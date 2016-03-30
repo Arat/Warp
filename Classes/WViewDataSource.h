@@ -6,8 +6,9 @@
 //  Copyright (c) 2014 Lukáš Foldýna. All rights reserved.
 //
 
-#import <Foundation/Foundation.h>
+@import Foundation;
 #import "WDataSourceProtocol.h"
+#import "WSourceObjectProtocol.h"
 #import "WCellViewObjectProtocol.h"
 
 
@@ -31,7 +32,7 @@ typedef NS_ENUM(NSUInteger, WViewDataSourceState) {
 
 // content data
 @property (nonatomic, copy) NSArray *content; // when it set it also refresh state and reloads table/collecion view
-- (NSIndexPath *) indexPathForObject:(id)object;
+- (NSIndexPath *) indexPathForObject:(id<WSourceObjectProtocol>)object;
 - (id) objectForIndexPath:(NSIndexPath *)indexPath;
 @property (nonatomic, assign, readonly) NSInteger contentCount;
 
@@ -43,11 +44,14 @@ typedef NS_ENUM(NSUInteger, WViewDataSourceState) {
 // table/collection
 @property (nonatomic, weak) UITableView *tableView; // set collection or table not both, set self as dataSource
 @property (nonatomic, weak) UICollectionView *collectionView; // set collection or table not both, set self as dataSource
+
 @property (nonatomic, strong) NSString *cellIdentifier; // reuse cell identifier for cells, all cells must implement WCellViewObjectProtocol
+- (NSString *) cellIdentifierForIndexPath:(NSIndexPath *)indexPath; // override point for cellIdentifier, default returns just cellIdentifier
 
 @property (nonatomic, strong) NSString *sectionIdentifier; // reuse section identifier for sections, all section views must implement WCellViewObjectProtocol
 @property (nonatomic, copy) NSArray *sectionTitles;
 
+- (void) deleteItemAtIndexPath:(NSIndexPath *)indexPath; // delete item, it will call deleteItemCallback and mark it as removing in source, same call as in UIT datasource
 @property (nonatomic, strong, readonly) NSArray *deletingItems; // items that are currently in delete queue
 
 // state
@@ -77,7 +81,9 @@ typedef NS_ENUM(NSUInteger, WViewDataSourceState) {
 @property (nonatomic, copy) void (^insertItemCallback)(NSIndexPath *indexPath); // called when user inserts row to table view
 @property (nonatomic, copy) void (^deleteItemCallback)(NSIndexPath *indexPath); // called when user delete row from table view
 
+@property (nonatomic, copy) BOOL (^canEditItemCallback)(NSIndexPath *indexPath); // called when it want to edit item in table view
+
 // called after cell is created and object is set to finish init for table/collection view
-@property (nonatomic, copy) void (^itemCellSetupCallback)(id<WCellViewObjectProtocol> cellView, id object);
+@property (nonatomic, copy) void (^itemCellSetupCallback)(id<WCellViewObjectProtocol> cellView, id<WSourceObjectProtocol> object);
 
 @end

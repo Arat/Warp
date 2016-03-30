@@ -12,6 +12,16 @@
 + (WDefaultStyleSheet *) globalStyleSheet;
 + (void) setGlobalStyleSheet:(WDefaultStyleSheet *)styleSheet;
 
+// Fonts
++ (UIFont *) systemFontOfSize:(CGFloat)fontSize;
+- (UIFont *) systemFontOfSize:(CGFloat)fontSize;
+
++ (UIFont *) boldSystemFontOfSize:(CGFloat)fontSize;
+- (UIFont *) boldSystemFontOfSize:(CGFloat)fontSize;
+
++ (UIFont *) italicSystemFontOfSize:(CGFloat)fontSize;
+- (UIFont *) italicSystemFontOfSize:(CGFloat)fontSize;
+
 // Controller
 - (Class) controllerErrorViewClass;
 - (UIColor *) rootContentBorderColor;
@@ -23,6 +33,14 @@
 - (UIFont *) activityLabelFont;
 - (UIFont *) activityBannerFont;
 - (UIColor *) activityTextColor;
+
+// Error view
+- (UIColor *) errorTitleColor;
+- (UIColor *) errorSubtitleColor;
+
+// Loading view
+- (UIColor *) loadingTintColor;
+- (UIColor *) loadingBackgroundColor;
 
 @end
 

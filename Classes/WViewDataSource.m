@@ -10,6 +10,7 @@
 #import "WViewDataSourcePrivate.h"
 #import "WGlobal.h"
 
+
 @implementation WViewDataSource
 
 - (instancetype) init
@@ -22,8 +23,6 @@
 
         _contentCount = 0;
         _section = 0;
-        
-        _deletingItems = [NSMutableArray array];
     }
     return self;
 }
@@ -104,11 +103,6 @@
     [self updateState];
 }
 
-- (NSArray *) deletingItems
-{
-    return [_deletingItems copy];
-}
-
 - (NSIndexPath *) indexPathForObject:(id)object
 {
     NSInteger index = [_content indexOfObject:object];
@@ -134,6 +128,47 @@
         return _content[index];
 }
 
+- (void) deleteItemAtIndexPath:(NSIndexPath *)indexPath
+{
+    NSAssert([NSThread isMainThread], @"Call only from main thread!");
+    
+    id<WSourceObjectProtocol> object = [self objectForIndexPath:indexPath];
+    if ([object isRemoving] || [object isProcessing] || [object isInserting]) {
+        return;
+    }
+    
+    [object setRemoving:YES];
+    id<WCellViewObjectProtocol> cell;
+    if ([self tableView]) {
+        cell = (id)[self.tableView cellForRowAtIndexPath:indexPath];
+    } else if ([self collectionView]) {
+        cell = (id)[self.collectionView cellForItemAtIndexPath:indexPath];
+    }
+    [cell setObject:object];
+    
+    if (_deleteItemCallback) {
+        _deleteItemCallback(indexPath);
+    }
+}
+
+- (NSArray *) deletingItems
+{
+    NSMutableArray *deletingItems = [NSMutableArray array];
+    for (id<WSourceObjectProtocol> object in [self content]) {
+        if ([object isRemoving]) {
+            [deletingItems addObject:object];
+        }
+    }
+    return [deletingItems copy];
+}
+
+- (NSString *) cellIdentifierForIndexPath:(NSIndexPath *)indexPath
+{
+    return _cellIdentifier;
+}
+
+#pragma mark Observing
+
 - (void) observerSourceForContentChanges:(NSObject<WDataSourceProtocol> *)source keyPath:(NSString *)keyPath
 {
     NSAssert([NSThread isMainThread], @"Call only from main thread!");
@@ -147,7 +182,10 @@
     
     _source = source;
     [self setSourceKeyPath:keyPath];
-    [source addObserver:self forKeyPath:keyPath options:NSKeyValueObservingOptionInitial | NSKeyValueObservingOptionOld | NSKeyValueObservingOptionNew context:&WTableViewDataSourceContentChangeContext];
+    [source addObserver:self forKeyPath:@"isLoading" options:NSKeyValueObservingOptionInitial | NSKeyValueObservingOptionNew
+                context:WTableViewDataSourceLoadingChangeContext];
+    [source addObserver:self forKeyPath:keyPath options:NSKeyValueObservingOptionInitial | NSKeyValueObservingOptionOld | NSKeyValueObservingOptionNew
+                context:&WTableViewDataSourceContentChangeContext];
 }
 
 - (void) removeSourceObserver
@@ -155,6 +193,7 @@
     if (!_source) {
         return;
     }
+    [_source removeObserver:self forKeyPath:@"isLoading" context:&WTableViewDataSourceLoadingChangeContext];
     [_source removeObserver:self forKeyPath:self.sourceKeyPath context:&WTableViewDataSourceContentChangeContext];
     _source = nil;
     
@@ -168,6 +207,9 @@
         dispatch_async(dispatch_get_main_queue(), ^{
             [self observeValueForKeyPath:keyPath ofObject:object change:change context:context];
         });
+    } else if (context == WTableViewDataSourceLoadingChangeContext && object == _source) {
+        _error = [_source.error copy];
+        [self updateState];
     } else if (context == WTableViewDataSourceContentChangeContext && object == _source) {
         _error = [_source.error copy];
         
@@ -243,8 +285,6 @@
     _content = [content copy];
     _contentCount = [_content count];
     
-    [_deletingItems removeObjectsInArray:objects];
-    
     if ([self deleteObjectsFromIndexPathsCallback]) {
         self.deleteObjectsFromIndexPathsCallback(indexPaths);
     } else if ([self tableView]) {
@@ -258,12 +298,9 @@
 {
     NSMutableArray *content = [_content mutableCopy];
     NSArray *new = newObjects;
-    NSArray *old = oldObjects;
+    //NSArray *old = oldObjects;
     NSInteger i = 0;
     for (NSIndexPath *indexPath in indexPaths) {
-        if ([_deletingItems indexOfObject:old[i]] != NSNotFound) {
-            [_deletingItems replaceObjectAtIndex:[_deletingItems indexOfObject:old[i]] withObject:new[i]];
-        }
         NSInteger index = (_collectionView ? indexPath.item : indexPath.row);
         [content replaceObjectAtIndex:index withObject:new[i]];
         i++;
@@ -282,9 +319,6 @@
 
 - (void) _reloadDataWithObjects:(NSArray *)objects
 {
-    // reload
-    [_deletingItems removeAllObjects];
-    
     _content = [objects copy];
     _contentCount = [_content count];
     
@@ -297,16 +331,17 @@
     }
 }
 
+#pragma mark -
 #pragma mark States
 
 - (BOOL) isLoaded
 {
-    return _content != nil;
+    return _content != nil && ![self isLoading];
 }
 
 - (BOOL) isLoading
 {
-    return _content == nil;
+    return _source == nil || [_source isLoading];
 }
 
 - (BOOL) isOutdated
@@ -326,6 +361,8 @@
         return WViewDataSourceStateOutdated;
     } else if ([self isLoaded] && [self.content count] == 0) {
         return WViewDataSourceStateEmpty;
+    } else if (![self isLoaded]) {
+        return WViewDataSourceStateLoading;
     } else {
         return WViewDataSourceStateLoaded;
     }
@@ -419,6 +456,7 @@
     }
 }
 
+#pragma mark -
 #pragma mark UITableViewDataSource
 
 - (NSInteger) numberOfSectionsInTableView:(UITableView *)tableView
@@ -438,16 +476,13 @@
 
 - (UITableViewCell *) tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    UITableViewCell<WCellViewObjectProtocol> *cell = (id)[tableView dequeueReusableCellWithIdentifier:self.cellIdentifier forIndexPath:indexPath];
-    NSObject *item = self.content[indexPath.row];
+    UITableViewCell<WCellViewObjectProtocol> *cell = (id)[tableView dequeueReusableCellWithIdentifier:[self cellIdentifierForIndexPath:indexPath]
+                                                                                         forIndexPath:indexPath];
+    id<WSourceObjectProtocol> item = self.content[indexPath.row];
     [cell setObject:item];
-    if ([cell respondsToSelector:@selector(removing)]) {
-        [cell setRemoving:[self.deletingItems indexOfObject:item] != NSNotFound];
-    }
     if (self.itemCellSetupCallback) {
         self.itemCellSetupCallback(cell, item);
     }
-    [cell setEditing:tableView.isEditing];
     return cell;
 }
 
@@ -460,18 +495,20 @@
             }
         } break;
         case UITableViewCellEditingStyleDelete: {
-            NSObject *object = [self objectForIndexPath:indexPath];
-            if ([_deletingItems indexOfObject:object] != NSNotFound || object == nil) {
-                return;
-            }
-            [_deletingItems addObject:object];
-            
-            if (self.deleteItemCallback) {
-                self.deleteItemCallback(indexPath);
-            }
+            [self deleteItemAtIndexPath:indexPath];
         } break;
         case UITableViewCellEditingStyleNone: {
         } break;
+    }
+}
+
+- (BOOL) tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    if (_canEditItemCallback) {
+        return _canEditItemCallback(indexPath);
+    } else {
+        id<WSourceObjectProtocol> item = self.content[indexPath.row];
+        return ![item isRemoving] && ![item isInserting] && ![item isRemoving];
     }
 }
 
@@ -489,12 +526,10 @@
 
 - (UICollectionViewCell *) collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath
 {
-    UICollectionViewCell<WCellViewObjectProtocol> *cell = (id)[collectionView dequeueReusableCellWithReuseIdentifier:self.cellIdentifier forIndexPath:indexPath];
-    NSObject *item = self.content[indexPath.item];
+    UICollectionViewCell<WCellViewObjectProtocol> *cell = (id)[collectionView dequeueReusableCellWithReuseIdentifier:[self cellIdentifierForIndexPath:indexPath]
+                                                                                                        forIndexPath:indexPath];
+    id<WSourceObjectProtocol> item = self.content[indexPath.item];
     [cell setObject:item];
-    if ([cell respondsToSelector:@selector(removing)]) {
-        [cell setRemoving:[self.deletingItems indexOfObject:item] != NSNotFound];
-    }
     if (self.itemCellSetupCallback) {
         self.itemCellSetupCallback(cell, item);
     }
@@ -506,7 +541,8 @@
     if ([self sectionIdentifier] == nil) {
         return nil;
     }
-    UICollectionReusableView<WCellViewObjectProtocol> *sectionView = [collectionView dequeueReusableSupplementaryViewOfKind:kind withReuseIdentifier:self.sectionIdentifier forIndexPath:indexPath];
+    UICollectionReusableView<WCellViewObjectProtocol> *sectionView = [collectionView dequeueReusableSupplementaryViewOfKind:kind
+                                                                                                        withReuseIdentifier:self.sectionIdentifier forIndexPath:indexPath];
     NSArray *sectionTitles = [self sectionTitles];
     if ([sectionTitles count] > [indexPath section]) {
         [sectionView setObject:self.sectionTitles[indexPath.section]];

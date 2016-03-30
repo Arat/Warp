@@ -34,6 +34,7 @@ static pthread_mutex_t  gMutex = PTHREAD_MUTEX_INITIALIZER;
 
 extern void WNetworkRequestStarted()
 {
+    #if !TARGET_IS_EXTENSION
     pthread_mutex_lock(&gMutex);
     
     if (0 == gNetworkTaskCount) {
@@ -42,11 +43,13 @@ extern void WNetworkRequestStarted()
     gNetworkTaskCount++;
     
     pthread_mutex_unlock(&gMutex);
+    #endif
 }
 
 
 extern void WNetworkRequestStopped()
 {
+    #if !TARGET_IS_EXTENSION
     pthread_mutex_lock(&gMutex);
     
     --gNetworkTaskCount;
@@ -56,6 +59,7 @@ extern void WNetworkRequestStopped()
         [UIApplication sharedApplication].networkActivityIndicatorVisible = NO;
     }
     pthread_mutex_unlock(&gMutex);
+    #endif
 }
 
 

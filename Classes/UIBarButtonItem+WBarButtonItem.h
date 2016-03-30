@@ -11,20 +11,20 @@
 
 @interface UIBarButtonItem (WBarButtonItem)
 
-+ (id) itemWithImage:(UIImage *)image target:(id)target action:(SEL)action;
-+ (id) itemWithImage:(UIImage *)image style:(UIBarButtonItemStyle)style target:(id)target action:(SEL)action;
++ (instancetype) itemWithImage:(UIImage *)image target:(id)target action:(SEL)action;
++ (instancetype) itemWithImage:(UIImage *)image style:(UIBarButtonItemStyle)style target:(id)target action:(SEL)action;
 
-+ (id) itemWithImageName:(NSString *)name target:(id)target action:(SEL)action;
-+ (id) itemWithImageName:(NSString *)name style:(UIBarButtonItemStyle)style target:(id)target action:(SEL)action;
++ (instancetype) itemWithImageName:(NSString *)name target:(id)target action:(SEL)action;
++ (instancetype) itemWithImageName:(NSString *)name style:(UIBarButtonItemStyle)style target:(id)target action:(SEL)action;
 
-+ (id) itemWithTitle:(NSString *)title target:(id)target action:(SEL)action;
-+ (id) itemWithTitle:(NSString *)title style:(UIBarButtonItemStyle)style target:(id)target action:(SEL)action;
++ (instancetype) itemWithTitle:(NSString *)title target:(id)target action:(SEL)action;
++ (instancetype) itemWithTitle:(NSString *)title style:(UIBarButtonItemStyle)style target:(id)target action:(SEL)action;
 
-+ (id) itemWithBarButtonSystemItem:(UIBarButtonSystemItem)systemItem target:(id)target action:(SEL)action;
-+ (id) itemWithBarButtonSystemItem:(UIBarButtonSystemItem)systemItem style:(UIBarButtonItemStyle)style target:(id)target action:(SEL)action;
-+ (id) itemWithFlexibleSpaceStyle;
-+ (id) itemWithFixedSpaceWidth:(CGFloat)width;
++ (instancetype) itemWithBarButtonSystemItem:(UIBarButtonSystemItem)systemItem target:(id)target action:(SEL)action;
++ (instancetype) itemWithBarButtonSystemItem:(UIBarButtonSystemItem)systemItem style:(UIBarButtonItemStyle)style target:(id)target action:(SEL)action;
++ (instancetype) itemWithFlexibleSpaceStyle;
++ (instancetype) itemWithFixedSpaceWidth:(CGFloat)width;
 
-+ (id) itemWithCustomView:(UIView *)customView;
++ (instancetype) itemWithCustomView:(UIView *)customView;
 
 @end

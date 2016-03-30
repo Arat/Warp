@@ -350,7 +350,7 @@
         [content removeObjectAtIndex:currentIndex];
         currentIndex = [indexSet indexGreaterThanIndex:currentIndex];
     }
-    for (NSObject *object in [_deletingItems copy]) {
+    for (NSObject<WSourceObjectProtocol> *object in [_deletingItems copy]) {
         NSIndexPath *indexPath = [self indexPathForObject:object];
         if ([indexSet containsIndex:indexPath.section]) {
             [_deletingItems removeObject:object];
@@ -381,7 +381,7 @@
         currentIndex = [indexSet indexGreaterThanIndex:currentIndex];
         i++;
     }
-    for (NSIndexPath *object in [_deletingItems copy]) {
+    for (NSIndexPath<WSourceObjectProtocol> *object in [_deletingItems copy]) {
         NSIndexPath *indexPath = [self indexPathForObject:object];
         if ([indexSet containsIndex:indexPath.section]) {
             [_deletingItems removeObject:object];
@@ -415,15 +415,12 @@
 - (UITableViewCell *) tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     UITableViewCell<WCellViewObjectProtocol> *cell = (id)[tableView dequeueReusableCellWithIdentifier:self.cellIdentifier forIndexPath:indexPath];
-    NSObject *item = self.content[indexPath.section][indexPath.row];
+    NSObject<WSourceObjectProtocol> *item = self.content[indexPath.section][indexPath.row];
     [cell setObject:item];
-    if ([cell respondsToSelector:@selector(removing)]) {
-        [cell setRemoving:[self.deletingItems indexOfObject:item] != NSNotFound];
-    }
+
     if (self.itemCellSetupCallback) {
         self.itemCellSetupCallback(cell, item);
     }
-    [cell setEditing:tableView.isEditing];
     return cell;
 }
 
@@ -442,11 +439,9 @@
 - (UICollectionViewCell *) collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath
 {
     UICollectionViewCell<WCellViewObjectProtocol> *cell = (id)[collectionView dequeueReusableCellWithReuseIdentifier:self.cellIdentifier forIndexPath:indexPath];
-    NSObject *item = self.content[indexPath.section][indexPath.item];
+    NSObject<WSourceObjectProtocol> *item = self.content[indexPath.section][indexPath.item];
     [cell setObject:item];
-    if ([cell respondsToSelector:@selector(removing)]) {
-        [cell setRemoving:[self.deletingItems indexOfObject:item] != NSNotFound];
-    }
+
     if (self.itemCellSetupCallback) {
         self.itemCellSetupCallback(cell, item);
     }

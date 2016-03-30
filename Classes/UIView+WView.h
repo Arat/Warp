@@ -77,7 +77,7 @@
  */
 @property (nonatomic) CGSize size;
 
-- (id) superTableViewCell;
-- (UITableView *) superTableView;
+@property (nonatomic, readonly, strong) id superTableViewCell;
+@property (nonatomic, readonly, strong) UITableView *superTableView;
 
 @end

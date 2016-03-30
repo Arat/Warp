@@ -9,6 +9,7 @@
 #import "WViewDataSource.h"
 
 
+static void *WTableViewDataSourceLoadingChangeContext = &WTableViewDataSourceLoadingChangeContext;
 static void *WTableViewDataSourceContentChangeContext = &WTableViewDataSourceContentChangeContext;
 static void *WTableViewDataSourceSectionChangeContext = &WTableViewDataSourceSectionChangeContext;
 

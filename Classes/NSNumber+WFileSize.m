@@ -115,10 +115,15 @@
 	return [NSString stringWithFormat: @"%1.1f TR", floatSize];
 }
 
++ (NSNumber *) freeDiskSpace
+{
+    NSDictionary *fattributes = [[NSFileManager defaultManager] attributesOfFileSystemForPath:NSHomeDirectory() error:nil];
+    return fattributes[NSFileSystemFreeSize];
+}
+
 + (NSDictionary *) fileSystemUsage
 {
-	NSError *error;
-	return [[NSFileManager defaultManager] attributesOfFileSystemForPath: [[NSBundle mainBundle] executablePath] error: &error];
+	return [[NSFileManager defaultManager] attributesOfFileSystemForPath:NSHomeDirectory() error:nil];
 }
 
 @end

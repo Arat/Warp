@@ -29,6 +29,8 @@
 /*
  * Vrati info disku
  */
++ (NSNumber *) freeDiskSpace;
+
 + (NSDictionary *) fileSystemUsage;
 
 @end

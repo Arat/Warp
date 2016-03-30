@@ -45,6 +45,8 @@
 		655781DA1CABE79600EAD75A /* WFileLogger.h in Headers */ = {isa = PBXBuildFile; fileRef = 808DDC37147548410019A8BA /* WFileLogger.h */; };
 		655781DB1CABE79700EAD75A /* WFileLogger.h in Headers */ = {isa = PBXBuildFile; fileRef = 808DDC37147548410019A8BA /* WFileLogger.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		655781DC1CABE79A00EAD75A /* WFileLogger.m in Sources */ = {isa = PBXBuildFile; fileRef = 808DDC38147548410019A8BA /* WFileLogger.m */; };
+		655781E91CABEF8A00EAD75A /* WSourceObjectProtocol.h in Headers */ = {isa = PBXBuildFile; fileRef = 655781E81CABEF8A00EAD75A /* WSourceObjectProtocol.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		655781EA1CABEF8E00EAD75A /* WSourceObjectProtocol.h in Headers */ = {isa = PBXBuildFile; fileRef = 655781E81CABEF8A00EAD75A /* WSourceObjectProtocol.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		65768636196D5A6200C0E88D /* WGlobal.m in Sources */ = {isa = PBXBuildFile; fileRef = 8030E7F7101F1FFB008BC21B /* WGlobal.m */; };
 		65768637196D5A6200C0E88D /* WAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 80950094120F05C300EE6A75 /* WAppDelegate.m */; };
 		65768638196D5A6200C0E88D /* WViewDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 652BAAD1191938E700D1867A /* WViewDataSource.m */; };
@@ -193,6 +195,7 @@
 		655781B51CABE1F700EAD75A /* WarpX.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = WarpX.h; path = Resources/WarpX.h; sourceTree = "<group>"; };
 		655781CD1CABE23000EAD75A /* iOS-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "iOS-Info.plist"; path = "Resources/iOS-Info.plist"; sourceTree = "<group>"; };
 		655781CE1CABE23000EAD75A /* OSX-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "OSX-Info.plist"; path = "Resources/OSX-Info.plist"; sourceTree = "<group>"; };
+		655781E81CABEF8A00EAD75A /* WSourceObjectProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WSourceObjectProtocol.h; sourceTree = "<group>"; };
 		6576861A196D597D00C0E88D /* Warp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Warp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		65782CEC16870F61006C0F9C /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 		65782DC5168750C5006C0F9C /* NSDate+WAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDate+WAdditions.m"; sourceTree = "<group>"; };
@@ -474,6 +477,7 @@
 			children = (
 				652BAAD4191938F400D1867A /* WViewDataSource.h */,
 				65A0488119ACC6EC0068D3EE /* WViewDataSourcePrivate.h */,
+				655781E81CABEF8A00EAD75A /* WSourceObjectProtocol.h */,
 				652BAAD1191938E700D1867A /* WViewDataSource.m */,
 				65A0487319ACBEB00068D3EE /* WSectionedViewDataSource.h */,
 				65A0487719ACBECB0068D3EE /* WSectionedViewDataSource.m */,
@@ -520,6 +524,7 @@
 				6576865A196D5AD700C0E88D /* WViewDataSource.h in Headers */,
 				65339E0819814CBD00CE3AC1 /* WTableView.h in Headers */,
 				65768667196D5AE900C0E88D /* WErrorView.h in Headers */,
+				655781EA1CABEF8E00EAD75A /* WSourceObjectProtocol.h in Headers */,
 				65768668196D5AE900C0E88D /* WActivityView.h in Headers */,
 				6576866A196D5AF000C0E88D /* WPatternLayer.h in Headers */,
 				65A0487619ACBEB00068D3EE /* WSectionedViewDataSource.h in Headers */,
@@ -583,6 +588,7 @@
 				655781C11CABE1F700EAD75A /* WarpFramework.h in Headers */,
 				655781D21CABE77E00EAD75A /* WFileSearch.h in Headers */,
 				6556B9201ADBD61A00DC7376 /* WViewController.h in Headers */,
+				655781E91CABEF8A00EAD75A /* WSourceObjectProtocol.h in Headers */,
 				652BAAC21917E0A100D1867A /* WErrorView.h in Headers */,
 				809501C4120F0A4600EE6A75 /* WGlobal.h in Headers */,
 				809501C5120F0A4600EE6A75 /* Warp.h in Headers */,

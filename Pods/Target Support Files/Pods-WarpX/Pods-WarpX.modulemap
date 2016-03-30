@@ -1,6 +1,0 @@
-framework module Pods_WarpX {
-  umbrella header "Pods-WarpX-umbrella.h"
-
-  export *
-  module * { export * }
-}

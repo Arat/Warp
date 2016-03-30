@@ -89,17 +89,3 @@ extern BOOL WISOSX09(void);
 extern BOOL WISOSX10(void);
 
 extern BOOL WIsStringWithAnyText(id object);
-
-#if TARGET_OS_IPHONE
-
-typedef enum {
-    WInterfaceOrientationMaskPortrait = (1 << UIInterfaceOrientationPortrait),
-    WInterfaceOrientationMaskLandscapeLeft = (1 << UIInterfaceOrientationLandscapeLeft),
-    WInterfaceOrientationMaskLandscapeRight = (1 << UIInterfaceOrientationLandscapeRight),
-    WInterfaceOrientationMaskPortraitUpsideDown = (1 << UIInterfaceOrientationPortraitUpsideDown),
-    WInterfaceOrientationMaskLandscape = (WInterfaceOrientationMaskLandscapeLeft | WInterfaceOrientationMaskLandscapeRight),
-    WInterfaceOrientationMaskAll = (WInterfaceOrientationMaskPortrait | WInterfaceOrientationMaskLandscapeLeft | WInterfaceOrientationMaskLandscapeRight | WInterfaceOrientationMaskPortraitUpsideDown),
-    WInterfaceOrientationMaskAllButUpsideDown = (WInterfaceOrientationMaskPortrait | WInterfaceOrientationMaskLandscapeLeft | WInterfaceOrientationMaskLandscapeRight),
-} WInterfaceOrientationMask;
-
-#endif

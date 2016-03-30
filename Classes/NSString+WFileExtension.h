@@ -17,85 +17,85 @@
 /*
  * Zjisiti jestli dokazeme otevrit
  */
-- (BOOL) canOpen;
+@property (nonatomic, readonly) BOOL canOpen;
 
 /*
  * Seznam kocovek obrazku
  */
-- (NSArray *) extImage;
+@property (nonatomic, readonly, copy) NSArray *extImage;
 
 /*
  * Zjisiti jestli je koncovka typu obrazek
  */
-- (BOOL) isImage;
+@property (nonatomic, getter=isImage, readonly) BOOL image;
 
 /*
  * Seznam kocovek audio
  */
-- (NSArray *) extAudio;
+@property (nonatomic, readonly, copy) NSArray *extAudio;
 
 /*
  * Zjisiti jestli je koncovka typu audio
  */
-- (BOOL) isAudio;
+@property (nonatomic, getter=isAudio, readonly) BOOL audio;
 
 /*
  * Seznam kocovek video souboru
  */
-- (NSArray *) extVideo;
+@property (nonatomic, readonly, copy) NSArray *extVideo;
 
 /*
  * Zjisiti jestli je koncovka typu video
  */
-- (BOOL) isVideo;
+@property (nonatomic, getter=isVideo, readonly) BOOL video;
 
-- (BOOL) isStreamedVideo;
+@property (nonatomic, getter=isStreamedVideo, readonly) BOOL streamedVideo;
 
 /*
  * Seznam kocovek textovych souboru
  */
-- (NSArray *) extText;
+@property (nonatomic, readonly, copy) NSArray *extText;
 
 /*
  * Zjisiti jestli je koncovka typu text
  */
-- (BOOL) isText;
+@property (nonatomic, getter=isText, readonly) BOOL text;
 
 /*
  * Seznam kocovek dokumentu
  */
-- (NSArray *) extDocument;
+@property (nonatomic, readonly, copy) NSArray *extDocument;
 
 /*
  * Zjisiti jestli je koncovka typu dokument
  */
-- (BOOL) isDocument;
+@property (nonatomic, getter=isDocument, readonly) BOOL document;
 
 /*
  * Seznam kocovek bundle dokumentu
  */
-- (NSArray *) extBundle;
+@property (nonatomic, readonly, copy) NSArray *extBundle;
 
 /*
  * Zjisiti jestli je koncovka typu document bundle
  */
-- (BOOL) isBundle;
+@property (nonatomic, getter=isBundle, readonly) BOOL bundle;
 
 /*
  * Seznam kocovek archivu
  */
-- (NSArray *) extArchive;
+@property (nonatomic, readonly, copy) NSArray *extArchive;
 
 /*
  * Zjisiti jestli je koncovka typu archiv
  */
-- (BOOL) isArchive;
+@property (nonatomic, getter=isArchive, readonly) BOOL archive;
 
 /*
  * Zjisiti jestli umime archiv rozbalit
  */
-- (BOOL) canUnarchive;
+@property (nonatomic, readonly) BOOL canUnarchive;
 
-- (NSString *) stringByStrippingHTML;
+@property (nonatomic, readonly, copy) NSString *stringByStrippingHTML;
 
 @end

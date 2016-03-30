@@ -6,15 +6,11 @@
 //  Copyright (c) 2014 Lukáš Foldýna. All rights reserved.
 //
 
-#import <Foundation/Foundation.h>
+@import Foundation;
 
 
 @protocol WCellViewObjectProtocol <NSObject>
 
 - (void) setObject:(id)object;
-
-@optional
-
-@property (nonatomic, assign) BOOL removing;
 
 @end

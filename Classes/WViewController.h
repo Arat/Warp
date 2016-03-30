@@ -6,12 +6,12 @@
 //  Copyright (c) 2015 TwoManShow. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
+@import UIKit;
 
 
 @class WViewDataSource, WErrorView;
 
-@interface WViewController : UIViewController
+@protocol WViewControllerProtocol <NSObject>
 
 @property (nonatomic, strong) WViewDataSource *viewSource;
 
@@ -26,8 +26,27 @@
 - (CGRect) overlayerFrame;
 - (void) hideOverlayer;
 
-@property (nonatomic, readonly, strong) NSString *titleForState;
-@property (nonatomic, readonly, strong) NSString *subtitleForState;
-@property (nonatomic, readonly, strong) UIImage *imageForState;
+@property (nonatomic, readonly, strong) NSString *titleForState; // source-label.source-state.title
+@property (nonatomic, readonly, strong) NSString *subtitleForState; // source-label.source-state.subtitle or error description
+@property (nonatomic, readonly, strong) UIImage *imageForState; // source-label.source-state.image
+
+@end
+
+
+@interface UIViewController (WViewController)
+
+@end
+
+
+@interface WViewController : UIViewController <WViewControllerProtocol>
+
+@end
+
+@interface WTableViewController : UITableViewController <WViewControllerProtocol>
+
+@end
+
+
+@interface WCollectionViewController : UICollectionViewController <WViewControllerProtocol>
 
 @end

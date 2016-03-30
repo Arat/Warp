@@ -1,6 +1,0 @@
-framework module Pods_Warp_Example {
-  umbrella header "Pods-Warp_Example-umbrella.h"
-
-  export *
-  module * { export * }
-}

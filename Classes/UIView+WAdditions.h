@@ -20,11 +20,11 @@
 /*
  * Najde a vrati ve view hierarchii prvni UIScrollView
  */
-- (UIScrollView *) findScrollView;
+@property (nonatomic, readonly, strong) UIScrollView *findScrollView;
 
 /*
  * Vytvori UIImage z obsahu view
  */
-- (UIImage *) takeScreenshot;
+@property (nonatomic, readonly, strong) UIImage *takeScreenshot;
 
 @end

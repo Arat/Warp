@@ -13,4 +13,6 @@
 
 @property (nonatomic, strong) NSError *error;
 
+@property (nonatomic, assign, readonly, getter = isLoading) BOOL loading;
+
 @end
