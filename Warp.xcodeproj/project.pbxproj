@@ -1,0 +1,1177 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		29A2196A142F0CF41C3DF200 /* Pods_Warp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 48BAF93B0A314AA807518DE9 /* Pods_Warp.framework */; };
+		59B4B1BCFA0A4280C68F8687 /* libPods-Warp-lib.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 73F2283DB4DA139125D3E594 /* libPods-Warp-lib.a */; };
+		650223931AA73ADB002FEED7 /* WAppDelegate.h in Headers */ = {isa = PBXBuildFile; fileRef = 80950093120F05C300EE6A75 /* WAppDelegate.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		650223981AA73AE0002FEED7 /* WAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 80950094120F05C300EE6A75 /* WAppDelegate.m */; };
+		65177C3E18FEBB5100EAC1DA /* WGradientView.h in Headers */ = {isa = PBXBuildFile; fileRef = 65177C3D18FEBB5100EAC1DA /* WGradientView.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		65177C4118FEBB5B00EAC1DA /* WGradientView.m in Sources */ = {isa = PBXBuildFile; fileRef = 65177C4018FEBB5B00EAC1DA /* WGradientView.m */; };
+		6524622319814F7A00AFDA7E /* WTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 80C7C2BF1073EBB400BAC071 /* WTableView.m */; };
+		6524622419814FBB00AFDA7E /* WCellViewObjectProtocol.h in Headers */ = {isa = PBXBuildFile; fileRef = 652BAAD6191938F400D1867A /* WCellViewObjectProtocol.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		65246230198153C100AFDA7E /* WGradientView.m in Sources */ = {isa = PBXBuildFile; fileRef = 65177C4018FEBB5B00EAC1DA /* WGradientView.m */; };
+		652BAABF1917E08800D1867A /* WErrorView.m in Sources */ = {isa = PBXBuildFile; fileRef = 652BAABC1917E08800D1867A /* WErrorView.m */; };
+		652BAAC21917E0A100D1867A /* WErrorView.h in Headers */ = {isa = PBXBuildFile; fileRef = 652BAAC11917E0A100D1867A /* WErrorView.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		652BAAD2191938E700D1867A /* WViewDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 652BAAD1191938E700D1867A /* WViewDataSource.m */; };
+		652BAAD7191938F400D1867A /* WViewDataSource.h in Headers */ = {isa = PBXBuildFile; fileRef = 652BAAD4191938F400D1867A /* WViewDataSource.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		652BAAD9191938F400D1867A /* WDataSourceProtocol.h in Headers */ = {isa = PBXBuildFile; fileRef = 652BAAD5191938F400D1867A /* WDataSourceProtocol.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		652BAADB191938F400D1867A /* WCellViewObjectProtocol.h in Headers */ = {isa = PBXBuildFile; fileRef = 652BAAD6191938F400D1867A /* WCellViewObjectProtocol.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		65339E0819814CBD00CE3AC1 /* WTableView.h in Headers */ = {isa = PBXBuildFile; fileRef = 80C7C2BE1073EBB400BAC071 /* WTableView.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		653972091981492F00BF47B7 /* WDataSourceProtocol.h in Headers */ = {isa = PBXBuildFile; fileRef = 652BAAD5191938F400D1867A /* WDataSourceProtocol.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		6556B9201ADBD61A00DC7376 /* WViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = 6556B91E1ADBD61A00DC7376 /* WViewController.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		6556B9221ADBD61A00DC7376 /* WViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = 6556B91E1ADBD61A00DC7376 /* WViewController.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		6556B9231ADBD61A00DC7376 /* WViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6556B91F1ADBD61A00DC7376 /* WViewController.m */; };
+		6556B9251ADBD61A00DC7376 /* WViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6556B91F1ADBD61A00DC7376 /* WViewController.m */; };
+		655781C01CABE1F700EAD75A /* Warp_Prefix.pch in Headers */ = {isa = PBXBuildFile; fileRef = 655781B31CABE1F700EAD75A /* Warp_Prefix.pch */; };
+		655781C11CABE1F700EAD75A /* WarpFramework.h in Headers */ = {isa = PBXBuildFile; fileRef = 655781B41CABE1F700EAD75A /* WarpFramework.h */; };
+		655781C21CABE1F700EAD75A /* WarpX.h in Headers */ = {isa = PBXBuildFile; fileRef = 655781B51CABE1F700EAD75A /* WarpX.h */; };
+		655781CF1CABE77B00EAD75A /* WFileSearch.m in Sources */ = {isa = PBXBuildFile; fileRef = 6522D5D8160B680200643E58 /* WFileSearch.m */; };
+		655781D01CABE77C00EAD75A /* WFileSearch.m in Sources */ = {isa = PBXBuildFile; fileRef = 6522D5D8160B680200643E58 /* WFileSearch.m */; };
+		655781D11CABE77E00EAD75A /* WFileSearch.h in Headers */ = {isa = PBXBuildFile; fileRef = 6522D5D7160B680200643E58 /* WFileSearch.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		655781D21CABE77E00EAD75A /* WFileSearch.h in Headers */ = {isa = PBXBuildFile; fileRef = 6522D5D7160B680200643E58 /* WFileSearch.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		655781D31CABE78400EAD75A /* WFileSourceProtocol.h in Headers */ = {isa = PBXBuildFile; fileRef = 808AF6AF0F7947120062879F /* WFileSourceProtocol.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		655781D41CABE78800EAD75A /* WFileSource.h in Headers */ = {isa = PBXBuildFile; fileRef = 808AF6AA0F7947120062879F /* WFileSource.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		655781D51CABE78B00EAD75A /* WFileSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 808AF6AB0F7947120062879F /* WFileSource.m */; };
+		655781D61CABE78E00EAD75A /* WFileSystemSource.h in Headers */ = {isa = PBXBuildFile; fileRef = 808AF6B00F7947120062879F /* WFileSystemSource.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		655781D71CABE78E00EAD75A /* WFileSystemSource.h in Headers */ = {isa = PBXBuildFile; fileRef = 808AF6B00F7947120062879F /* WFileSystemSource.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		655781D81CABE79200EAD75A /* WFileSystemSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 808AF6B10F7947120062879F /* WFileSystemSource.m */; };
+		655781D91CABE79200EAD75A /* WFileSystemSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 808AF6B10F7947120062879F /* WFileSystemSource.m */; };
+		655781DA1CABE79600EAD75A /* WFileLogger.h in Headers */ = {isa = PBXBuildFile; fileRef = 808DDC37147548410019A8BA /* WFileLogger.h */; };
+		655781DB1CABE79700EAD75A /* WFileLogger.h in Headers */ = {isa = PBXBuildFile; fileRef = 808DDC37147548410019A8BA /* WFileLogger.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		655781DC1CABE79A00EAD75A /* WFileLogger.m in Sources */ = {isa = PBXBuildFile; fileRef = 808DDC38147548410019A8BA /* WFileLogger.m */; };
+		65768636196D5A6200C0E88D /* WGlobal.m in Sources */ = {isa = PBXBuildFile; fileRef = 8030E7F7101F1FFB008BC21B /* WGlobal.m */; };
+		65768637196D5A6200C0E88D /* WAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 80950094120F05C300EE6A75 /* WAppDelegate.m */; };
+		65768638196D5A6200C0E88D /* WViewDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 652BAAD1191938E700D1867A /* WViewDataSource.m */; };
+		65768645196D5A9900C0E88D /* WErrorView.m in Sources */ = {isa = PBXBuildFile; fileRef = 652BAABC1917E08800D1867A /* WErrorView.m */; };
+		65768646196D5A9900C0E88D /* WActivityView.m in Sources */ = {isa = PBXBuildFile; fileRef = 65A10A15192123FB00F0EB86 /* WActivityView.m */; };
+		65768647196D5A9900C0E88D /* WPatternLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 80AE3EDE1118D6280050095C /* WPatternLayer.m */; };
+		65768648196D5A9900C0E88D /* WDefaultStyleSheet.m in Sources */ = {isa = PBXBuildFile; fileRef = 800846710FB19B3800BEE3FA /* WDefaultStyleSheet.m */; };
+		65768649196D5A9900C0E88D /* UIImage+WResize.m in Sources */ = {isa = PBXBuildFile; fileRef = 8008963B168E0C08003528EB /* UIImage+WResize.m */; };
+		6576864A196D5A9900C0E88D /* NSDate+WAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 65782DC5168750C5006C0F9C /* NSDate+WAdditions.m */; };
+		6576864B196D5A9900C0E88D /* NSFileManager+WFileManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 80A4C02D162F079B00D8BEE1 /* NSFileManager+WFileManager.m */; };
+		6576864C196D5A9900C0E88D /* NSNumber+WFileSize.m in Sources */ = {isa = PBXBuildFile; fileRef = 808AF67D0F7947120062879F /* NSNumber+WFileSize.m */; };
+		6576864D196D5A9900C0E88D /* NSString+WFileExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = 808AF6830F7947120062879F /* NSString+WFileExtension.m */; };
+		6576864E196D5A9900C0E88D /* NSString+WCrypto.m in Sources */ = {isa = PBXBuildFile; fileRef = 808AF6810F7947120062879F /* NSString+WCrypto.m */; };
+		65768650196D5A9900C0E88D /* UIView+WAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 808AF68B0F7947120062879F /* UIView+WAdditions.m */; };
+		65768654196D5A9900C0E88D /* NSObject+WAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 80D6FFE61332A03400D4D0BC /* NSObject+WAdditions.m */; };
+		65768655196D5A9900C0E88D /* UIView+WView.m in Sources */ = {isa = PBXBuildFile; fileRef = 659C4A7518E456D4005BD7D3 /* UIView+WView.m */; };
+		65768656196D5A9900C0E88D /* UIBarButtonItem+WBarButtonItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 659C4AE418E48F25005BD7D3 /* UIBarButtonItem+WBarButtonItem.m */; };
+		65768657196D5ACE00C0E88D /* Warp.h in Headers */ = {isa = PBXBuildFile; fileRef = 8030E7FA101F200B008BC21B /* Warp.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		65768658196D5ACE00C0E88D /* WGlobal.h in Headers */ = {isa = PBXBuildFile; fileRef = 8030E7F4101F1FEA008BC21B /* WGlobal.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		65768659196D5ACE00C0E88D /* WAppDelegate.h in Headers */ = {isa = PBXBuildFile; fileRef = 80950093120F05C300EE6A75 /* WAppDelegate.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		6576865A196D5AD700C0E88D /* WViewDataSource.h in Headers */ = {isa = PBXBuildFile; fileRef = 652BAAD4191938F400D1867A /* WViewDataSource.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		65768663196D5AE900C0E88D /* WGradientView.h in Headers */ = {isa = PBXBuildFile; fileRef = 65177C3D18FEBB5100EAC1DA /* WGradientView.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		65768667196D5AE900C0E88D /* WErrorView.h in Headers */ = {isa = PBXBuildFile; fileRef = 652BAAC11917E0A100D1867A /* WErrorView.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		65768668196D5AE900C0E88D /* WActivityView.h in Headers */ = {isa = PBXBuildFile; fileRef = 65A10A181921241100F0EB86 /* WActivityView.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		6576866A196D5AF000C0E88D /* WPatternLayer.h in Headers */ = {isa = PBXBuildFile; fileRef = 80AE3EDD1118D6280050095C /* WPatternLayer.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		6576866B196D5AF000C0E88D /* WDefaultStyleSheet.h in Headers */ = {isa = PBXBuildFile; fileRef = 803ED5EF0FB1AC500084AB49 /* WDefaultStyleSheet.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		6576866C196D5AFE00C0E88D /* UIImage+WResize.h in Headers */ = {isa = PBXBuildFile; fileRef = 80089645168E0C10003528EB /* UIImage+WResize.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		6576866D196D5AFE00C0E88D /* NSDate+WAdditions.h in Headers */ = {isa = PBXBuildFile; fileRef = 65782DC8168750D6006C0F9C /* NSDate+WAdditions.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		6576866E196D5AFE00C0E88D /* NSFileManager+WFileManager.h in Headers */ = {isa = PBXBuildFile; fileRef = 80A4C02C162F079B00D8BEE1 /* NSFileManager+WFileManager.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		6576866F196D5AFE00C0E88D /* NSNumber+WFileSize.h in Headers */ = {isa = PBXBuildFile; fileRef = 808AF67C0F7947120062879F /* NSNumber+WFileSize.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		65768670196D5AFE00C0E88D /* NSString+WFileExtension.h in Headers */ = {isa = PBXBuildFile; fileRef = 808AF6820F7947120062879F /* NSString+WFileExtension.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		65768671196D5AFE00C0E88D /* NSString+WCrypto.h in Headers */ = {isa = PBXBuildFile; fileRef = 808AF6800F7947120062879F /* NSString+WCrypto.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		65768673196D5AFE00C0E88D /* UIView+WAdditions.h in Headers */ = {isa = PBXBuildFile; fileRef = 808AF68A0F7947120062879F /* UIView+WAdditions.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		65768677196D5AFE00C0E88D /* NSObject+WAdditions.h in Headers */ = {isa = PBXBuildFile; fileRef = 80D6FFE51332A03400D4D0BC /* NSObject+WAdditions.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		65768678196D5AFE00C0E88D /* UIView+WView.h in Headers */ = {isa = PBXBuildFile; fileRef = 659C4A9018E4579E005BD7D3 /* UIView+WView.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		65768679196D5AFE00C0E88D /* UIBarButtonItem+WBarButtonItem.h in Headers */ = {isa = PBXBuildFile; fileRef = 659C4AE918E48F57005BD7D3 /* UIBarButtonItem+WBarButtonItem.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		65782DC6168750C5006C0F9C /* NSDate+WAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 65782DC5168750C5006C0F9C /* NSDate+WAdditions.m */; };
+		65782DC9168750D6006C0F9C /* NSDate+WAdditions.h in Headers */ = {isa = PBXBuildFile; fileRef = 65782DC8168750D6006C0F9C /* NSDate+WAdditions.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		659C4A7018E4562F005BD7D3 /* WPatternLayer.h in Headers */ = {isa = PBXBuildFile; fileRef = 80AE3EDD1118D6280050095C /* WPatternLayer.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		659C4A7818E456D4005BD7D3 /* UIView+WView.m in Sources */ = {isa = PBXBuildFile; fileRef = 659C4A7518E456D4005BD7D3 /* UIView+WView.m */; };
+		659C4A9118E4579E005BD7D3 /* UIView+WView.h in Headers */ = {isa = PBXBuildFile; fileRef = 659C4A9018E4579E005BD7D3 /* UIView+WView.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		659C4A9C18E45853005BD7D3 /* ImageIO.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 659C4A9B18E45853005BD7D3 /* ImageIO.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
+		659C4AE718E48F25005BD7D3 /* UIBarButtonItem+WBarButtonItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 659C4AE418E48F25005BD7D3 /* UIBarButtonItem+WBarButtonItem.m */; };
+		659C4AEA18E48F57005BD7D3 /* UIBarButtonItem+WBarButtonItem.h in Headers */ = {isa = PBXBuildFile; fileRef = 659C4AE918E48F57005BD7D3 /* UIBarButtonItem+WBarButtonItem.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		65A0487419ACBEB00068D3EE /* WSectionedViewDataSource.h in Headers */ = {isa = PBXBuildFile; fileRef = 65A0487319ACBEB00068D3EE /* WSectionedViewDataSource.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		65A0487619ACBEB00068D3EE /* WSectionedViewDataSource.h in Headers */ = {isa = PBXBuildFile; fileRef = 65A0487319ACBEB00068D3EE /* WSectionedViewDataSource.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		65A0487819ACBECB0068D3EE /* WSectionedViewDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 65A0487719ACBECB0068D3EE /* WSectionedViewDataSource.m */; };
+		65A0487A19ACBECB0068D3EE /* WSectionedViewDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 65A0487719ACBECB0068D3EE /* WSectionedViewDataSource.m */; };
+		65A10A0A1921209F00F0EB86 /* WDefaultStyleSheet.h in Headers */ = {isa = PBXBuildFile; fileRef = 803ED5EF0FB1AC500084AB49 /* WDefaultStyleSheet.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		65A10A17192123FB00F0EB86 /* WActivityView.m in Sources */ = {isa = PBXBuildFile; fileRef = 65A10A15192123FB00F0EB86 /* WActivityView.m */; };
+		65A10A191921241100F0EB86 /* WActivityView.h in Headers */ = {isa = PBXBuildFile; fileRef = 65A10A181921241100F0EB86 /* WActivityView.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		65A10A1C1921250600F0EB86 /* WDefaultStyleSheet.m in Sources */ = {isa = PBXBuildFile; fileRef = 800846710FB19B3800BEE3FA /* WDefaultStyleSheet.m */; };
+		65C0C9C01A8CDE7200D9B053 /* NSUserDefaults+WGroupDefaults.m in Sources */ = {isa = PBXBuildFile; fileRef = 65C0C9BF1A8CDE7100D9B053 /* NSUserDefaults+WGroupDefaults.m */; };
+		65C0C9C21A8CDE7200D9B053 /* NSUserDefaults+WGroupDefaults.m in Sources */ = {isa = PBXBuildFile; fileRef = 65C0C9BF1A8CDE7100D9B053 /* NSUserDefaults+WGroupDefaults.m */; };
+		65C0C9C31A8CDE7200D9B053 /* NSUserDefaults+WGroupDefaults.m in Sources */ = {isa = PBXBuildFile; fileRef = 65C0C9BF1A8CDE7100D9B053 /* NSUserDefaults+WGroupDefaults.m */; };
+		65C0C9C91A8CDE8000D9B053 /* NSUserDefaults+WGroupDefaults.h in Headers */ = {isa = PBXBuildFile; fileRef = 65C0C9C81A8CDE8000D9B053 /* NSUserDefaults+WGroupDefaults.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		65C0C9CB1A8CDE8000D9B053 /* NSUserDefaults+WGroupDefaults.h in Headers */ = {isa = PBXBuildFile; fileRef = 65C0C9C81A8CDE8000D9B053 /* NSUserDefaults+WGroupDefaults.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		65C0C9CC1A8CDE8000D9B053 /* NSUserDefaults+WGroupDefaults.h in Headers */ = {isa = PBXBuildFile; fileRef = 65C0C9C81A8CDE8000D9B053 /* NSUserDefaults+WGroupDefaults.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		65E4CB38199127D9009C0BAB /* WGlobal.h in Headers */ = {isa = PBXBuildFile; fileRef = 8030E7F4101F1FEA008BC21B /* WGlobal.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		65E4CB39199127DD009C0BAB /* WGlobal.m in Sources */ = {isa = PBXBuildFile; fileRef = 8030E7F7101F1FFB008BC21B /* WGlobal.m */; };
+		65E4CB3A199127F4009C0BAB /* NSDate+WAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 65782DC5168750C5006C0F9C /* NSDate+WAdditions.m */; };
+		65E4CB3B199127F6009C0BAB /* NSDate+WAdditions.h in Headers */ = {isa = PBXBuildFile; fileRef = 65782DC8168750D6006C0F9C /* NSDate+WAdditions.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		65E4CB3C19912804009C0BAB /* NSFileManager+WFileManager.h in Headers */ = {isa = PBXBuildFile; fileRef = 80A4C02C162F079B00D8BEE1 /* NSFileManager+WFileManager.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		65E4CB3D19912804009C0BAB /* NSFileManager+WFileManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 80A4C02D162F079B00D8BEE1 /* NSFileManager+WFileManager.m */; };
+		65E4CB3E19912804009C0BAB /* NSNumber+WFileSize.h in Headers */ = {isa = PBXBuildFile; fileRef = 808AF67C0F7947120062879F /* NSNumber+WFileSize.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		65E4CB3F19912804009C0BAB /* NSNumber+WFileSize.m in Sources */ = {isa = PBXBuildFile; fileRef = 808AF67D0F7947120062879F /* NSNumber+WFileSize.m */; };
+		65E4CB4019912804009C0BAB /* NSString+WFileExtension.h in Headers */ = {isa = PBXBuildFile; fileRef = 808AF6820F7947120062879F /* NSString+WFileExtension.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		65E4CB4119912804009C0BAB /* NSString+WFileExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = 808AF6830F7947120062879F /* NSString+WFileExtension.m */; };
+		65E4CB4219912804009C0BAB /* NSString+WCrypto.h in Headers */ = {isa = PBXBuildFile; fileRef = 808AF6800F7947120062879F /* NSString+WCrypto.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		65E4CB4319912804009C0BAB /* NSString+WCrypto.m in Sources */ = {isa = PBXBuildFile; fileRef = 808AF6810F7947120062879F /* NSString+WCrypto.m */; };
+		65E4CB4619912804009C0BAB /* NSObject+WAdditions.h in Headers */ = {isa = PBXBuildFile; fileRef = 80D6FFE51332A03400D4D0BC /* NSObject+WAdditions.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		65E4CB4719912804009C0BAB /* NSObject+WAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 80D6FFE61332A03400D4D0BC /* NSObject+WAdditions.m */; };
+		8008963C168E0C08003528EB /* UIImage+WResize.m in Sources */ = {isa = PBXBuildFile; fileRef = 8008963B168E0C08003528EB /* UIImage+WResize.m */; };
+		80089646168E0C10003528EB /* UIImage+WResize.h in Headers */ = {isa = PBXBuildFile; fileRef = 80089645168E0C10003528EB /* UIImage+WResize.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		805F490E120F1E5900197D6E /* WFileSourceProtocol.h in Headers */ = {isa = PBXBuildFile; fileRef = 808AF6AF0F7947120062879F /* WFileSourceProtocol.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		805F490F120F1E5900197D6E /* WFileSource.h in Headers */ = {isa = PBXBuildFile; fileRef = 808AF6AA0F7947120062879F /* WFileSource.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		805F4910120F1E5900197D6E /* WFileSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 808AF6AB0F7947120062879F /* WFileSource.m */; };
+		809500F9120F0A4600EE6A75 /* NSNumber+WFileSize.h in Headers */ = {isa = PBXBuildFile; fileRef = 808AF67C0F7947120062879F /* NSNumber+WFileSize.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		809500FA120F0A4600EE6A75 /* NSString+WCrypto.h in Headers */ = {isa = PBXBuildFile; fileRef = 808AF6800F7947120062879F /* NSString+WCrypto.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		809500FB120F0A4600EE6A75 /* NSString+WFileExtension.h in Headers */ = {isa = PBXBuildFile; fileRef = 808AF6820F7947120062879F /* NSString+WFileExtension.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		809500FE120F0A4600EE6A75 /* UIView+WAdditions.h in Headers */ = {isa = PBXBuildFile; fileRef = 808AF68A0F7947120062879F /* UIView+WAdditions.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		809501C4120F0A4600EE6A75 /* WGlobal.h in Headers */ = {isa = PBXBuildFile; fileRef = 8030E7F4101F1FEA008BC21B /* WGlobal.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		809501C5120F0A4600EE6A75 /* Warp.h in Headers */ = {isa = PBXBuildFile; fileRef = 8030E7FA101F200B008BC21B /* Warp.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		809501CC120F0A4600EE6A75 /* WTableView.h in Headers */ = {isa = PBXBuildFile; fileRef = 80C7C2BE1073EBB400BAC071 /* WTableView.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		809501D4120F0A4600EE6A75 /* WAppDelegate.h in Headers */ = {isa = PBXBuildFile; fileRef = 80950093120F05C300EE6A75 /* WAppDelegate.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		809501D7120F0A4600EE6A75 /* NSNumber+WFileSize.m in Sources */ = {isa = PBXBuildFile; fileRef = 808AF67D0F7947120062879F /* NSNumber+WFileSize.m */; };
+		809501D8120F0A4600EE6A75 /* NSString+WCrypto.m in Sources */ = {isa = PBXBuildFile; fileRef = 808AF6810F7947120062879F /* NSString+WCrypto.m */; };
+		809501D9120F0A4600EE6A75 /* NSString+WFileExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = 808AF6830F7947120062879F /* NSString+WFileExtension.m */; };
+		809501DC120F0A4600EE6A75 /* UIView+WAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 808AF68B0F7947120062879F /* UIView+WAdditions.m */; };
+		80950207120F0A4600EE6A75 /* WGlobal.m in Sources */ = {isa = PBXBuildFile; fileRef = 8030E7F7101F1FFB008BC21B /* WGlobal.m */; };
+		8095020F120F0A4600EE6A75 /* WTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 80C7C2BF1073EBB400BAC071 /* WTableView.m */; };
+		80950211120F0A4600EE6A75 /* WPatternLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 80AE3EDE1118D6280050095C /* WPatternLayer.m */; };
+		80950217120F0A4600EE6A75 /* WAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 80950094120F05C300EE6A75 /* WAppDelegate.m */; };
+		8095021C120F0A4600EE6A75 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1DF5F4DF0D08C38300B7A737 /* UIKit.framework */; };
+		8095021D120F0A4600EE6A75 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1D30AB110D05D00D00671497 /* Foundation.framework */; };
+		8095021E120F0A4600EE6A75 /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 80A9C0710FF4170900C49B6D /* CFNetwork.framework */; };
+		8095021F120F0A4600EE6A75 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 80A9C0810FF4173200C49B6D /* QuartzCore.framework */; };
+		80950220120F0A4600EE6A75 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 288765FC0DF74451002DB57D /* CoreGraphics.framework */; };
+		80950221120F0A4600EE6A75 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8014CE7910457A1F001269DB /* CoreData.framework */; };
+		80950222120F0A4600EE6A75 /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 80344E51106190D6004B10C0 /* MobileCoreServices.framework */; };
+		80A4C02E162F079B00D8BEE1 /* NSFileManager+WFileManager.h in Headers */ = {isa = PBXBuildFile; fileRef = 80A4C02C162F079B00D8BEE1 /* NSFileManager+WFileManager.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		80A4C030162F079B00D8BEE1 /* NSFileManager+WFileManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 80A4C02D162F079B00D8BEE1 /* NSFileManager+WFileManager.m */; };
+		80AEBD6A124643E400D54895 /* AssetsLibrary.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 80AEBD69124643E400D54895 /* AssetsLibrary.framework */; };
+		80D6FFE71332A03400D4D0BC /* NSObject+WAdditions.h in Headers */ = {isa = PBXBuildFile; fileRef = 80D6FFE51332A03400D4D0BC /* NSObject+WAdditions.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		80D6FFE91332A03400D4D0BC /* NSObject+WAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 80D6FFE61332A03400D4D0BC /* NSObject+WAdditions.m */; };
+		80E1D842155955C600FFF46A /* WFileLogger.m in Sources */ = {isa = PBXBuildFile; fileRef = 808DDC38147548410019A8BA /* WFileLogger.m */; };
+		B998D2F7FF2BFF9099679A36 /* Pods_WarpX.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6AA7B212DD06D7FE8966226F /* Pods_WarpX.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		65E14A2219DC3EFD002A2055 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		016F3B4D5B1A02F31BB12122 /* Pods-WarpX.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WarpX.debug.xcconfig"; path = "Pods/Target Support Files/Pods-WarpX/Pods-WarpX.debug.xcconfig"; sourceTree = "<group>"; };
+		0C45C094F8FC2E0A47E0C6B3 /* Pods-Warp-lib.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Warp-lib.release.xcconfig"; path = "Pods/Target Support Files/Pods-Warp-lib/Pods-Warp-lib.release.xcconfig"; sourceTree = "<group>"; };
+		1D30AB110D05D00D00671497 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		1DF5F4DF0D08C38300B7A737 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		288765FC0DF74451002DB57D /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		28C287D1AA03F330C7DE11C3 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		48BAF93B0A314AA807518DE9 /* Pods_Warp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Warp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		56D08EDFC5A7FE335F91C551 /* Pods-WarpX.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WarpX.release.xcconfig"; path = "Pods/Target Support Files/Pods-WarpX/Pods-WarpX.release.xcconfig"; sourceTree = "<group>"; };
+		65177C3D18FEBB5100EAC1DA /* WGradientView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WGradientView.h; sourceTree = "<group>"; };
+		65177C4018FEBB5B00EAC1DA /* WGradientView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WGradientView.m; sourceTree = "<group>"; };
+		6522D5D7160B680200643E58 /* WFileSearch.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WFileSearch.h; sourceTree = "<group>"; };
+		6522D5D8160B680200643E58 /* WFileSearch.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WFileSearch.m; sourceTree = "<group>"; };
+		652BAABC1917E08800D1867A /* WErrorView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WErrorView.m; sourceTree = "<group>"; };
+		652BAAC11917E0A100D1867A /* WErrorView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WErrorView.h; sourceTree = "<group>"; };
+		652BAAD1191938E700D1867A /* WViewDataSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WViewDataSource.m; sourceTree = "<group>"; };
+		652BAAD4191938F400D1867A /* WViewDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WViewDataSource.h; sourceTree = "<group>"; };
+		652BAAD5191938F400D1867A /* WDataSourceProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WDataSourceProtocol.h; sourceTree = "<group>"; };
+		652BAAD6191938F400D1867A /* WCellViewObjectProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WCellViewObjectProtocol.h; sourceTree = "<group>"; };
+		6556B91E1ADBD61A00DC7376 /* WViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WViewController.h; sourceTree = "<group>"; };
+		6556B91F1ADBD61A00DC7376 /* WViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WViewController.m; sourceTree = "<group>"; };
+		6556B92D1ADBD95800DC7376 /* Warp.podspec */ = {isa = PBXFileReference; lastKnownFileType = text; path = Warp.podspec; sourceTree = "<group>"; };
+		655781B31CABE1F700EAD75A /* Warp_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Warp_Prefix.pch; path = Resources/Warp_Prefix.pch; sourceTree = "<group>"; };
+		655781B41CABE1F700EAD75A /* WarpFramework.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = WarpFramework.h; path = Resources/WarpFramework.h; sourceTree = "<group>"; };
+		655781B51CABE1F700EAD75A /* WarpX.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = WarpX.h; path = Resources/WarpX.h; sourceTree = "<group>"; };
+		655781CD1CABE23000EAD75A /* iOS-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "iOS-Info.plist"; path = "Resources/iOS-Info.plist"; sourceTree = "<group>"; };
+		655781CE1CABE23000EAD75A /* OSX-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "OSX-Info.plist"; path = "Resources/OSX-Info.plist"; sourceTree = "<group>"; };
+		6576861A196D597D00C0E88D /* Warp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Warp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		65782CEC16870F61006C0F9C /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
+		65782DC5168750C5006C0F9C /* NSDate+WAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDate+WAdditions.m"; sourceTree = "<group>"; };
+		65782DC8168750D6006C0F9C /* NSDate+WAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDate+WAdditions.h"; sourceTree = "<group>"; };
+		659C4A7518E456D4005BD7D3 /* UIView+WView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+WView.m"; sourceTree = "<group>"; };
+		659C4A9018E4579E005BD7D3 /* UIView+WView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+WView.h"; sourceTree = "<group>"; };
+		659C4A9B18E45853005BD7D3 /* ImageIO.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ImageIO.framework; path = System/Library/Frameworks/ImageIO.framework; sourceTree = SDKROOT; };
+		659C4AE418E48F25005BD7D3 /* UIBarButtonItem+WBarButtonItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIBarButtonItem+WBarButtonItem.m"; sourceTree = "<group>"; };
+		659C4AE918E48F57005BD7D3 /* UIBarButtonItem+WBarButtonItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIBarButtonItem+WBarButtonItem.h"; sourceTree = "<group>"; };
+		65A0487319ACBEB00068D3EE /* WSectionedViewDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WSectionedViewDataSource.h; sourceTree = "<group>"; };
+		65A0487719ACBECB0068D3EE /* WSectionedViewDataSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WSectionedViewDataSource.m; sourceTree = "<group>"; };
+		65A0488119ACC6EC0068D3EE /* WViewDataSourcePrivate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WViewDataSourcePrivate.h; sourceTree = "<group>"; };
+		65A10A15192123FB00F0EB86 /* WActivityView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WActivityView.m; sourceTree = "<group>"; };
+		65A10A181921241100F0EB86 /* WActivityView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WActivityView.h; sourceTree = "<group>"; };
+		65C0C9BF1A8CDE7100D9B053 /* NSUserDefaults+WGroupDefaults.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSUserDefaults+WGroupDefaults.m"; sourceTree = "<group>"; };
+		65C0C9C81A8CDE8000D9B053 /* NSUserDefaults+WGroupDefaults.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSUserDefaults+WGroupDefaults.h"; sourceTree = "<group>"; };
+		65E4CB22199127AE009C0BAB /* WarpX.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = WarpX.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		6AA7B212DD06D7FE8966226F /* Pods_WarpX.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_WarpX.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		73F2283DB4DA139125D3E594 /* libPods-Warp-lib.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Warp-lib.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		800846710FB19B3800BEE3FA /* WDefaultStyleSheet.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WDefaultStyleSheet.m; sourceTree = "<group>"; };
+		8008963B168E0C08003528EB /* UIImage+WResize.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+WResize.m"; sourceTree = "<group>"; };
+		80089645168E0C10003528EB /* UIImage+WResize.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+WResize.h"; sourceTree = "<group>"; };
+		8014CE7910457A1F001269DB /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		8030E7F4101F1FEA008BC21B /* WGlobal.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WGlobal.h; sourceTree = "<group>"; };
+		8030E7F7101F1FFB008BC21B /* WGlobal.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WGlobal.m; sourceTree = "<group>"; };
+		8030E7FA101F200B008BC21B /* Warp.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Warp.h; sourceTree = "<group>"; };
+		80344E51106190D6004B10C0 /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
+		803ED5EF0FB1AC500084AB49 /* WDefaultStyleSheet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WDefaultStyleSheet.h; sourceTree = "<group>"; };
+		807BC70E13A42804005797A3 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		808AF67C0F7947120062879F /* NSNumber+WFileSize.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSNumber+WFileSize.h"; sourceTree = "<group>"; };
+		808AF67D0F7947120062879F /* NSNumber+WFileSize.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSNumber+WFileSize.m"; sourceTree = "<group>"; };
+		808AF6800F7947120062879F /* NSString+WCrypto.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+WCrypto.h"; sourceTree = "<group>"; };
+		808AF6810F7947120062879F /* NSString+WCrypto.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+WCrypto.m"; sourceTree = "<group>"; };
+		808AF6820F7947120062879F /* NSString+WFileExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+WFileExtension.h"; sourceTree = "<group>"; };
+		808AF6830F7947120062879F /* NSString+WFileExtension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+WFileExtension.m"; sourceTree = "<group>"; };
+		808AF68A0F7947120062879F /* UIView+WAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+WAdditions.h"; sourceTree = "<group>"; };
+		808AF68B0F7947120062879F /* UIView+WAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+WAdditions.m"; sourceTree = "<group>"; };
+		808AF6AA0F7947120062879F /* WFileSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WFileSource.h; sourceTree = "<group>"; };
+		808AF6AB0F7947120062879F /* WFileSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WFileSource.m; sourceTree = "<group>"; };
+		808AF6AF0F7947120062879F /* WFileSourceProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WFileSourceProtocol.h; sourceTree = "<group>"; };
+		808AF6B00F7947120062879F /* WFileSystemSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WFileSystemSource.h; sourceTree = "<group>"; };
+		808AF6B10F7947120062879F /* WFileSystemSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WFileSystemSource.m; sourceTree = "<group>"; };
+		808AF7300F794BCD0062879F /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
+		808DDC37147548410019A8BA /* WFileLogger.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WFileLogger.h; sourceTree = "<group>"; };
+		808DDC38147548410019A8BA /* WFileLogger.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WFileLogger.m; sourceTree = "<group>"; };
+		80950093120F05C300EE6A75 /* WAppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WAppDelegate.h; sourceTree = "<group>"; };
+		80950094120F05C300EE6A75 /* WAppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WAppDelegate.m; sourceTree = "<group>"; };
+		80950226120F0A4600EE6A75 /* libWarp.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libWarp.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		80A4C02C162F079B00D8BEE1 /* NSFileManager+WFileManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSFileManager+WFileManager.h"; sourceTree = "<group>"; };
+		80A4C02D162F079B00D8BEE1 /* NSFileManager+WFileManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSFileManager+WFileManager.m"; sourceTree = "<group>"; };
+		80A9C0690FF4169500C49B6D /* libsqlite3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.dylib; path = usr/lib/libsqlite3.dylib; sourceTree = SDKROOT; };
+		80A9C0710FF4170900C49B6D /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
+		80A9C0810FF4173200C49B6D /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		80A9C0960FF4177800C49B6D /* libiconv.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libiconv.dylib; path = usr/lib/libiconv.dylib; sourceTree = SDKROOT; };
+		80A9C0980FF4177800C49B6D /* libicucore.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libicucore.dylib; path = usr/lib/libicucore.dylib; sourceTree = SDKROOT; };
+		80AE3EDD1118D6280050095C /* WPatternLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WPatternLayer.h; sourceTree = "<group>"; };
+		80AE3EDE1118D6280050095C /* WPatternLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WPatternLayer.m; sourceTree = "<group>"; };
+		80AEBD69124643E400D54895 /* AssetsLibrary.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AssetsLibrary.framework; path = iphoneos4.0/System/Library/Frameworks/AssetsLibrary.framework; sourceTree = "<group>"; };
+		80C7C2BE1073EBB400BAC071 /* WTableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WTableView.h; sourceTree = "<group>"; };
+		80C7C2BF1073EBB400BAC071 /* WTableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WTableView.m; sourceTree = "<group>"; };
+		80D6FFE51332A03400D4D0BC /* NSObject+WAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+WAdditions.h"; sourceTree = "<group>"; };
+		80D6FFE61332A03400D4D0BC /* NSObject+WAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+WAdditions.m"; sourceTree = "<group>"; };
+		871B06A18869436E883A834B /* Pods-Warp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Warp.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Warp/Pods-Warp.debug.xcconfig"; sourceTree = "<group>"; };
+		9DFFD237DDA2B24E5C9C08D1 /* Pods-Warp-lib.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Warp-lib.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Warp-lib/Pods-Warp-lib.debug.xcconfig"; sourceTree = "<group>"; };
+		CBFD48D5F4FD739E0B685506 /* Pods-Warp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Warp.release.xcconfig"; path = "Pods/Target Support Files/Pods-Warp/Pods-Warp.release.xcconfig"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		65768616196D597D00C0E88D /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				29A2196A142F0CF41C3DF200 /* Pods_Warp.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		65E4CB1E199127AE009C0BAB /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B998D2F7FF2BFF9099679A36 /* Pods_WarpX.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		80950218120F0A4600EE6A75 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				659C4A9C18E45853005BD7D3 /* ImageIO.framework in Frameworks */,
+				8095021C120F0A4600EE6A75 /* UIKit.framework in Frameworks */,
+				8095021D120F0A4600EE6A75 /* Foundation.framework in Frameworks */,
+				8095021E120F0A4600EE6A75 /* CFNetwork.framework in Frameworks */,
+				8095021F120F0A4600EE6A75 /* QuartzCore.framework in Frameworks */,
+				80950220120F0A4600EE6A75 /* CoreGraphics.framework in Frameworks */,
+				80950221120F0A4600EE6A75 /* CoreData.framework in Frameworks */,
+				80AEBD6A124643E400D54895 /* AssetsLibrary.framework in Frameworks */,
+				80950222120F0A4600EE6A75 /* MobileCoreServices.framework in Frameworks */,
+				59B4B1BCFA0A4280C68F8687 /* libPods-Warp-lib.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		080E96DDFE201D6D7F000001 /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				8030E806101F208B008BC21B /* Global */,
+				80CC798612B508C300D0BD5D /* Sources */,
+				808AF7250F794A670062879F /* File Source */,
+				808AF72B0F794B670062879F /* Views */,
+				6556B9191ADBD5F500DC7376 /* Controller */,
+				80FA7A88117F845600EC3D39 /* Styles */,
+				808AF7240F7949FC0062879F /* Additions */,
+			);
+			path = Classes;
+			sourceTree = "<group>";
+		};
+		19C28FACFE9D520D11CA2CBB /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				80950226120F0A4600EE6A75 /* libWarp.a */,
+				6576861A196D597D00C0E88D /* Warp.framework */,
+				65E4CB22199127AE009C0BAB /* WarpX.framework */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		29B97314FDCFA39411CA2CEA /* CustomTemplate */ = {
+			isa = PBXGroup;
+			children = (
+				080E96DDFE201D6D7F000001 /* Classes */,
+				80A9BFE00FF411DE00C49B6D /* Resource */,
+				29B97323FDCFA39411CA2CEA /* Frameworks */,
+				19C28FACFE9D520D11CA2CBB /* Products */,
+				E093EE490B4E8660466F8818 /* Pods */,
+			);
+			name = CustomTemplate;
+			sourceTree = "<group>";
+		};
+		29B97323FDCFA39411CA2CEA /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				808AF7300F794BCD0062879F /* libz.dylib */,
+				80A9C0690FF4169500C49B6D /* libsqlite3.dylib */,
+				80A9C0960FF4177800C49B6D /* libiconv.dylib */,
+				80A9C0980FF4177800C49B6D /* libicucore.dylib */,
+				659C4A9B18E45853005BD7D3 /* ImageIO.framework */,
+				1D30AB110D05D00D00671497 /* Foundation.framework */,
+				65782CEC16870F61006C0F9C /* AVFoundation.framework */,
+				80A9C0710FF4170900C49B6D /* CFNetwork.framework */,
+				1DF5F4DF0D08C38300B7A737 /* UIKit.framework */,
+				288765FC0DF74451002DB57D /* CoreGraphics.framework */,
+				80A9C0810FF4173200C49B6D /* QuartzCore.framework */,
+				8014CE7910457A1F001269DB /* CoreData.framework */,
+				80AEBD69124643E400D54895 /* AssetsLibrary.framework */,
+				807BC70E13A42804005797A3 /* SystemConfiguration.framework */,
+				80344E51106190D6004B10C0 /* MobileCoreServices.framework */,
+				28C287D1AA03F330C7DE11C3 /* libPods.a */,
+				48BAF93B0A314AA807518DE9 /* Pods_Warp.framework */,
+				73F2283DB4DA139125D3E594 /* libPods-Warp-lib.a */,
+				6AA7B212DD06D7FE8966226F /* Pods_WarpX.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		6522D5D1160B67E500643E58 /* search */ = {
+			isa = PBXGroup;
+			children = (
+				6522D5D7160B680200643E58 /* WFileSearch.h */,
+				6522D5D8160B680200643E58 /* WFileSearch.m */,
+			);
+			name = search;
+			sourceTree = "<group>";
+		};
+		6556B9191ADBD5F500DC7376 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				6556B91E1ADBD61A00DC7376 /* WViewController.h */,
+				6556B91F1ADBD61A00DC7376 /* WViewController.m */,
+			);
+			name = Controller;
+			sourceTree = "<group>";
+		};
+		8030E806101F208B008BC21B /* Global */ = {
+			isa = PBXGroup;
+			children = (
+				8030E7FA101F200B008BC21B /* Warp.h */,
+				8030E7F4101F1FEA008BC21B /* WGlobal.h */,
+				8030E7F7101F1FFB008BC21B /* WGlobal.m */,
+				80950093120F05C300EE6A75 /* WAppDelegate.h */,
+				80950094120F05C300EE6A75 /* WAppDelegate.m */,
+			);
+			name = Global;
+			sourceTree = "<group>";
+		};
+		808AF7240F7949FC0062879F /* Additions */ = {
+			isa = PBXGroup;
+			children = (
+				80089645168E0C10003528EB /* UIImage+WResize.h */,
+				8008963B168E0C08003528EB /* UIImage+WResize.m */,
+				65782DC8168750D6006C0F9C /* NSDate+WAdditions.h */,
+				65782DC5168750C5006C0F9C /* NSDate+WAdditions.m */,
+				80A4C02C162F079B00D8BEE1 /* NSFileManager+WFileManager.h */,
+				80A4C02D162F079B00D8BEE1 /* NSFileManager+WFileManager.m */,
+				808AF67C0F7947120062879F /* NSNumber+WFileSize.h */,
+				808AF67D0F7947120062879F /* NSNumber+WFileSize.m */,
+				808AF6820F7947120062879F /* NSString+WFileExtension.h */,
+				808AF6830F7947120062879F /* NSString+WFileExtension.m */,
+				808AF6800F7947120062879F /* NSString+WCrypto.h */,
+				808AF6810F7947120062879F /* NSString+WCrypto.m */,
+				808AF68A0F7947120062879F /* UIView+WAdditions.h */,
+				808AF68B0F7947120062879F /* UIView+WAdditions.m */,
+				80D6FFE51332A03400D4D0BC /* NSObject+WAdditions.h */,
+				80D6FFE61332A03400D4D0BC /* NSObject+WAdditions.m */,
+				659C4A9018E4579E005BD7D3 /* UIView+WView.h */,
+				659C4A7518E456D4005BD7D3 /* UIView+WView.m */,
+				65C0C9C81A8CDE8000D9B053 /* NSUserDefaults+WGroupDefaults.h */,
+				65C0C9BF1A8CDE7100D9B053 /* NSUserDefaults+WGroupDefaults.m */,
+				659C4AE918E48F57005BD7D3 /* UIBarButtonItem+WBarButtonItem.h */,
+				659C4AE418E48F25005BD7D3 /* UIBarButtonItem+WBarButtonItem.m */,
+			);
+			name = Additions;
+			sourceTree = "<group>";
+		};
+		808AF7250F794A670062879F /* File Source */ = {
+			isa = PBXGroup;
+			children = (
+				6522D5D1160B67E500643E58 /* search */,
+				808AF72A0F794B3C0062879F /* source */,
+			);
+			name = "File Source";
+			sourceTree = "<group>";
+		};
+		808AF72A0F794B3C0062879F /* source */ = {
+			isa = PBXGroup;
+			children = (
+				808AF6AF0F7947120062879F /* WFileSourceProtocol.h */,
+				808AF6AA0F7947120062879F /* WFileSource.h */,
+				808AF6AB0F7947120062879F /* WFileSource.m */,
+				808AF6B00F7947120062879F /* WFileSystemSource.h */,
+				808AF6B10F7947120062879F /* WFileSystemSource.m */,
+				808DDC37147548410019A8BA /* WFileLogger.h */,
+				808DDC38147548410019A8BA /* WFileLogger.m */,
+			);
+			name = source;
+			sourceTree = "<group>";
+		};
+		808AF72B0F794B670062879F /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				80C7C2BE1073EBB400BAC071 /* WTableView.h */,
+				80C7C2BF1073EBB400BAC071 /* WTableView.m */,
+				65177C3D18FEBB5100EAC1DA /* WGradientView.h */,
+				65177C4018FEBB5B00EAC1DA /* WGradientView.m */,
+				652BAAC11917E0A100D1867A /* WErrorView.h */,
+				652BAABC1917E08800D1867A /* WErrorView.m */,
+				65A10A181921241100F0EB86 /* WActivityView.h */,
+				65A10A15192123FB00F0EB86 /* WActivityView.m */,
+			);
+			name = Views;
+			sourceTree = "<group>";
+		};
+		80A9BFE00FF411DE00C49B6D /* Resource */ = {
+			isa = PBXGroup;
+			children = (
+				655781CD1CABE23000EAD75A /* iOS-Info.plist */,
+				655781CE1CABE23000EAD75A /* OSX-Info.plist */,
+				655781B31CABE1F700EAD75A /* Warp_Prefix.pch */,
+				655781B41CABE1F700EAD75A /* WarpFramework.h */,
+				655781B51CABE1F700EAD75A /* WarpX.h */,
+				6556B92D1ADBD95800DC7376 /* Warp.podspec */,
+			);
+			name = Resource;
+			sourceTree = "<group>";
+		};
+		80CC798612B508C300D0BD5D /* Sources */ = {
+			isa = PBXGroup;
+			children = (
+				652BAAD4191938F400D1867A /* WViewDataSource.h */,
+				65A0488119ACC6EC0068D3EE /* WViewDataSourcePrivate.h */,
+				652BAAD1191938E700D1867A /* WViewDataSource.m */,
+				65A0487319ACBEB00068D3EE /* WSectionedViewDataSource.h */,
+				65A0487719ACBECB0068D3EE /* WSectionedViewDataSource.m */,
+				652BAAD5191938F400D1867A /* WDataSourceProtocol.h */,
+				652BAAD6191938F400D1867A /* WCellViewObjectProtocol.h */,
+			);
+			name = Sources;
+			sourceTree = "<group>";
+		};
+		80FA7A88117F845600EC3D39 /* Styles */ = {
+			isa = PBXGroup;
+			children = (
+				80AE3EDD1118D6280050095C /* WPatternLayer.h */,
+				80AE3EDE1118D6280050095C /* WPatternLayer.m */,
+				803ED5EF0FB1AC500084AB49 /* WDefaultStyleSheet.h */,
+				800846710FB19B3800BEE3FA /* WDefaultStyleSheet.m */,
+			);
+			name = Styles;
+			sourceTree = "<group>";
+		};
+		E093EE490B4E8660466F8818 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				871B06A18869436E883A834B /* Pods-Warp.debug.xcconfig */,
+				CBFD48D5F4FD739E0B685506 /* Pods-Warp.release.xcconfig */,
+				016F3B4D5B1A02F31BB12122 /* Pods-WarpX.debug.xcconfig */,
+				56D08EDFC5A7FE335F91C551 /* Pods-WarpX.release.xcconfig */,
+				9DFFD237DDA2B24E5C9C08D1 /* Pods-Warp-lib.debug.xcconfig */,
+				0C45C094F8FC2E0A47E0C6B3 /* Pods-Warp-lib.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		65768617196D597D00C0E88D /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				65768657196D5ACE00C0E88D /* Warp.h in Headers */,
+				65768658196D5ACE00C0E88D /* WGlobal.h in Headers */,
+				65768659196D5ACE00C0E88D /* WAppDelegate.h in Headers */,
+				6576865A196D5AD700C0E88D /* WViewDataSource.h in Headers */,
+				65339E0819814CBD00CE3AC1 /* WTableView.h in Headers */,
+				65768667196D5AE900C0E88D /* WErrorView.h in Headers */,
+				65768668196D5AE900C0E88D /* WActivityView.h in Headers */,
+				6576866A196D5AF000C0E88D /* WPatternLayer.h in Headers */,
+				65A0487619ACBEB00068D3EE /* WSectionedViewDataSource.h in Headers */,
+				65C0C9CB1A8CDE8000D9B053 /* NSUserDefaults+WGroupDefaults.h in Headers */,
+				6576866B196D5AF000C0E88D /* WDefaultStyleSheet.h in Headers */,
+				655781D41CABE78800EAD75A /* WFileSource.h in Headers */,
+				655781DB1CABE79700EAD75A /* WFileLogger.h in Headers */,
+				6576866C196D5AFE00C0E88D /* UIImage+WResize.h in Headers */,
+				655781D11CABE77E00EAD75A /* WFileSearch.h in Headers */,
+				6576866D196D5AFE00C0E88D /* NSDate+WAdditions.h in Headers */,
+				6576866E196D5AFE00C0E88D /* NSFileManager+WFileManager.h in Headers */,
+				6576866F196D5AFE00C0E88D /* NSNumber+WFileSize.h in Headers */,
+				65768670196D5AFE00C0E88D /* NSString+WFileExtension.h in Headers */,
+				65768671196D5AFE00C0E88D /* NSString+WCrypto.h in Headers */,
+				65768673196D5AFE00C0E88D /* UIView+WAdditions.h in Headers */,
+				65768677196D5AFE00C0E88D /* NSObject+WAdditions.h in Headers */,
+				65768678196D5AFE00C0E88D /* UIView+WView.h in Headers */,
+				65768679196D5AFE00C0E88D /* UIBarButtonItem+WBarButtonItem.h in Headers */,
+				655781D61CABE78E00EAD75A /* WFileSystemSource.h in Headers */,
+				6524622419814FBB00AFDA7E /* WCellViewObjectProtocol.h in Headers */,
+				65768663196D5AE900C0E88D /* WGradientView.h in Headers */,
+				655781D31CABE78400EAD75A /* WFileSourceProtocol.h in Headers */,
+				6556B9221ADBD61A00DC7376 /* WViewController.h in Headers */,
+				653972091981492F00BF47B7 /* WDataSourceProtocol.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		65E4CB1F199127AE009C0BAB /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				65E4CB4619912804009C0BAB /* NSObject+WAdditions.h in Headers */,
+				650223931AA73ADB002FEED7 /* WAppDelegate.h in Headers */,
+				65E4CB3E19912804009C0BAB /* NSNumber+WFileSize.h in Headers */,
+				65E4CB4019912804009C0BAB /* NSString+WFileExtension.h in Headers */,
+				65E4CB38199127D9009C0BAB /* WGlobal.h in Headers */,
+				65E4CB3B199127F6009C0BAB /* NSDate+WAdditions.h in Headers */,
+				65C0C9CC1A8CDE8000D9B053 /* NSUserDefaults+WGroupDefaults.h in Headers */,
+				65E4CB4219912804009C0BAB /* NSString+WCrypto.h in Headers */,
+				65E4CB3C19912804009C0BAB /* NSFileManager+WFileManager.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		809500F7120F0A4600EE6A75 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				655781DA1CABE79600EAD75A /* WFileLogger.h in Headers */,
+				65A10A191921241100F0EB86 /* WActivityView.h in Headers */,
+				65A10A0A1921209F00F0EB86 /* WDefaultStyleSheet.h in Headers */,
+				655781C21CABE1F700EAD75A /* WarpX.h in Headers */,
+				809500F9120F0A4600EE6A75 /* NSNumber+WFileSize.h in Headers */,
+				65C0C9C91A8CDE8000D9B053 /* NSUserDefaults+WGroupDefaults.h in Headers */,
+				809500FA120F0A4600EE6A75 /* NSString+WCrypto.h in Headers */,
+				652BAAD9191938F400D1867A /* WDataSourceProtocol.h in Headers */,
+				809500FB120F0A4600EE6A75 /* NSString+WFileExtension.h in Headers */,
+				65A0487419ACBEB00068D3EE /* WSectionedViewDataSource.h in Headers */,
+				655781C01CABE1F700EAD75A /* Warp_Prefix.pch in Headers */,
+				809500FE120F0A4600EE6A75 /* UIView+WAdditions.h in Headers */,
+				652BAAD7191938F400D1867A /* WViewDataSource.h in Headers */,
+				655781C11CABE1F700EAD75A /* WarpFramework.h in Headers */,
+				655781D21CABE77E00EAD75A /* WFileSearch.h in Headers */,
+				6556B9201ADBD61A00DC7376 /* WViewController.h in Headers */,
+				652BAAC21917E0A100D1867A /* WErrorView.h in Headers */,
+				809501C4120F0A4600EE6A75 /* WGlobal.h in Headers */,
+				809501C5120F0A4600EE6A75 /* Warp.h in Headers */,
+				809501CC120F0A4600EE6A75 /* WTableView.h in Headers */,
+				659C4AEA18E48F57005BD7D3 /* UIBarButtonItem+WBarButtonItem.h in Headers */,
+				809501D4120F0A4600EE6A75 /* WAppDelegate.h in Headers */,
+				65177C3E18FEBB5100EAC1DA /* WGradientView.h in Headers */,
+				655781D71CABE78E00EAD75A /* WFileSystemSource.h in Headers */,
+				805F490E120F1E5900197D6E /* WFileSourceProtocol.h in Headers */,
+				805F490F120F1E5900197D6E /* WFileSource.h in Headers */,
+				659C4A7018E4562F005BD7D3 /* WPatternLayer.h in Headers */,
+				659C4A9118E4579E005BD7D3 /* UIView+WView.h in Headers */,
+				80D6FFE71332A03400D4D0BC /* NSObject+WAdditions.h in Headers */,
+				652BAADB191938F400D1867A /* WCellViewObjectProtocol.h in Headers */,
+				80A4C02E162F079B00D8BEE1 /* NSFileManager+WFileManager.h in Headers */,
+				65782DC9168750D6006C0F9C /* NSDate+WAdditions.h in Headers */,
+				80089646168E0C10003528EB /* UIImage+WResize.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		65768619196D597D00C0E88D /* Warp */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 6576862D196D597E00C0E88D /* Build configuration list for PBXNativeTarget "Warp" */;
+			buildPhases = (
+				B76A8E545C7055F0E492432D /* Check Pods Manifest.lock */,
+				65768615196D597D00C0E88D /* Sources */,
+				65768616196D597D00C0E88D /* Frameworks */,
+				65768617196D597D00C0E88D /* Headers */,
+				65768618196D597D00C0E88D /* Resources */,
+				8DF278B0C32F6701E8F11236 /* Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Warp;
+			productName = "Warp Framework";
+			productReference = 6576861A196D597D00C0E88D /* Warp.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		65E4CB21199127AE009C0BAB /* WarpX */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 65E4CB36199127AF009C0BAB /* Build configuration list for PBXNativeTarget "WarpX" */;
+			buildPhases = (
+				F1EF28ABC4DA906840660E13 /* Check Pods Manifest.lock */,
+				65E4CB1D199127AE009C0BAB /* Sources */,
+				65E4CB1E199127AE009C0BAB /* Frameworks */,
+				65E4CB1F199127AE009C0BAB /* Headers */,
+				65E4CB20199127AE009C0BAB /* Resources */,
+				65E14A2219DC3EFD002A2055 /* CopyFiles */,
+				D44EF0124DF78C6840AB2FAC /* Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = WarpX;
+			productName = WarpX;
+			productReference = 65E4CB22199127AE009C0BAB /* WarpX.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		809500F2120F0A4600EE6A75 /* Warp-lib */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 80950223120F0A4600EE6A75 /* Build configuration list for PBXNativeTarget "Warp-lib" */;
+			buildPhases = (
+				C77D5CE2ECEAFCC263B3C35F /* Check Pods Manifest.lock */,
+				809500F7120F0A4600EE6A75 /* Headers */,
+				809501D5120F0A4600EE6A75 /* Sources */,
+				80950218120F0A4600EE6A75 /* Frameworks */,
+				DACF1350FC05F5C659100AAA /* Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Warp-lib";
+			productName = Warp;
+			productReference = 80950226120F0A4600EE6A75 /* libWarp.a */;
+			productType = "com.apple.product-type.library.static";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		29B97313FDCFA39411CA2CEA /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				CLASSPREFIX = W;
+				LastUpgradeCheck = 0700;
+				ORGANIZATIONNAME = TwoManShow;
+				TargetAttributes = {
+					65768619196D597D00C0E88D = {
+						CreatedOnToolsVersion = 6.0;
+					};
+					65E4CB21199127AE009C0BAB = {
+						CreatedOnToolsVersion = 6.0;
+					};
+				};
+			};
+			buildConfigurationList = C01FCF4E08A954540054247B /* Build configuration list for PBXProject "Warp" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 1;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 29B97314FDCFA39411CA2CEA /* CustomTemplate */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				809500F2120F0A4600EE6A75 /* Warp-lib */,
+				65768619196D597D00C0E88D /* Warp */,
+				65E4CB21199127AE009C0BAB /* WarpX */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		65768618196D597D00C0E88D /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		65E4CB20199127AE009C0BAB /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		8DF278B0C32F6701E8F11236 /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Warp/Pods-Warp-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		B76A8E545C7055F0E492432D /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		C77D5CE2ECEAFCC263B3C35F /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		D44EF0124DF78C6840AB2FAC /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-WarpX/Pods-WarpX-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		DACF1350FC05F5C659100AAA /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Warp-lib/Pods-Warp-lib-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		F1EF28ABC4DA906840660E13 /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		65768615196D597D00C0E88D /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				655781D51CABE78B00EAD75A /* WFileSource.m in Sources */,
+				655781DC1CABE79A00EAD75A /* WFileLogger.m in Sources */,
+				655781D81CABE79200EAD75A /* WFileSystemSource.m in Sources */,
+				655781CF1CABE77B00EAD75A /* WFileSearch.m in Sources */,
+				6524622319814F7A00AFDA7E /* WTableView.m in Sources */,
+				65768645196D5A9900C0E88D /* WErrorView.m in Sources */,
+				65768646196D5A9900C0E88D /* WActivityView.m in Sources */,
+				65768647196D5A9900C0E88D /* WPatternLayer.m in Sources */,
+				65768648196D5A9900C0E88D /* WDefaultStyleSheet.m in Sources */,
+				65768649196D5A9900C0E88D /* UIImage+WResize.m in Sources */,
+				6576864A196D5A9900C0E88D /* NSDate+WAdditions.m in Sources */,
+				6576864B196D5A9900C0E88D /* NSFileManager+WFileManager.m in Sources */,
+				65A0487A19ACBECB0068D3EE /* WSectionedViewDataSource.m in Sources */,
+				6576864C196D5A9900C0E88D /* NSNumber+WFileSize.m in Sources */,
+				6576864D196D5A9900C0E88D /* NSString+WFileExtension.m in Sources */,
+				6576864E196D5A9900C0E88D /* NSString+WCrypto.m in Sources */,
+				65768650196D5A9900C0E88D /* UIView+WAdditions.m in Sources */,
+				65768654196D5A9900C0E88D /* NSObject+WAdditions.m in Sources */,
+				65C0C9C21A8CDE7200D9B053 /* NSUserDefaults+WGroupDefaults.m in Sources */,
+				65768655196D5A9900C0E88D /* UIView+WView.m in Sources */,
+				65768656196D5A9900C0E88D /* UIBarButtonItem+WBarButtonItem.m in Sources */,
+				65768636196D5A6200C0E88D /* WGlobal.m in Sources */,
+				65768637196D5A6200C0E88D /* WAppDelegate.m in Sources */,
+				65768638196D5A6200C0E88D /* WViewDataSource.m in Sources */,
+				6556B9251ADBD61A00DC7376 /* WViewController.m in Sources */,
+				65246230198153C100AFDA7E /* WGradientView.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		65E4CB1D199127AE009C0BAB /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				65E4CB3D19912804009C0BAB /* NSFileManager+WFileManager.m in Sources */,
+				65E4CB4719912804009C0BAB /* NSObject+WAdditions.m in Sources */,
+				65E4CB3A199127F4009C0BAB /* NSDate+WAdditions.m in Sources */,
+				65E4CB3F19912804009C0BAB /* NSNumber+WFileSize.m in Sources */,
+				65E4CB39199127DD009C0BAB /* WGlobal.m in Sources */,
+				650223981AA73AE0002FEED7 /* WAppDelegate.m in Sources */,
+				65C0C9C31A8CDE7200D9B053 /* NSUserDefaults+WGroupDefaults.m in Sources */,
+				65E4CB4319912804009C0BAB /* NSString+WCrypto.m in Sources */,
+				65E4CB4119912804009C0BAB /* NSString+WFileExtension.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		809501D5120F0A4600EE6A75 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				65A0487819ACBECB0068D3EE /* WSectionedViewDataSource.m in Sources */,
+				809501D7120F0A4600EE6A75 /* NSNumber+WFileSize.m in Sources */,
+				809501D8120F0A4600EE6A75 /* NSString+WCrypto.m in Sources */,
+				809501D9120F0A4600EE6A75 /* NSString+WFileExtension.m in Sources */,
+				809501DC120F0A4600EE6A75 /* UIView+WAdditions.m in Sources */,
+				65177C4118FEBB5B00EAC1DA /* WGradientView.m in Sources */,
+				652BAAD2191938E700D1867A /* WViewDataSource.m in Sources */,
+				80950207120F0A4600EE6A75 /* WGlobal.m in Sources */,
+				8095020F120F0A4600EE6A75 /* WTableView.m in Sources */,
+				80950211120F0A4600EE6A75 /* WPatternLayer.m in Sources */,
+				6556B9231ADBD61A00DC7376 /* WViewController.m in Sources */,
+				80950217120F0A4600EE6A75 /* WAppDelegate.m in Sources */,
+				652BAABF1917E08800D1867A /* WErrorView.m in Sources */,
+				659C4AE718E48F25005BD7D3 /* UIBarButtonItem+WBarButtonItem.m in Sources */,
+				805F4910120F1E5900197D6E /* WFileSource.m in Sources */,
+				80D6FFE91332A03400D4D0BC /* NSObject+WAdditions.m in Sources */,
+				80E1D842155955C600FFF46A /* WFileLogger.m in Sources */,
+				659C4A7818E456D4005BD7D3 /* UIView+WView.m in Sources */,
+				80A4C030162F079B00D8BEE1 /* NSFileManager+WFileManager.m in Sources */,
+				655781D01CABE77C00EAD75A /* WFileSearch.m in Sources */,
+				65782DC6168750C5006C0F9C /* NSDate+WAdditions.m in Sources */,
+				65A10A1C1921250600F0EB86 /* WDefaultStyleSheet.m in Sources */,
+				65C0C9C01A8CDE7200D9B053 /* NSUserDefaults+WGroupDefaults.m in Sources */,
+				65A10A17192123FB00F0EB86 /* WActivityView.m in Sources */,
+				8008963C168E0C08003528EB /* UIImage+WResize.m in Sources */,
+				655781D91CABE79200EAD75A /* WFileSystemSource.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		6576862E196D597E00C0E88D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 871B06A18869436E883A834B /* Pods-Warp.debug.xcconfig */;
+			buildSettings = {
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_PREFIX_HEADER = Resources/Warp_Prefix.pch;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"LUMBERMODULE=1",
+					"$(inherited)",
+				);
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				INFOPLIST_FILE = "Resources/iOS-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.arat.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		6576862F196D597E00C0E88D /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = CBFD48D5F4FD739E0B685506 /* Pods-Warp.release.xcconfig */;
+			buildSettings = {
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_NS_ASSERTIONS = NO;
+				GCC_PREFIX_HEADER = Resources/Warp_Prefix.pch;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"LUMBERMODULE=1",
+					"$(inherited)",
+				);
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				INFOPLIST_FILE = "Resources/iOS-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.arat.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		65E4CB32199127AF009C0BAB /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 016F3B4D5B1A02F31BB12122 /* Pods-WarpX.debug.xcconfig */;
+			buildSettings = {
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CODE_SIGN_IDENTITY = "Mac Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "Mac Developer";
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				FRAMEWORK_VERSION = A;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"LUMBERMODULE=1",
+					"$(inherited)",
+				);
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				INFOPLIST_FILE = "Resources/OSX-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 10.7;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.arat.$(PRODUCT_NAME:rfc1034identifier)";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				SKIP_INSTALL = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		65E4CB33199127AF009C0BAB /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 56D08EDFC5A7FE335F91C551 /* Pods-WarpX.release.xcconfig */;
+			buildSettings = {
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CODE_SIGN_IDENTITY = "Mac Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "Mac Developer";
+				COMBINE_HIDPI_IMAGES = YES;
+				COPY_PHASE_STRIP = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_NS_ASSERTIONS = NO;
+				FRAMEWORK_VERSION = A;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"LUMBERMODULE=1",
+					"$(inherited)",
+				);
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				INFOPLIST_FILE = "Resources/OSX-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 10.7;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.arat.$(PRODUCT_NAME:rfc1034identifier)";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				SKIP_INSTALL = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		8087AF7A12ADCE01009F7B93 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Distribution";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = c99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
+				MACOSX_DEPLOYMENT_TARGET = 10.7;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		8087AF7B12ADCE01009F7B93 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 0C45C094F8FC2E0A47E0C6B3 /* Pods-Warp-lib.release.xcconfig */;
+			buildSettings = {
+				GCC_PREFIX_HEADER = Resources/Warp_Prefix.pch;
+				GCC_PREPROCESSOR_DEFINITIONS = "$(inherited)";
+				GCC_WARN_ABOUT_MISSING_PROTOTYPES = NO;
+				PRODUCT_NAME = Warp;
+			};
+			name = Release;
+		};
+		80950224120F0A4600EE6A75 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 9DFFD237DDA2B24E5C9C08D1 /* Pods-Warp-lib.debug.xcconfig */;
+			buildSettings = {
+				GCC_PREFIX_HEADER = Resources/Warp_Prefix.pch;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_ABOUT_MISSING_PROTOTYPES = NO;
+				PRODUCT_NAME = Warp;
+			};
+			name = Debug;
+		};
+		C01FCF4F08A954540054247B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = c99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
+				MACOSX_DEPLOYMENT_TARGET = 10.7;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		6576862D196D597E00C0E88D /* Build configuration list for PBXNativeTarget "Warp" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				6576862E196D597E00C0E88D /* Debug */,
+				6576862F196D597E00C0E88D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		65E4CB36199127AF009C0BAB /* Build configuration list for PBXNativeTarget "WarpX" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				65E4CB32199127AF009C0BAB /* Debug */,
+				65E4CB33199127AF009C0BAB /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		80950223120F0A4600EE6A75 /* Build configuration list for PBXNativeTarget "Warp-lib" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				80950224120F0A4600EE6A75 /* Debug */,
+				8087AF7B12ADCE01009F7B93 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		C01FCF4E08A954540054247B /* Build configuration list for PBXProject "Warp" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C01FCF4F08A954540054247B /* Debug */,
+				8087AF7A12ADCE01009F7B93 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 29B97313FDCFA39411CA2CEA /* Project object */;
+}

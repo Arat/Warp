@@ -1,0 +1,24 @@
+PODS:
+  - CocoaLumberjack (2.2.0):
+    - CocoaLumberjack/Default (= 2.2.0)
+    - CocoaLumberjack/Extensions (= 2.2.0)
+  - CocoaLumberjack/Core (2.2.0)
+  - CocoaLumberjack/Default (2.2.0):
+    - CocoaLumberjack/Core
+  - CocoaLumberjack/Extensions (2.2.0):
+    - CocoaLumberjack/Default
+  - Warp (0.1.0):
+    - CocoaLumberjack
+
+DEPENDENCIES:
+  - Warp (from `../`)
+
+EXTERNAL SOURCES:
+  Warp:
+    :path: "../"
+
+SPEC CHECKSUMS:
+  CocoaLumberjack: 17fe8581f84914d5d7e6360f7c70022b173c3ae0
+  Warp: 68caab12ed6c1dbf3ab1b913257a2638f29863cf
+
+COCOAPODS: 0.39.0

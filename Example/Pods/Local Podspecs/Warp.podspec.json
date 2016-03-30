@@ -1,0 +1,30 @@
+{
+  "name": "Warp",
+  "version": "0.1.0",
+  "summary": "Warp Objective-C Framework for iOS and OS X.",
+  "description": "Warp Objective-C Framework for iOS and OS X. Collection of classes to make iOS development easy.",
+  "homepage": "https://github.com/TwoManShow/Warp",
+  "license": "MIT",
+  "authors": {
+    "Lukas Foldyna": "lukas@twomanshow.co"
+  },
+  "source": {
+    "git": "https://github.com/TwoManShow/Warp.git",
+    "tag": "0.1.0"
+  },
+  "platforms": {
+    "ios": "6.0"
+  },
+  "requires_arc": true,
+  "xcconfig": {
+    "GCC_PREPROCESSOR_DEFINITIONS": "LUMBERMODULE=1 $(inherited)"
+  },
+  "prefix_header_file": "Resources/Warp_Prefix.pch",
+  "source_files": "Classes/**/*",
+  "frameworks": "UIKit",
+  "dependencies": {
+    "CocoaLumberjack": [
+
+    ]
+  }
+}
