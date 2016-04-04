@@ -1,6 +1,6 @@
 //
-//  NFDTableViewDataSource.m
-//  NoFlappyDownload
+//  WViewDataSource.m
+//  Warp
 //
 //  Created by Lukáš Foldýna on 29/04/14.
 //  Copyright (c) 2014 Lukáš Foldýna. All rights reserved.
@@ -132,19 +132,21 @@
 {
     NSAssert([NSThread isMainThread], @"Call only from main thread!");
     
-    id<WSourceObjectProtocol> object = [self objectForIndexPath:indexPath];
+    id<WViewDataObjectProtocol> object = [self objectForIndexPath:indexPath];
     if ([object isRemoving] || [object isProcessing] || [object isInserting]) {
         return;
     }
     
     [object setRemoving:YES];
-    id<WCellViewObjectProtocol> cell;
+    id<WViewDataCellProtocol> cell;
     if ([self tableView]) {
         cell = (id)[self.tableView cellForRowAtIndexPath:indexPath];
     } else if ([self collectionView]) {
         cell = (id)[self.collectionView cellForItemAtIndexPath:indexPath];
     }
-    [cell setObject:object];
+    if (object) {
+        [cell setObject:(id)object];
+    }
     
     if (_deleteItemCallback) {
         _deleteItemCallback(indexPath);
@@ -154,7 +156,7 @@
 - (NSArray *) deletingItems
 {
     NSMutableArray *deletingItems = [NSMutableArray array];
-    for (id<WSourceObjectProtocol> object in [self content]) {
+    for (id<WViewDataObjectProtocol> object in [self content]) {
         if ([object isRemoving]) {
             [deletingItems addObject:object];
         }
@@ -169,7 +171,7 @@
 
 #pragma mark Observing
 
-- (void) observerSourceForContentChanges:(NSObject<WDataSourceProtocol> *)source keyPath:(NSString *)keyPath
+- (void) observerSourceForContentChanges:(NSObject<WViewDataSourceProtocol> *)source keyPath:(NSString *)keyPath
 {
     NSAssert([NSThread isMainThread], @"Call only from main thread!");
     
@@ -476,10 +478,12 @@
 
 - (UITableViewCell *) tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    UITableViewCell<WCellViewObjectProtocol> *cell = (id)[tableView dequeueReusableCellWithIdentifier:[self cellIdentifierForIndexPath:indexPath]
+    UITableViewCell<WViewDataCellProtocol> *cell = (id)[tableView dequeueReusableCellWithIdentifier:[self cellIdentifierForIndexPath:indexPath]
                                                                                          forIndexPath:indexPath];
-    id<WSourceObjectProtocol> item = self.content[indexPath.row];
-    [cell setObject:item];
+    id<WViewDataObjectProtocol> item = self.content[indexPath.row];
+    if (item) {
+        [cell setObject:(id)item];
+    }
     if (self.itemCellSetupCallback) {
         self.itemCellSetupCallback(cell, item);
     }
@@ -507,7 +511,7 @@
     if (_canEditItemCallback) {
         return _canEditItemCallback(indexPath);
     } else {
-        id<WSourceObjectProtocol> item = self.content[indexPath.row];
+        id<WViewDataObjectProtocol> item = self.content[indexPath.row];
         return ![item isRemoving] && ![item isInserting] && ![item isRemoving];
     }
 }
@@ -526,10 +530,12 @@
 
 - (UICollectionViewCell *) collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath
 {
-    UICollectionViewCell<WCellViewObjectProtocol> *cell = (id)[collectionView dequeueReusableCellWithReuseIdentifier:[self cellIdentifierForIndexPath:indexPath]
+    UICollectionViewCell<WViewDataCellProtocol> *cell = (id)[collectionView dequeueReusableCellWithReuseIdentifier:[self cellIdentifierForIndexPath:indexPath]
                                                                                                         forIndexPath:indexPath];
-    id<WSourceObjectProtocol> item = self.content[indexPath.item];
-    [cell setObject:item];
+    id<WViewDataObjectProtocol> item = self.content[indexPath.item];
+    if (item) {
+        [cell setObject:(id)item];
+    }
     if (self.itemCellSetupCallback) {
         self.itemCellSetupCallback(cell, item);
     }
@@ -541,7 +547,7 @@
     if ([self sectionIdentifier] == nil) {
         return nil;
     }
-    UICollectionReusableView<WCellViewObjectProtocol> *sectionView = [collectionView dequeueReusableSupplementaryViewOfKind:kind
+    UICollectionReusableView<WViewDataCellProtocol> *sectionView = [collectionView dequeueReusableSupplementaryViewOfKind:kind
                                                                                                         withReuseIdentifier:self.sectionIdentifier forIndexPath:indexPath];
     NSArray *sectionTitles = [self sectionTitles];
     if ([sectionTitles count] > [indexPath section]) {

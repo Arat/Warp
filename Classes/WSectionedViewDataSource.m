@@ -331,7 +331,7 @@
     _contentCount = [content count];
     
     if ([self insertObjectsAtIndexPathsCallback]) {
-        self.insertObjectsAtIndexPathsCallback(nil);
+        self.insertObjectsAtIndexPathsCallback(@[]); //TODO
     } else if ([self tableView]) {
         [self.tableView insertSections:indexSet withRowAnimation:UITableViewRowAnimationAutomatic];
     } else {
@@ -350,7 +350,7 @@
         [content removeObjectAtIndex:currentIndex];
         currentIndex = [indexSet indexGreaterThanIndex:currentIndex];
     }
-    for (NSObject<WSourceObjectProtocol> *object in [_deletingItems copy]) {
+    for (NSObject<WViewDataObjectProtocol> *object in [_deletingItems copy]) {
         NSIndexPath *indexPath = [self indexPathForObject:object];
         if ([indexSet containsIndex:indexPath.section]) {
             [_deletingItems removeObject:object];
@@ -361,7 +361,7 @@
     _contentCount = [content count];
     
     if ([self deleteObjectsFromIndexPathsCallback]) {
-        self.deleteObjectsFromIndexPathsCallback(nil);
+        self.deleteObjectsFromIndexPathsCallback(@[]); //TODO
     } else if ([self tableView]) {
         [self.tableView deleteSections:indexSet withRowAnimation:UITableViewRowAnimationAutomatic];
     } else {
@@ -381,7 +381,7 @@
         currentIndex = [indexSet indexGreaterThanIndex:currentIndex];
         i++;
     }
-    for (NSIndexPath<WSourceObjectProtocol> *object in [_deletingItems copy]) {
+    for (NSIndexPath<WViewDataObjectProtocol> *object in [_deletingItems copy]) {
         NSIndexPath *indexPath = [self indexPathForObject:object];
         if ([indexSet containsIndex:indexPath.section]) {
             [_deletingItems removeObject:object];
@@ -392,7 +392,7 @@
     _contentCount = [content count];
     
     if ([self deleteObjectsFromIndexPathsCallback]) {
-        self.deleteObjectsFromIndexPathsCallback(nil);
+        self.deleteObjectsFromIndexPathsCallback(@[]); //TODO
     } else if ([self tableView]) {
         [self.tableView reloadSections:indexSet withRowAnimation:UITableViewRowAnimationAutomatic];
     } else {
@@ -414,9 +414,11 @@
 
 - (UITableViewCell *) tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    UITableViewCell<WCellViewObjectProtocol> *cell = (id)[tableView dequeueReusableCellWithIdentifier:self.cellIdentifier forIndexPath:indexPath];
-    NSObject<WSourceObjectProtocol> *item = self.content[indexPath.section][indexPath.row];
-    [cell setObject:item];
+    UITableViewCell<WViewDataCellProtocol> *cell = (id)[tableView dequeueReusableCellWithIdentifier:self.cellIdentifier forIndexPath:indexPath];
+    NSObject<WViewDataObjectProtocol> *item = self.content[indexPath.section][indexPath.row];
+    if (item) {
+        [cell setObject:(id)item];
+    }
 
     if (self.itemCellSetupCallback) {
         self.itemCellSetupCallback(cell, item);
@@ -438,8 +440,8 @@
 
 - (UICollectionViewCell *) collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath
 {
-    UICollectionViewCell<WCellViewObjectProtocol> *cell = (id)[collectionView dequeueReusableCellWithReuseIdentifier:self.cellIdentifier forIndexPath:indexPath];
-    NSObject<WSourceObjectProtocol> *item = self.content[indexPath.section][indexPath.item];
+    UICollectionViewCell<WViewDataCellProtocol> *cell = (id)[collectionView dequeueReusableCellWithReuseIdentifier:self.cellIdentifier forIndexPath:indexPath];
+    NSObject<WViewDataObjectProtocol> *item = self.content[indexPath.section][indexPath.item];
     [cell setObject:item];
 
     if (self.itemCellSetupCallback) {

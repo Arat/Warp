@@ -22,7 +22,7 @@ static void *WTableViewDataSourceSectionChangeContext = &WTableViewDataSourceSec
     
     NSArray                         *_sectionTitles;
     
-    NSObject<WDataSourceProtocol>   *_source;
+    NSObject<WViewDataSourceProtocol>   *_source;
     
     UICollectionView                __weak *_collectionView;
     UITableView                     __weak *_tableView;

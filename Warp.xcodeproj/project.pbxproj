@@ -14,16 +14,15 @@
 		65177C3E18FEBB5100EAC1DA /* WGradientView.h in Headers */ = {isa = PBXBuildFile; fileRef = 65177C3D18FEBB5100EAC1DA /* WGradientView.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		65177C4118FEBB5B00EAC1DA /* WGradientView.m in Sources */ = {isa = PBXBuildFile; fileRef = 65177C4018FEBB5B00EAC1DA /* WGradientView.m */; };
 		6524622319814F7A00AFDA7E /* WTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 80C7C2BF1073EBB400BAC071 /* WTableView.m */; };
-		6524622419814FBB00AFDA7E /* WCellViewObjectProtocol.h in Headers */ = {isa = PBXBuildFile; fileRef = 652BAAD6191938F400D1867A /* WCellViewObjectProtocol.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		65246230198153C100AFDA7E /* WGradientView.m in Sources */ = {isa = PBXBuildFile; fileRef = 65177C4018FEBB5B00EAC1DA /* WGradientView.m */; };
 		652BAABF1917E08800D1867A /* WErrorView.m in Sources */ = {isa = PBXBuildFile; fileRef = 652BAABC1917E08800D1867A /* WErrorView.m */; };
 		652BAAC21917E0A100D1867A /* WErrorView.h in Headers */ = {isa = PBXBuildFile; fileRef = 652BAAC11917E0A100D1867A /* WErrorView.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		652BAAD2191938E700D1867A /* WViewDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 652BAAD1191938E700D1867A /* WViewDataSource.m */; };
 		652BAAD7191938F400D1867A /* WViewDataSource.h in Headers */ = {isa = PBXBuildFile; fileRef = 652BAAD4191938F400D1867A /* WViewDataSource.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		652BAAD9191938F400D1867A /* WDataSourceProtocol.h in Headers */ = {isa = PBXBuildFile; fileRef = 652BAAD5191938F400D1867A /* WDataSourceProtocol.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		652BAADB191938F400D1867A /* WCellViewObjectProtocol.h in Headers */ = {isa = PBXBuildFile; fileRef = 652BAAD6191938F400D1867A /* WCellViewObjectProtocol.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		6531C4081CB26A7300B76B5D /* WViewDataCellProtocol.h in Headers */ = {isa = PBXBuildFile; fileRef = 6531C4051CB26A7300B76B5D /* WViewDataCellProtocol.h */; };
+		6531C4091CB26A7300B76B5D /* WViewDataObjectProtocol.h in Headers */ = {isa = PBXBuildFile; fileRef = 6531C4061CB26A7300B76B5D /* WViewDataObjectProtocol.h */; };
+		6531C40A1CB26A7300B76B5D /* WViewDataSourceProtocol.h in Headers */ = {isa = PBXBuildFile; fileRef = 6531C4071CB26A7300B76B5D /* WViewDataSourceProtocol.h */; };
 		65339E0819814CBD00CE3AC1 /* WTableView.h in Headers */ = {isa = PBXBuildFile; fileRef = 80C7C2BE1073EBB400BAC071 /* WTableView.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		653972091981492F00BF47B7 /* WDataSourceProtocol.h in Headers */ = {isa = PBXBuildFile; fileRef = 652BAAD5191938F400D1867A /* WDataSourceProtocol.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		6556B9201ADBD61A00DC7376 /* WViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = 6556B91E1ADBD61A00DC7376 /* WViewController.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		6556B9221ADBD61A00DC7376 /* WViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = 6556B91E1ADBD61A00DC7376 /* WViewController.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		6556B9231ADBD61A00DC7376 /* WViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6556B91F1ADBD61A00DC7376 /* WViewController.m */; };
@@ -45,8 +44,6 @@
 		655781DA1CABE79600EAD75A /* WFileLogger.h in Headers */ = {isa = PBXBuildFile; fileRef = 808DDC37147548410019A8BA /* WFileLogger.h */; };
 		655781DB1CABE79700EAD75A /* WFileLogger.h in Headers */ = {isa = PBXBuildFile; fileRef = 808DDC37147548410019A8BA /* WFileLogger.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		655781DC1CABE79A00EAD75A /* WFileLogger.m in Sources */ = {isa = PBXBuildFile; fileRef = 808DDC38147548410019A8BA /* WFileLogger.m */; };
-		655781E91CABEF8A00EAD75A /* WSourceObjectProtocol.h in Headers */ = {isa = PBXBuildFile; fileRef = 655781E81CABEF8A00EAD75A /* WSourceObjectProtocol.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		655781EA1CABEF8E00EAD75A /* WSourceObjectProtocol.h in Headers */ = {isa = PBXBuildFile; fileRef = 655781E81CABEF8A00EAD75A /* WSourceObjectProtocol.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		65768636196D5A6200C0E88D /* WGlobal.m in Sources */ = {isa = PBXBuildFile; fileRef = 8030E7F7101F1FFB008BC21B /* WGlobal.m */; };
 		65768637196D5A6200C0E88D /* WAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 80950094120F05C300EE6A75 /* WAppDelegate.m */; };
 		65768638196D5A6200C0E88D /* WViewDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 652BAAD1191938E700D1867A /* WViewDataSource.m */; };
@@ -185,8 +182,9 @@
 		652BAAC11917E0A100D1867A /* WErrorView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WErrorView.h; sourceTree = "<group>"; };
 		652BAAD1191938E700D1867A /* WViewDataSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WViewDataSource.m; sourceTree = "<group>"; };
 		652BAAD4191938F400D1867A /* WViewDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WViewDataSource.h; sourceTree = "<group>"; };
-		652BAAD5191938F400D1867A /* WDataSourceProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WDataSourceProtocol.h; sourceTree = "<group>"; };
-		652BAAD6191938F400D1867A /* WCellViewObjectProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WCellViewObjectProtocol.h; sourceTree = "<group>"; };
+		6531C4051CB26A7300B76B5D /* WViewDataCellProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WViewDataCellProtocol.h; sourceTree = "<group>"; };
+		6531C4061CB26A7300B76B5D /* WViewDataObjectProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WViewDataObjectProtocol.h; sourceTree = "<group>"; };
+		6531C4071CB26A7300B76B5D /* WViewDataSourceProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WViewDataSourceProtocol.h; sourceTree = "<group>"; };
 		6556B91E1ADBD61A00DC7376 /* WViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WViewController.h; sourceTree = "<group>"; };
 		6556B91F1ADBD61A00DC7376 /* WViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WViewController.m; sourceTree = "<group>"; };
 		6556B92D1ADBD95800DC7376 /* Warp.podspec */ = {isa = PBXFileReference; lastKnownFileType = text; path = Warp.podspec; sourceTree = "<group>"; };
@@ -195,7 +193,6 @@
 		655781B51CABE1F700EAD75A /* WarpX.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = WarpX.h; path = Resources/WarpX.h; sourceTree = "<group>"; };
 		655781CD1CABE23000EAD75A /* iOS-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "iOS-Info.plist"; path = "Resources/iOS-Info.plist"; sourceTree = "<group>"; };
 		655781CE1CABE23000EAD75A /* OSX-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "OSX-Info.plist"; path = "Resources/OSX-Info.plist"; sourceTree = "<group>"; };
-		655781E81CABEF8A00EAD75A /* WSourceObjectProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WSourceObjectProtocol.h; sourceTree = "<group>"; };
 		6576861A196D597D00C0E88D /* Warp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Warp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		65782CEC16870F61006C0F9C /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 		65782DC5168750C5006C0F9C /* NSDate+WAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDate+WAdditions.m"; sourceTree = "<group>"; };
@@ -475,14 +472,14 @@
 		80CC798612B508C300D0BD5D /* Sources */ = {
 			isa = PBXGroup;
 			children = (
+				6531C4051CB26A7300B76B5D /* WViewDataCellProtocol.h */,
+				6531C4061CB26A7300B76B5D /* WViewDataObjectProtocol.h */,
+				6531C4071CB26A7300B76B5D /* WViewDataSourceProtocol.h */,
 				652BAAD4191938F400D1867A /* WViewDataSource.h */,
 				65A0488119ACC6EC0068D3EE /* WViewDataSourcePrivate.h */,
-				655781E81CABEF8A00EAD75A /* WSourceObjectProtocol.h */,
 				652BAAD1191938E700D1867A /* WViewDataSource.m */,
 				65A0487319ACBEB00068D3EE /* WSectionedViewDataSource.h */,
 				65A0487719ACBECB0068D3EE /* WSectionedViewDataSource.m */,
-				652BAAD5191938F400D1867A /* WDataSourceProtocol.h */,
-				652BAAD6191938F400D1867A /* WCellViewObjectProtocol.h */,
 			);
 			name = Sources;
 			sourceTree = "<group>";
@@ -524,7 +521,6 @@
 				6576865A196D5AD700C0E88D /* WViewDataSource.h in Headers */,
 				65339E0819814CBD00CE3AC1 /* WTableView.h in Headers */,
 				65768667196D5AE900C0E88D /* WErrorView.h in Headers */,
-				655781EA1CABEF8E00EAD75A /* WSourceObjectProtocol.h in Headers */,
 				65768668196D5AE900C0E88D /* WActivityView.h in Headers */,
 				6576866A196D5AF000C0E88D /* WPatternLayer.h in Headers */,
 				65A0487619ACBEB00068D3EE /* WSectionedViewDataSource.h in Headers */,
@@ -544,11 +540,9 @@
 				65768678196D5AFE00C0E88D /* UIView+WView.h in Headers */,
 				65768679196D5AFE00C0E88D /* UIBarButtonItem+WBarButtonItem.h in Headers */,
 				655781D61CABE78E00EAD75A /* WFileSystemSource.h in Headers */,
-				6524622419814FBB00AFDA7E /* WCellViewObjectProtocol.h in Headers */,
 				65768663196D5AE900C0E88D /* WGradientView.h in Headers */,
 				655781D31CABE78400EAD75A /* WFileSourceProtocol.h in Headers */,
 				6556B9221ADBD61A00DC7376 /* WViewController.h in Headers */,
-				653972091981492F00BF47B7 /* WDataSourceProtocol.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -579,17 +573,18 @@
 				809500F9120F0A4600EE6A75 /* NSNumber+WFileSize.h in Headers */,
 				65C0C9C91A8CDE8000D9B053 /* NSUserDefaults+WGroupDefaults.h in Headers */,
 				809500FA120F0A4600EE6A75 /* NSString+WCrypto.h in Headers */,
-				652BAAD9191938F400D1867A /* WDataSourceProtocol.h in Headers */,
 				809500FB120F0A4600EE6A75 /* NSString+WFileExtension.h in Headers */,
 				65A0487419ACBEB00068D3EE /* WSectionedViewDataSource.h in Headers */,
 				655781C01CABE1F700EAD75A /* Warp_Prefix.pch in Headers */,
 				809500FE120F0A4600EE6A75 /* UIView+WAdditions.h in Headers */,
+				6531C4091CB26A7300B76B5D /* WViewDataObjectProtocol.h in Headers */,
+				6531C4081CB26A7300B76B5D /* WViewDataCellProtocol.h in Headers */,
 				652BAAD7191938F400D1867A /* WViewDataSource.h in Headers */,
 				655781C11CABE1F700EAD75A /* WarpFramework.h in Headers */,
 				655781D21CABE77E00EAD75A /* WFileSearch.h in Headers */,
 				6556B9201ADBD61A00DC7376 /* WViewController.h in Headers */,
-				655781E91CABEF8A00EAD75A /* WSourceObjectProtocol.h in Headers */,
 				652BAAC21917E0A100D1867A /* WErrorView.h in Headers */,
+				6531C40A1CB26A7300B76B5D /* WViewDataSourceProtocol.h in Headers */,
 				809501C4120F0A4600EE6A75 /* WGlobal.h in Headers */,
 				809501C5120F0A4600EE6A75 /* Warp.h in Headers */,
 				809501CC120F0A4600EE6A75 /* WTableView.h in Headers */,
@@ -602,7 +597,6 @@
 				659C4A7018E4562F005BD7D3 /* WPatternLayer.h in Headers */,
 				659C4A9118E4579E005BD7D3 /* UIView+WView.h in Headers */,
 				80D6FFE71332A03400D4D0BC /* NSObject+WAdditions.h in Headers */,
-				652BAADB191938F400D1867A /* WCellViewObjectProtocol.h in Headers */,
 				80A4C02E162F079B00D8BEE1 /* NSFileManager+WFileManager.h in Headers */,
 				65782DC9168750D6006C0F9C /* NSDate+WAdditions.h in Headers */,
 				80089646168E0C10003528EB /* UIImage+WResize.h in Headers */,

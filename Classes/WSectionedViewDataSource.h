@@ -33,7 +33,7 @@ typedef NS_ENUM(NSUInteger, WSectionedViewDataSourceChangeType) {
 @end
 
 
-@protocol WSectionedViewDataSourceDelegate <WDataSourceProtocol>
+@protocol WSectionedViewDataSourceDelegate <WViewDataSourceProtocol>
 
 - (void) addObserver:(WSectionedViewDataSource *)observer keyPath:(NSString *)keyPath;
 - (void) removeObserver:(WSectionedViewDataSource *)observer keyPath:(NSString *)keyPath;

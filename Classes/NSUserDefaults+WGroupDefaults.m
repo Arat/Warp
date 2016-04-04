@@ -1,6 +1,6 @@
 //
 //  NSUserDefaults+WGroupDefaults.m
-//  NoFlappyDownload
+//  Warp
 //
 //  Created by Lukáš Foldýna on 18/01/15.
 //  Copyright (c) 2015 Lukáš Foldýna. All rights reserved.
