@@ -14,7 +14,6 @@
 @interface WFileSystemSource (Private)
 
 - (NSDictionary *) loadFilesAtPath:(NSString *)path;
-- (void) _stopTimer;
 
 @end
 
@@ -86,11 +85,6 @@ static WFileSystemSource *sharedFiles = nil;
     NSURL *URL = [[NSFileManager defaultManager] URLForPublishingUbiquitousItemAtURL:[NSURL fileURLWithPath:file]
                                                                       expirationDate:nil error:nil];
     completion(URL);
-}
-
-- (void) _timeoutTimer:(NSTimer *)timer
-{
-    [self _stopTimer];
 }
 
 @end
