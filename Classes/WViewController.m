@@ -7,8 +7,8 @@
 //
 
 #import "WViewController.h"
-#import "WErrorView.h"
 #import "WViewDataSource.h"
+#import "WErrorView.h"
 
 
 @implementation UIViewController (WViewController)
@@ -248,6 +248,29 @@
     return [_viewSource imageForState];
 }
 
+#pragma mark -
+#pragma mark UITableViewDelegate
+
+- (BOOL) tableView:(UITableView *)tableView willSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    id<WViewDataObjectProtocol> object = [_viewSource objectForIndexPath:indexPath];
+    if (object && !object.inserting && !object.processing && !object.removing) {
+        return indexPath;
+    } else {
+        return nil;
+    }
+}
+
+- (BOOL) tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    id<WViewDataObjectProtocol> object = [_viewSource objectForIndexPath:indexPath];
+    if (object && !object.inserting && !object.processing && !object.removing) {
+        return indexPath;
+    } else {
+        return nil;
+    }
+}
+
 @end
 
 
@@ -350,6 +373,19 @@
 - (UIImage *) imageForState
 {
     return [_viewSource imageForState];
+}
+
+#pragma mark -
+#pragma mark UICollectionViewDelegate
+
+- (BOOL) collectionView:(UICollectionView *)collectionView shouldSelectItemAtIndexPath:(NSIndexPath *)indexPath
+{
+    id<WViewDataObjectProtocol> object = [_viewSource objectForIndexPath:indexPath];
+    if (object && !object.inserting && !object.processing && !object.removing) {
+        return indexPath;
+    } else {
+        return nil;
+    }
 }
 
 @end
