@@ -7,9 +7,8 @@
 //
 
 @import UIKit;
+@import Warp;
 
-@interface AppDelegate : UIResponder <UIApplicationDelegate>
-
-@property (strong, nonatomic) UIWindow *window;
+@interface AppDelegate : WAppDelegate
 
 @end
