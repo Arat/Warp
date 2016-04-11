@@ -30,7 +30,7 @@ static NSString *WApplicationGroupIdentifier = nil;
 + (BOOL) isApplicationExtension
 {
     if (WISOS8()) {
-        return [[[NSBundle mainBundle] executablePath] containsString:@".appex/"];
+        return [[NSBundle mainBundle].executablePath containsString:@".appex/"];
     } else {
         return NO;
     }
@@ -38,7 +38,7 @@ static NSString *WApplicationGroupIdentifier = nil;
 
 + (BOOL) isApplicationRunningFromTestflight
 {
-    return [[[[NSBundle mainBundle] appStoreReceiptURL] lastPathComponent] isEqualToString:@"sandboxReceipt"];
+    return [[NSBundle mainBundle].appStoreReceiptURL.lastPathComponent isEqualToString:@"sandboxReceipt"];
 }
 
 + (NSString *) applicationID
@@ -53,7 +53,7 @@ static NSString *WApplicationGroupIdentifier = nil;
 
 + (NSString *) applicationVersion
 {
-    return [[NSBundle mainBundle] infoDictionary][@"CFBundleShortVersionString"];
+    return [NSBundle mainBundle].infoDictionary[@"CFBundleShortVersionString"];
 }
 
 #pragma mark Application's documents directory
@@ -106,7 +106,7 @@ static NSString *WApplicationGroupIdentifier = nil;
 + (NSString *) applicationLibraryDirectory
 {	
     NSArray  *paths = NSSearchPathForDirectoriesInDomains(NSLibraryDirectory, NSUserDomainMask, YES);
-    NSString *basePath = ([paths count] > 0) ? paths[0] : nil;
+    NSString *basePath = (paths.count > 0) ? paths[0] : nil;
     return basePath;
 }
 
@@ -116,7 +116,7 @@ static NSString *WApplicationGroupIdentifier = nil;
 + (NSString *) applicationCacheDirectory
 {	
     NSArray  *paths = NSSearchPathForDirectoriesInDomains(NSCachesDirectory, NSUserDomainMask, YES);
-    NSString *basePath = ([paths count] > 0) ? paths[0] : nil;
+    NSString *basePath = (paths.count > 0) ? paths[0] : nil;
     return basePath;
 }
 
@@ -131,7 +131,7 @@ static NSString *WApplicationGroupIdentifier = nil;
     NSString *tmpPath = NSTemporaryDirectory();
 #endif
     if ([tmpPath hasSuffix:@"/"])
-        return [tmpPath substringToIndex:[tmpPath length] - 1];
+        return [tmpPath substringToIndex:tmpPath.length - 1];
     return tmpPath;
 }
 
@@ -170,9 +170,9 @@ static NSString *WApplicationGroupIdentifier = nil;
 + (NSString *) applicationGroupDirectory
 {
     if (WISOSX08() || WISOS8()) {
-        return [[[NSFileManager defaultManager] containerURLForSecurityApplicationGroupIdentifier:[WAppDelegate applicationGroupIdentifier]] path];
+        return [[NSFileManager defaultManager] containerURLForSecurityApplicationGroupIdentifier:[WAppDelegate applicationGroupIdentifier]].path;
     } else {
-        return [[WAppDelegate applicationDocumentsDirectory] stringByDeletingLastPathComponent];
+        return [WAppDelegate applicationDocumentsDirectory].stringByDeletingLastPathComponent;
     }
 }
 
@@ -190,7 +190,7 @@ static NSString *WApplicationGroupIdentifier = nil;
     if (WISOSX08() || WISOS8()) {
         return [[NSFileManager defaultManager] containerURLForSecurityApplicationGroupIdentifier:[WAppDelegate applicationGroupIdentifier]];
     } else {
-        return [NSURL fileURLWithPath:[[WAppDelegate applicationDocumentsDirectory] stringByDeletingLastPathComponent]];
+        return [NSURL fileURLWithPath:[WAppDelegate applicationDocumentsDirectory].stringByDeletingLastPathComponent];
     }
 }
 

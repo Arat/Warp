@@ -32,7 +32,7 @@ static WFileSystemSource *sharedFiles = nil;
     return sharedFiles;
 }
 
-- (id) init
+- (instancetype) init
 {
     if ((self = [super init])) {
         NSString  *docDirectory = [WAppDelegate applicationDocumentsDirectory];

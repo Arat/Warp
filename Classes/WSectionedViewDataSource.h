@@ -21,21 +21,21 @@ typedef NS_ENUM(NSUInteger, WSectionedViewDataSourceChangeType) {
 
 @interface WSectionedViewDataSource : WViewDataSource
 
-- (void) observerSourceForContentChanges:(NSObject<WSectionedViewDataSourceDelegate> *)source keyPath:(NSString *)keyPath;
+- (void) observerSourceForContentChanges:(NSObject<WSectionedViewDataSourceDelegate> * _Nonnull)source keyPath:(NSString * _Nonnull)keyPath;
 - (void) removeSourceObserver;
 
-- (void) observerSourceForSectionTitlesChangesKeyPath:(NSString *)keyPath;
+- (void) observerSourceForSectionTitlesChangesKeyPath:(NSString * _Nonnull)keyPath;
 - (void) removeSourceObserverForSectionTitles;
 
-- (void) source:(NSObject<WSectionedViewDataSourceDelegate> *)source didChangeSections:(NSArray *)sections titles:(NSArray *)titles atIndexes:(NSIndexSet *)indexSet forChangeType:(WSectionedViewDataSourceChangeType)changeType;
-- (void) source:(NSObject<WSectionedViewDataSourceDelegate> *)source didChangeObjects:(NSArray *)objects atIndexPaths:(NSArray *)indexPaths forChangeType:(WSectionedViewDataSourceChangeType)changeType;
+- (void) source:(NSObject<WSectionedViewDataSourceDelegate> * _Nonnull)source didChangeSections:(NSArray * _Nonnull)sections titles:(NSArray * _Nonnull)titles atIndexes:(NSIndexSet * _Nullable)indexSet forChangeType:(WSectionedViewDataSourceChangeType)changeType;
+- (void) source:(NSObject<WSectionedViewDataSourceDelegate> * _Nonnull)source didChangeObjects:(NSArray * _Nonnull)objects atIndexPaths:(NSArray * _Nonnull)indexPaths forChangeType:(WSectionedViewDataSourceChangeType)changeType;
 
 @end
 
 
 @protocol WSectionedViewDataSourceDelegate <WViewDataSourceProtocol>
 
-- (void) addObserver:(WSectionedViewDataSource *)observer keyPath:(NSString *)keyPath;
-- (void) removeObserver:(WSectionedViewDataSource *)observer keyPath:(NSString *)keyPath;
+- (void) addObserver:(WSectionedViewDataSource * _Nonnull)observer keyPath:(NSString * _Nonnull)keyPath;
+- (void) removeObserver:(WSectionedViewDataSource *_Nonnull )observer keyPath:(NSString * _Nonnull)keyPath;
 
 @end

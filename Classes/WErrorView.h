@@ -6,19 +6,20 @@
 //  Copyright (c) 2014 TwoManShow. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
+@import UIKit;
 
 
 @interface WErrorView : UIView
 
-- (instancetype) initWithTitle:(NSString *)title subtitle:(NSString *)subtitle image:(UIImage *)image;
-@property (nonatomic, strong) UIImage *image;
-@property (nonatomic, copy) NSString *title;
-@property (nonatomic, copy) NSString *subtitle;
+- (instancetype _Nonnull) initWithTitle:(NSString * _Nullable)title subtitle:(NSString * _Nullable)subtitle image:(UIImage * _Nullable)image;
 
-@property (nonatomic, strong) UIImageView *imageView;
-@property (nonatomic, strong) UILabel *titleView;
-@property (nonatomic, strong) UILabel *subtitleView;
+@property (nonatomic, strong, nullable) UIImage *image;
+@property (nonatomic, copy, nullable) NSString *title;
+@property (nonatomic, copy, nullable) NSString *subtitle;
+
+@property (nonatomic, strong, nonnull) UIImageView *imageView;
+@property (nonatomic, strong, nonnull) UILabel *titleView;
+@property (nonatomic, strong, nonnull) UILabel *subtitleView;
 @property (nonatomic, assign) CGFloat spaceBetweenImage;
 
 @end

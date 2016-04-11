@@ -23,24 +23,24 @@
 - (UIFont *) italicSystemFontOfSize:(CGFloat)fontSize;
 
 // Controller
-- (Class) controllerErrorViewClass;
-- (UIColor *) rootContentBorderColor;
+@property (nonatomic, readonly, strong) Class controllerErrorViewClass;
+@property (nonatomic, readonly, copy) UIColor *rootContentBorderColor;
 
-- (CGFloat) popoverMargin;
-- (CGSize) popoverArrowSize;
+@property (nonatomic, readonly) CGFloat popoverMargin;
+@property (nonatomic, readonly) CGSize popoverArrowSize;
 
 // Activity view
-- (UIFont *) activityLabelFont;
-- (UIFont *) activityBannerFont;
-- (UIColor *) activityTextColor;
+@property (nonatomic, readonly, copy) UIFont *activityLabelFont;
+@property (nonatomic, readonly, copy) UIFont *activityBannerFont;
+@property (nonatomic, readonly, copy) UIColor *activityTextColor;
 
 // Error view
-- (UIColor *) errorTitleColor;
-- (UIColor *) errorSubtitleColor;
+@property (nonatomic, readonly, copy) UIColor *errorTitleColor;
+@property (nonatomic, readonly, copy) UIColor *errorSubtitleColor;
 
 // Loading view
-- (UIColor *) loadingTintColor;
-- (UIColor *) loadingBackgroundColor;
+@property (nonatomic, readonly, copy) UIColor *loadingTintColor;
+@property (nonatomic, readonly, copy) UIColor *loadingBackgroundColor;
 
 @end
 

@@ -22,11 +22,7 @@ static const CGFloat kHPadding  = 10.0;
 
 - (instancetype) init
 {
-    self = [super init];
-    
-    if (self) {
-        [self _createView];
-    }
+    self = [self initWithFrame:CGRectZero];
     return self;
 }
 

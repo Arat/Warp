@@ -6,23 +6,23 @@
 //  Copyright 2008 TwoManShow. All rights reserved.
 //
 
-#import <Foundation/Foundation.h>
+@import Foundation;
 
 
-typedef enum {
+typedef NS_ENUM(NSInteger, WFileSourceType) {
     WFileSourceTypeSystem = 0, // localni system
     WFileSourceTypeNetwork, // sitovy system
     WFileSourceTypeJolicloud, // jolicloud system
 	WFileSourceTypeHttp, // url/http system
 	WFileSourceTypeAssetsLibrary, // iOS photo library system
-} WFileSourceType; // Typy file systemu
+}; // Typy file systemu
 
 
-typedef enum {
+typedef NS_ENUM(NSInteger, WFileSourceThumbnailsSize) {
     WFileSourceThumbnailsSizeSmall = 0,
     WFileSourceThumbnailsSizeNormal,
     WFileSourceThumbnailsSizeLarge
-} WFileSourceThumbnailsSize;
+};
 
 
 // notifikace, ktera se posila pri chybe
@@ -81,12 +81,12 @@ typedef void (^WFilePublicLinkBlock)(NSURL *publicURL);
 /*
  * Je zdroj pripojen
  */
-- (BOOL) isConnected;
+@property (nonatomic, getter=isConnected, readonly) BOOL connected;
 
 /*
  * Je zdroj zaneprazdnen
  */
-- (BOOL) isBusy;
+@property (nonatomic, getter=isBusy, readonly) BOOL busy;
 
 /*
  * Odpojit zdroj
@@ -175,7 +175,7 @@ typedef void (^WFilePublicLinkBlock)(NSURL *publicURL);
 /*
  * Jestli protokol podporuje vyhledavani
  */
-- (BOOL) supportsSearch;
+@property (nonatomic, readonly) BOOL supportsSearch;
 
 /*
  * Vyhledavani od zadane cesty, podle slova...
@@ -185,13 +185,13 @@ typedef void (^WFilePublicLinkBlock)(NSURL *publicURL);
 /*
  * Vrati informace o file systemu
  */
-- (NSDictionary *) systemAtrributes;
+@property (nonatomic, readonly, copy) NSDictionary *systemAtrributes;
 - (void) systemAtrributesWithBlock:(WFileAttriburesBlock)block;
 
 /*
  * Vrati nahled souboru
  */
-- (BOOL) supportsThumbnails;
+@property (nonatomic, readonly) BOOL supportsThumbnails;
 - (BOOL) supportsThumbnailsWithSize:(WFileSourceThumbnailsSize)thumbnailSize;
 - (void) loadThumbnailForFile:(NSString *)file toPath:(NSString *)toPath completion:(WFileThumbnailBlock)completion;
 - (void) loadThumbnailForFile:(NSString *)file toPath:(NSString *)toPath completion:(WFileThumbnailBlock)completion size:(WFileSourceThumbnailsSize)size;
@@ -199,7 +199,7 @@ typedef void (^WFilePublicLinkBlock)(NSURL *publicURL);
 /*
  * Vytvori sharable link souboru
  */
-- (BOOL) supportsPublicLinks;
+@property (nonatomic, readonly) BOOL supportsPublicLinks;
 - (void) publicLinkForFile:(NSString *)file completion:(WFilePublicLinkBlock)completion;
 
 @end

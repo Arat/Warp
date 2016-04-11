@@ -35,7 +35,7 @@
 	if (_locations == nil) {
 		_locations = @[@0.0f, @1.0f];
 	}
-	CGFloat *locations = malloc([_locations count] * sizeof(CGFloat));
+	CGFloat *locations = malloc(_locations.count * sizeof(CGFloat));
 	
 	NSUInteger i, count = [_locations count];
 	for (i = 0; i < count; i++) {
@@ -81,7 +81,7 @@
 - (NSArray *) colors
 {
     NSMutableArray *colors = [NSMutableArray array];
-    for (NSObject *object in [(CAGradientLayer *)[self layer] colors]) {
+    for (NSObject *object in ((CAGradientLayer *)self.layer).colors) {
         CGColorRef color = (__bridge CGColorRef)object;
         [colors addObject:[UIColor colorWithCGColor:color]];
     }
@@ -92,39 +92,39 @@
 {
     NSMutableArray *CGColors = [NSMutableArray array];
     for (UIColor *color in colors) {
-        [CGColors addObject:(id)[color CGColor]];
+        [CGColors addObject:(id)color.CGColor];
     }
-    [(CAGradientLayer *)[self layer] setColors:CGColors];
+    [(CAGradientLayer *)self.layer setColors:colors];
 }
 
 - (NSArray *) locations
 {
-    return [(CAGradientLayer *)[self layer] locations];
+    return [(CAGradientLayer *)self.layer locations];
 }
 
 - (void) setLocations:(NSArray *)locations
 {
-    [(CAGradientLayer *)[self layer] setLocations:locations];
+    [(CAGradientLayer *)self.layer setLocations:locations];
 }
 
 - (CGPoint) startPoint
 {
-    return [(CAGradientLayer *)[self layer] startPoint];
+    return [(CAGradientLayer *)self.layer startPoint];
 }
 
 - (void) setStartPoint:(CGPoint)startPoint
 {
-    return [(CAGradientLayer *)[self layer] setStartPoint:startPoint];
+    return [(CAGradientLayer *)self.layer setStartPoint:startPoint];
 }
 
 - (CGPoint) endPoint
 {
-    return [(CAGradientLayer *)[self layer] endPoint];
+    return [(CAGradientLayer *)self.layer endPoint];
 }
 
 - (void) setEndPoint:(CGPoint)endPoint
 {
-    return [(CAGradientLayer *)[self layer] setEndPoint:endPoint];
+    return [(CAGradientLayer *)self.layer setEndPoint:endPoint];
 }
 
 @end

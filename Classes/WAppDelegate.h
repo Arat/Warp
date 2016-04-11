@@ -6,10 +6,10 @@
 //  Copyright 2010 TwoManShow. All rights reserved.
 //
 
-#import <Foundation/Foundation.h>
+@import Foundation;
 #if TARGET_OS_IPHONE
 #else
-#import <AppKit/AppKit.h>
+@import AppKit;
 #endif
 
 
@@ -19,36 +19,36 @@
 @interface WAppDelegate : NSObject <NSApplicationDelegate>
 #endif
 
-+ (instancetype) sharedAppDelegate;
++ (instancetype _Nonnull) sharedAppDelegate;
 
 + (BOOL) isApplicationExtension;
 + (BOOL) isApplicationRunningFromTestflight;
-+ (NSString *) applicationID;
-+ (NSString *) applicationName;
-+ (NSString *) applicationVersion;
++ (NSString * _Nonnull) applicationID;
++ (NSString * _Nonnull) applicationName;
++ (NSString * _Nonnull) applicationVersion;
 
-@property (nonatomic, weak, readonly) NSString *applicationDocumentsDirectory;
-@property (nonatomic, weak, readonly) NSString *applicationLibraryDirectory;
-@property (nonatomic, weak, readonly) NSString *applicationCacheDirectory;
-@property (nonatomic, weak, readonly) NSString *applicationTemporaryDirectory;
-+ (NSString *) applicationDocumentsDirectory;
-+ (NSString *) applicationLibraryDirectory;
-+ (NSString *) applicationCacheDirectory;
-+ (NSString *) applicationTemporaryDirectory;
+@property (nonatomic, weak, readonly, nullable) NSString *applicationDocumentsDirectory;
+@property (nonatomic, weak, readonly, nullable) NSString *applicationLibraryDirectory;
+@property (nonatomic, weak, readonly, nullable) NSString *applicationCacheDirectory;
+@property (nonatomic, weak, readonly, nullable) NSString *applicationTemporaryDirectory;
++ (NSString * _Nonnull) applicationDocumentsDirectory;
++ (NSString * _Nonnull) applicationLibraryDirectory;
++ (NSString * _Nonnull) applicationCacheDirectory;
++ (NSString * _Nonnull) applicationTemporaryDirectory;
 
-@property (nonatomic, strong) NSString *applicationGroupIdentifier;
-@property (nonatomic, weak, readonly) NSString *applicationGroupDirectory;
-@property (nonatomic, weak, readonly) NSString *applicationGroupDocumentsDirectory;
-+ (NSString *) applicationGroupIdentifier;
-+ (void) setApplicationGroupIdentifier:(NSString *)groupIdentifier;
-+ (NSString *) applicationGroupDirectory;
-+ (NSString *) applicationGroupDocumentsDirectory;
-+ (NSURL *) applicationGroupURL;
-+ (NSURL *) applicationGroupDocumentsURL;
+@property (nonatomic, strong, nullable) NSString *applicationGroupIdentifier;
+@property (nonatomic, weak, readonly, nullable) NSString *applicationGroupDirectory;
+@property (nonatomic, weak, readonly, nullable) NSString *applicationGroupDocumentsDirectory;
++ (NSString * _Nullable) applicationGroupIdentifier;
++ (void) setApplicationGroupIdentifier:(NSString * _Nonnull)groupIdentifier;
++ (NSString * _Nullable) applicationGroupDirectory;
++ (NSString * _Nullable) applicationGroupDocumentsDirectory;
++ (NSURL * _Nullable) applicationGroupURL;
++ (NSURL * _Nullable) applicationGroupDocumentsURL;
 
 #if TARGET_OS_IPHONE
-@property (nonatomic, weak, readonly) UIViewController *rootViewController;
-+ (UIViewController *) rootViewController;
+@property (nonatomic, weak, readonly, nullable) UIViewController *rootViewController;
++ (UIViewController * _Nullable) rootViewController;
 #endif
 
 @end

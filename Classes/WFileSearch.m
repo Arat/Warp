@@ -22,7 +22,13 @@
 
 @implementation WFileSearch
 
-- (id) initWithFileSource:(id<WFileSourceProtocol>)fileSource
+- (instancetype) init
+{
+    self = [self initWithFileSource:nil];
+    return self;
+}
+
+- (instancetype) initWithFileSource:(id<WFileSourceProtocol>)fileSource
 {
     self = [super init];
     
@@ -63,8 +69,9 @@
             }
             _results = content;
             
-            if ([content count])
+            if ([content count]) {
                 [_delegate search:self didFoundFiles:content text:_searchText];
+            }
             if (_numberOfDirectoryLoadings == 0) {
                 [_delegate search:self didStopWithText:_searchText];
                 [_fileSource removeDelegate:self];
@@ -75,7 +82,7 @@
             _directories = [[NSMutableArray alloc] init];
             _numberOfDirectoryLoadings = 1;
             [_fileSource addDelegate:self];
-            [_fileSource loadAtPath:[_fileSource homePath]];
+            [_fileSource loadAtPath:_fileSource.homePath];
         }
     } else {
         if (_searchText && [text hasPrefix:_searchText] && [_results count]) {

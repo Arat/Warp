@@ -84,14 +84,14 @@ extern NSIndexPath *WNSIndexPathFromNSString(NSString *string)
 extern void WInit(void)
 {
     #if TARGET_OS_IPHONE
-    WISIOS4 = [[[UIDevice currentDevice] systemVersion] hasPrefix:@"4."];
-    WISIOS5 = ![[[UIDevice currentDevice] systemVersion] hasPrefix:@"4."];
-    WISIOS6 = WISIOS5 && ![[[UIDevice currentDevice] systemVersion] hasPrefix:@"5."];
-    WISIOS7 = WISIOS5 && WISIOS6 && ![[[UIDevice currentDevice] systemVersion] hasPrefix:@"6."];
-    WISIOS8 = WISIOS5 && WISIOS6 && WISIOS7 && ![[[UIDevice currentDevice] systemVersion] hasPrefix:@"7."];
-    WISIOS9 = WISIOS5 && WISIOS6 && WISIOS7 && WISIOS8 && ![[[UIDevice currentDevice] systemVersion] hasPrefix:@"8."];
-    WISIPad = [[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPad;
-    WISIPhone =[[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPhone;
+    WISIOS4 = [[UIDevice currentDevice].systemVersion hasPrefix:@"4."];
+    WISIOS5 = ![[UIDevice currentDevice].systemVersion hasPrefix:@"4."];
+    WISIOS6 = WISIOS5 && ![[UIDevice currentDevice].systemVersion hasPrefix:@"5."];
+    WISIOS7 = WISIOS5 && WISIOS6 && ![[UIDevice currentDevice].systemVersion hasPrefix:@"6."];
+    WISIOS8 = WISIOS5 && WISIOS6 && WISIOS7 && ![[UIDevice currentDevice].systemVersion hasPrefix:@"7."];
+    WISIOS9 = WISIOS5 && WISIOS6 && WISIOS7 && WISIOS8 && ![[UIDevice currentDevice].systemVersion hasPrefix:@"8."];
+    WISIPad = [UIDevice currentDevice].userInterfaceIdiom == UIUserInterfaceIdiomPad;
+    WISIPhone =[UIDevice currentDevice].userInterfaceIdiom == UIUserInterfaceIdiomPhone;
     WISIPhoneLong = WISIPhone && [UIScreen mainScreen].bounds.size.height > 500.0;
     #endif
     #if !TARGET_OS_IPHONE && TARGET_OS_MAC

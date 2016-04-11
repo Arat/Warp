@@ -304,7 +304,7 @@
     NSInteger i = 0;
     for (NSIndexPath *indexPath in indexPaths) {
         NSInteger index = (_collectionView ? indexPath.item : indexPath.row);
-        [content replaceObjectAtIndex:index withObject:new[i]];
+        content[index] = new[i];
         i++;
     }
     _content = [content copy];

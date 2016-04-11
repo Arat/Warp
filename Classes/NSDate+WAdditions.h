@@ -6,68 +6,68 @@
 //  Copyright (c) 2011 TwoManShow. All rights reserved.
 //
 
-#import <Foundation/Foundation.h>
+@import Foundation;
 
 
 @interface NSDate (WAdditions)
 
 + (NSDate *) today;
 
-- (NSInteger) dayDiffFromToday;
+@property (nonatomic, readonly) NSInteger dayDiffFromToday;
 
 - (NSInteger) dayDiffFromDate:(NSDate *)date;
 
-- (NSDate *) date;
+@property (nonatomic, readonly, copy) NSDate *date;
 
 /** returns string in format 'yyyy-MM-dd' from date */
-- (NSString *) DBFormattedString;
+@property (nonatomic, readonly, copy) NSString *DBFormattedString;
 
 /** returns string in format 'yyyy-MM-dd'T'HH:mm:ss.SSS'Z'' from date */
-- (NSString *) ISOFormattedString;
+@property (nonatomic, readonly, copy) NSString *ISOFormattedString;
 
 @end
 
 
 @interface NSString (NSDateWAdditions)
 
-- (NSDate *) date;
+@property (nonatomic, readonly, copy) NSDate *date;
 
-- (NSDate *) dateFromUnixTimestamp;
+@property (nonatomic, readonly, copy) NSDate *dateFromUnixTimestamp;
 
-- (NSDate *) dateFromMillisTimestamp;
+@property (nonatomic, readonly, copy) NSDate *dateFromMillisTimestamp;
 
 /** returns date from string in format 'yyyy-MM-dd' */
-- (NSDate *) dateFromDBFormat;
+@property (nonatomic, readonly, copy) NSDate *dateFromDBFormat;
 
 /** returns date from string in format 'yyyy-MM-dd'T'HH:mm:ss.SSS'Z'' */
-- (NSDate *) dateFromISOFormat;
+@property (nonatomic, readonly, copy) NSDate *dateFromISOFormat;
 
 @end
 
 @interface NSNumber (NSDateWAdditions)
 
-- (NSDate *) date;
+@property (nonatomic, readonly, copy) NSDate *date;
 
-- (NSDate *) dateFromUnixTimestamp;
+@property (nonatomic, readonly, copy) NSDate *dateFromUnixTimestamp;
 
-- (NSDate *) dateFromMillisTimestamp;
+@property (nonatomic, readonly, copy) NSDate *dateFromMillisTimestamp;
 
-- (NSDate *) dateFromDBFormat;
+@property (nonatomic, readonly, copy) NSDate *dateFromDBFormat;
 
-- (NSDate *) dateFromISOFormat;
+@property (nonatomic, readonly, copy) NSDate *dateFromISOFormat;
 
 @end
 
 @interface NSNull (NSDateWAdditions)
 
-- (NSDate *) date;
+@property (nonatomic, readonly, copy) NSDate *date;
 
-- (NSDate *) dateFromUnixTimestamp;
+@property (nonatomic, readonly, copy) NSDate *dateFromUnixTimestamp;
 
-- (NSDate *) dateFromMillisTimestamp;
+@property (nonatomic, readonly, copy) NSDate *dateFromMillisTimestamp;
 
-- (NSDate *) dateFromDBFormat;
+@property (nonatomic, readonly, copy) NSDate *dateFromDBFormat;
 
-- (NSDate *) dateFromISOFormat;
+@property (nonatomic, readonly, copy) NSDate *dateFromISOFormat;
 
 @end

@@ -6,7 +6,7 @@
 //  Copyright (c) 2014 TwoManShow. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
+@import UIKit;
 
 //! Project version number for Warp Framework.
 FOUNDATION_EXPORT double Warp_FrameworkVersionNumber;

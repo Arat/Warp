@@ -6,7 +6,7 @@
 //  Copyright 2008 TwoManShow. All rights reserved.
 //
 
-#import <Foundation/Foundation.h>
+@import Foundation;
 #import "WFileSource.h"
 
 

@@ -57,16 +57,16 @@ typedef NS_ENUM(NSUInteger, WViewDataSourceState) {
 // state
 @property (nonatomic, assign, readonly) WViewDataSourceState state;
 - (void) updateState; // manualy update state of source
-- (NSString * _Nonnull) stateTitle;
+@property (nonatomic, copy, readonly, nonnull) NSString *stateTitle;
 
 @property (nonatomic, assign, readonly, getter = isLoaded) BOOL loaded;
 @property (nonatomic, assign, readonly, getter = isLoading) BOOL loading;
 @property (nonatomic, assign, readonly, getter = isOutdated) BOOL outdated;
 @property (nonatomic, copy, nullable) NSError *error; // only serious error, which prevents to display data, when it set it also refresh state
 
-- (UIImage * _Nullable) imageForState; // label.state.image
-- (NSString * _Nonnull) titleForState; // label.state.title
-- (NSString * _Nonnull) subtitleForState; // label.state.subtitle or localized error description
+@property (nonatomic, copy, readonly, nullable) UIImage *imageForState; // label.state.image
+@property (nonatomic, copy, readonly, nonnull) NSString *titleForState; // label.state.title
+@property (nonatomic, copy, readonly, nonnull) NSString *subtitleForState; // label.state.subtitle or localized error description
 
 // callbacks (optional)
 @property (nonatomic, copy, nullable) void (^statusCallback)(WViewDataSourceState state); // called when status is changed

@@ -119,12 +119,12 @@
 
 - (NSDate *) dateFromUnixTimestamp
 {
-    return [NSDate dateWithTimeIntervalSince1970:[self longLongValue]];
+    return [NSDate dateWithTimeIntervalSince1970:self.longLongValue];
 }
 
 - (NSDate *) dateFromMillisTimestamp
 {
-    return [NSDate dateWithTimeIntervalSince1970:[self longLongValue] / 1000];
+    return [NSDate dateWithTimeIntervalSince1970:self.longLongValue / 1000];
 }
 
 - (NSDate *) dateFromDBFormat
@@ -164,12 +164,12 @@
 
 - (NSDate *) dateFromUnixTimestamp
 {
-    return [NSDate dateWithTimeIntervalSince1970:[self doubleValue]];
+    return [NSDate dateWithTimeIntervalSince1970:self.doubleValue];
 }
 
 - (NSDate *) dateFromMillisTimestamp
 {
-    return [NSDate dateWithTimeIntervalSince1970:[self doubleValue] / 1000];
+    return [NSDate dateWithTimeIntervalSince1970:self.doubleValue / 1000];
 }
 
 - (NSDate *) dateFromDBFormat

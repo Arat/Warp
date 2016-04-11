@@ -166,7 +166,7 @@
     for (NSIndexPath *indexPath in indexPaths) {
         NSInteger sectionCount = [content[indexPath.section] count];
         if (![content[indexPath.section] respondsToSelector:@selector(addObject:)]) {
-            [content replaceObjectAtIndex:indexPath.section withObject:[content[indexPath.section] mutableCopy]];
+            content[indexPath.section] = [content[indexPath.section] mutableCopy];
         }
         
         if (sectionCount <= indexPath.row) {
@@ -195,7 +195,7 @@
     NSMutableArray *removedObjects = [NSMutableArray array];
     for (NSIndexPath *indexPath in indexPaths) {
         if (![content[indexPath.section] respondsToSelector:@selector(addObject:)]) {
-            [content replaceObjectAtIndex:indexPath.section withObject:[content[indexPath.section] mutableCopy]];
+            content[indexPath.section] = [content[indexPath.section] mutableCopy];
         }
         NSObject *object = _content[indexPath.section][(_collectionView ? indexPath.item : indexPath.row)];
         [removedObjects addObject:object];
@@ -223,13 +223,13 @@
     for (NSIndexPath *indexPath in indexPaths) {
         NSMutableArray *section = content[indexPath.section];
         if (![section respondsToSelector:@selector(addObject:)]) {
-            [content replaceObjectAtIndex:indexPath.section withObject:[section mutableCopy]];
+            content[indexPath.section] = [section mutableCopy];
             section = content[indexPath.section];
         }
         NSInteger sectionCount = [section count];
         NSInteger index = (_collectionView ? indexPath.item : indexPath.row);
         if (sectionCount > index) {
-            [section replaceObjectAtIndex:index withObject:objects[i]];
+            section[index] = objects[i];
         } else {
             [section addObject:objects[i]];
         }
@@ -258,9 +258,9 @@
     _content = [[NSArray alloc] initWithArray:objects copyItems:YES];
     _contentCount = [_content count];
     
-    if ([self reloadObjectsCallback]) {
+    if (self.reloadObjectsCallback) {
         self.reloadObjectsCallback();
-    } else if ([self tableView]) {
+    } else if (self.tableView) {
         [self.tableView reloadData];
     } else {
         [self.collectionView reloadData];
@@ -376,8 +376,8 @@
     
     NSInteger i = 0, currentIndex = [indexSet firstIndex];
     while (currentIndex != NSNotFound) {
-        [headers replaceObjectAtIndex:currentIndex withObject:titles[i]];
-        [content replaceObjectAtIndex:currentIndex withObject:sections[i]];
+        headers[currentIndex] = titles[i];
+        content[currentIndex] = sections[i];
         currentIndex = [indexSet indexGreaterThanIndex:currentIndex];
         i++;
     }

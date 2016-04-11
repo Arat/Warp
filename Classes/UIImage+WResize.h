@@ -6,7 +6,7 @@
 //  Copyright (c) 2012 TwoManShow. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
+@import UIKit;
 
 
 @interface UIImage (WResize)
@@ -25,8 +25,8 @@
 
 @interface WPhoto : NSObject
 
-+ (id) photoWithFilePath:(NSString *)filePath;
-- (id) initWithFilePath:(NSString *)filePath;
++ (instancetype) photoWithFilePath:(NSString *)filePath;
+- (instancetype) initWithFilePath:(NSString *)filePath NS_DESIGNATED_INITIALIZER;
 @property (nonatomic, strong, readwrite) NSString *filePath;
 
 @property (nonatomic, assign, readonly) CGSize size;

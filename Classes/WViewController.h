@@ -13,27 +13,30 @@
 
 @protocol WViewControllerProtocol <NSObject>
 
-@property (nonatomic, strong) WViewDataSource *viewSource;
+@property (nonatomic, strong, nullable) WViewDataSource *viewSource;
 
-@property (nonatomic, strong) WErrorView *errorView;
+@property (nonatomic, strong, nonnull) WErrorView *errorView;
 - (void) displayError;
 - (void) hideError;
 
-@property (nonatomic, strong) UIActivityIndicatorView *loadingView;
+@property (nonatomic, strong, nonnull) UIActivityIndicatorView *loadingView;
 - (void) displayLoading;
 - (void) hideLoading;
 
-- (CGRect) overlayerFrame;
+@property (nonatomic, assign, readonly) CGRect overlayerFrame;
 - (void) hideOverlayer;
 
-@property (nonatomic, readonly, strong) NSString *titleForState; // source-label.source-state.title
-@property (nonatomic, readonly, strong) NSString *subtitleForState; // source-label.source-state.subtitle or error description
-@property (nonatomic, readonly, strong) UIImage *imageForState; // source-label.source-state.image
+@property (nonatomic, readonly, strong, nullable) UIImage *imageForState; // source-label.source-state.image
+@property (nonatomic, readonly, strong, nonnull) NSString *titleForState; // source-label.source-state.title
+@property (nonatomic, readonly, strong, nonnull) NSString *subtitleForState; // source-label.source-state.subtitle or error description
 
 @end
 
 
 @interface UIViewController (WViewController)
+
+@property (nonatomic, strong, readonly, nonnull) WErrorView *errorView;
+@property (nonatomic, strong, readonly, nonnull) UIActivityIndicatorView *loadingView;
 
 @end
 

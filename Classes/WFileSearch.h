@@ -6,7 +6,7 @@
 //  Copyright (c) 2012 TwoManShow. All rights reserved.
 //
 
-#import <Foundation/Foundation.h>
+@import Foundation;
 #import "WFileSourceProtocol.h"
 
 
@@ -14,7 +14,7 @@
 
 @interface WFileSearch : NSObject
 
-- (id) initWithFileSource:(id<WFileSourceProtocol>)fileSource;
+- (instancetype) initWithFileSource:(id<WFileSourceProtocol>)fileSource NS_DESIGNATED_INITIALIZER;
 @property (nonatomic, strong) id<WFileSourceProtocol> fileSource;
 
 @property (nonatomic, weak) id<WFileSearchDelegate> delegate;

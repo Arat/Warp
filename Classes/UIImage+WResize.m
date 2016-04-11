@@ -7,7 +7,7 @@
 //
 
 #import "UIImage+WResize.h"
-#import <ImageIO/ImageIO.h>
+@import ImageIO;
 
 
 @implementation UIImage (WResize)
@@ -70,7 +70,7 @@
         //(id)kCGImageSourceShouldCache : (id)kCFBooleanTrue,
         (id)kCGImageSourceCreateThumbnailWithTransform : (id)kCFBooleanTrue,
         (id)kCGImageSourceCreateThumbnailFromImageIfAbsent : (id)kCFBooleanTrue,
-        (id)kCGImageSourceThumbnailMaxPixelSize : [NSNumber numberWithInt:newSize.width > newSize.height ? newSize.width : newSize.height]};
+        (id)kCGImageSourceThumbnailMaxPixelSize : @(newSize.width > newSize.height ? newSize.width : newSize.height)};
     
     CGImageRef thumbnail = CGImageSourceCreateThumbnailAtIndex(source, 0, options);
     UIImage *image = [UIImage imageWithCGImage:thumbnail];
@@ -102,7 +102,7 @@
 + (UIImage *) imageNamedWithoutScaling:(NSString *)name
 {
     UIImage *image = [UIImage imageNamed:name];
-    return [UIImage imageWithCGImage:image.CGImage scale:[[UIScreen mainScreen] scale] orientation:image.imageOrientation];
+    return [UIImage imageWithCGImage:image.CGImage scale:[UIScreen mainScreen].scale orientation:image.imageOrientation];
 }
 
 #pragma mark -
@@ -131,7 +131,7 @@
     
     // Get the resized image from the context and a UIImage
     CGImageRef newImageRef = CGBitmapContextCreateImage(bitmap);
-    UIImage *newImage = [UIImage imageWithCGImage:newImageRef scale:[[UIScreen mainScreen] scale] orientation:UIImageOrientationUp];
+    UIImage *newImage = [UIImage imageWithCGImage:newImageRef scale:[UIScreen mainScreen].scale orientation:UIImageOrientationUp];
     
     // Clean up
     CGContextRelease(bitmap);
@@ -196,12 +196,18 @@
 
 @implementation WPhoto
 
-+ (id) photoWithFilePath:(NSString *)filePath
+- (instancetype) init
+{
+    self = [self initWithFilePath:nil];
+    return self;
+}
+
++ (instancetype) photoWithFilePath:(NSString *)filePath
 {
     return [[WPhoto alloc] initWithFilePath:filePath];
 }
 
-- (id) initWithFilePath:(NSString *)filePath
+- (instancetype) initWithFilePath:(NSString *)filePath
 {
     self = [super init];
     
@@ -244,7 +250,7 @@
         //(id)kCGImageSourceShouldCache : (id)kCFBooleanTrue,
         (id)kCGImageSourceCreateThumbnailWithTransform : (id)kCFBooleanTrue,
         (id)kCGImageSourceCreateThumbnailFromImageIfAbsent : (id)kCFBooleanTrue,
-        (id)kCGImageSourceThumbnailMaxPixelSize : [NSNumber numberWithInt:size]};
+        (id)kCGImageSourceThumbnailMaxPixelSize : @(size)};
     
     CGImageRef thumbnail = CGImageSourceCreateThumbnailAtIndex(_source, 0, options);
     UIImage *image = [UIImage imageWithCGImage:thumbnail];

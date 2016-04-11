@@ -114,7 +114,7 @@ CGPatternRef WCreateImagePattern(CGImageRef image)
 		_path = NULL;
 	}
 	if (_cornerRadius > 0) {
-		_path = [[UIBezierPath bezierPathWithRoundedRect:self.bounds cornerRadius:_cornerRadius] CGPath];
+		_path = [UIBezierPath bezierPathWithRoundedRect:self.bounds cornerRadius:_cornerRadius].CGPath;
 		CGPathRetain(_path);
 	}
 }
@@ -126,12 +126,12 @@ CGPatternRef WCreateImagePattern(CGImageRef image)
 	if (_pattern) {
 		CGPatternRelease(_pattern);
 	}
-	_pattern = WCreateImagePattern([_patternImage CGImage]);
+	_pattern = WCreateImagePattern(_patternImage.CGImage);
 	
 	if (_patternColor) {
 		CGColorRelease(_patternColor);
 	}
-	CGFloat alpha = [self opacity];
+	CGFloat alpha = self.opacity;
     CGColorSpaceRef colorSpace = CGColorSpaceCreatePattern(NULL);
 	_patternColor = CGColorCreateWithPattern(colorSpace, _pattern, &alpha);
     CGColorSpaceRelease(colorSpace);

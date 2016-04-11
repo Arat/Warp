@@ -6,7 +6,7 @@
 //  Copyright 2008 TwoManShow. All rights reserved.
 //
 
-#import <Foundation/Foundation.h>
+@import Foundation;
 #import <sys/statvfs.h>
 
 
@@ -15,9 +15,9 @@
 /*
  * Vrati string, prevedeny na nejvetsi odpovidajici jednotku
  */
-- (NSString *) stringSize;
+@property (nonatomic, readonly, copy) NSString *stringSize;
 
-- (NSString *) stringFloatSize;
+@property (nonatomic, readonly, copy) NSString *stringFloatSize;
 
 /*
  * Vrati string, prevedeny na nejvetsi odpovidajici jednotku

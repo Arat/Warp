@@ -6,9 +6,8 @@
 //  Copyright 2009 TwoManShow. All rights reserved.
 //
 
-#import <Foundation/Foundation.h>
-#import <QuartzCore/QuartzCore.h>
-#import <UIKit/UIKit.h>
+@import Foundation;
+@import UIKit;
 
 
 /*

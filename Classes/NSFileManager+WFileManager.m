@@ -17,7 +17,7 @@
 {
 #if TARGET_OS_IPHONE
     if (WISOS5()) {
-        if ([[[UIDevice currentDevice] systemVersion] hasPrefix:@"5.1."]) {
+        if ([[UIDevice currentDevice].systemVersion hasPrefix:@"5.1."]) {
             return [self _newAddSkipBackupAttributeToItemAtPath:path];
         } else {
             return [self _oldAddSkipBackupAttributeToItemAtPath:path];
@@ -69,7 +69,7 @@
 
 - (void) storeBookmarkForURL:(NSURL *)bookmarkURL toLocationAtURL:(NSURL *)locationURL
 {
-    [[NSFileManager defaultManager] createFileAtPath:[locationURL path] contents:[self bookmarkFromURL:bookmarkURL] attributes:nil];
+    [[NSFileManager defaultManager] createFileAtPath:locationURL.path contents:[self bookmarkFromURL:bookmarkURL] attributes:nil];
 }
 
 - (NSData *) bookmarkFromURL:(NSURL *)URL

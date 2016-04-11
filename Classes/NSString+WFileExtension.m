@@ -45,7 +45,7 @@ static NSArray *extArchive  = nil;
 
 - (BOOL) isImage
 {
-	if ([[self extImage] indexOfObject: self] == NSNotFound) {
+	if ([self.extImage indexOfObject: self] == NSNotFound) {
 		return NO;
 	}
 	return YES;
@@ -61,7 +61,7 @@ static NSArray *extArchive  = nil;
 
 - (BOOL) isAudio
 {
-	if ([[self extAudio] indexOfObject: self] == NSNotFound) {
+	if ([self.extAudio indexOfObject: self] == NSNotFound) {
 		return NO;
 	}
 	return YES;
@@ -77,7 +77,7 @@ static NSArray *extArchive  = nil;
 
 - (BOOL) isVideo
 {
-	if ([[self extVideo] indexOfObject: self] == NSNotFound) {
+	if ([self.extVideo indexOfObject: self] == NSNotFound) {
 		return NO;
 	}
 	return YES;
@@ -85,7 +85,7 @@ static NSArray *extArchive  = nil;
 
 - (BOOL) isStreamedVideo
 {
-    return [[self lowercaseString] isEqualToString:@"m3u8"];
+    return [self.lowercaseString isEqualToString:@"m3u8"];
 }
 
 - (NSArray *) extText
@@ -100,7 +100,7 @@ static NSArray *extArchive  = nil;
 
 - (BOOL) isText
 {
-	if ([[self extText] indexOfObject: self] == NSNotFound) {
+	if ([self.extText indexOfObject: self] == NSNotFound) {
 		return NO;
 	}
 	return YES;
@@ -117,7 +117,7 @@ static NSArray *extArchive  = nil;
 
 - (BOOL) isDocument
 {
-	if ([[self extDocument] indexOfObject: self] == NSNotFound) {
+	if ([self.extDocument indexOfObject: self] == NSNotFound) {
 		return NO;
 	}
 	return YES;
@@ -133,7 +133,7 @@ static NSArray *extArchive  = nil;
 
 - (BOOL) isBundle
 {
-	if ([[self extBundle] indexOfObject: self] == NSNotFound) {
+	if ([self.extBundle indexOfObject: self] == NSNotFound) {
 		return NO;
 	}
 	return YES;
@@ -149,7 +149,7 @@ static NSArray *extArchive  = nil;
 
 - (BOOL) isArchive
 {
-	if ([[self extArchive] indexOfObject: self] == NSNotFound) {
+	if ([self.extArchive indexOfObject: self] == NSNotFound) {
 		return NO;
 	}
 	return YES;

@@ -6,7 +6,7 @@
 //  Copyright 2011 TwoManShow. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
+@import UIKit;
 
 
 @interface WGradientView : UIView

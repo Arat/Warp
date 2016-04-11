@@ -30,110 +30,125 @@ static CGFloat kProgressMargin  = 6;
 
 @implementation WActivityView
 
+- (instancetype) initWithCoder:(NSCoder *)aDecoder
+{
+    self = [self initWithCoder:aDecoder];
+    
+    if (self) {
+        [self _initWithFrame:self.frame style:WActivityViewStyleWhiteBox text:nil];
+    }
+    return self;
+}
+
 - (instancetype) initWithFrame:(CGRect)frame style:(WActivityViewStyle)style text:(NSString *)text
 {
     self = [super initWithFrame:frame];
     
     if (self) {
-        _style = style;
-        _progress = 0;
-        _smoothesProgress = NO;
-        _smoothTimer =nil;
-        _progressView = nil;
-        
-        _bezelView = [[UIView alloc] init];
-        if (_style == WActivityViewStyleBlackBezel) {
-            _bezelView.backgroundColor = [UIColor clearColor];
-            self.backgroundColor = [UIColor clearColor];
-        } else if (_style == WActivityViewStyleWhiteBezel) {
-            _bezelView.backgroundColor = [UIColor clearColor];
-            self.backgroundColor = [UIColor clearColor];
-        } else if (_style == WActivityViewStyleWhiteBox) {
-            _bezelView.backgroundColor = [UIColor clearColor];
-            self.backgroundColor = [UIColor whiteColor];
-        } else if (_style == WActivityViewStyleBlackBox) {
-            _bezelView.backgroundColor = [UIColor clearColor];
-            self.backgroundColor = [UIColor colorWithWhite:0 alpha:0.8];
-        } else if (_style == WActivityViewStyleBlackBanner) {
-            _bezelView.backgroundColor = [UIColor clearColor];
-            self.backgroundColor = [UIColor clearColor];
-        } else {
-            _bezelView.backgroundColor = [UIColor clearColor];
-            self.backgroundColor = [UIColor clearColor];
-        }
-        
-        self.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
-        
-        _label = [[UILabel alloc] init];
-        _label.text = text;
-        _label.backgroundColor = [UIColor clearColor];
-        _label.lineBreakMode = NSLineBreakByTruncatingTail;
-        
-        if (_style == WActivityViewStyleWhite) {
-            _activityIndicator = [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:
-                                  UIActivityIndicatorViewStyleWhite];
-            _label.font = WSTYLEVAR(activityLabelFont);
-            _label.textColor = [UIColor whiteColor];
-        } else if (_style == WActivityViewStyleGray
-                   || _style == WActivityViewStyleWhiteBox
-                   || _style == WActivityViewStyleWhiteBezel) {
-            _activityIndicator = [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:
-                                  UIActivityIndicatorViewStyleGray];
-            _label.font = WSTYLEVAR(activityLabelFont);
-            _label.textColor = WSTYLEVAR(activityTextColor);
-        } else if (_style == WActivityViewStyleBlackBezel || _style == WActivityViewStyleBlackBox) {
-            _activityIndicator = [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:
-                                  UIActivityIndicatorViewStyleWhite];
-            _activityIndicator.frame = CGRectMake(0, 0, 24, 24);
-            _label.font = WSTYLEVAR(activityLabelFont);
-            _label.textColor = [UIColor whiteColor];
-            _label.shadowColor = [UIColor colorWithWhite:0 alpha:0.3];
-            _label.shadowOffset = CGSizeMake(1, 1);
-        } else if (_style == WActivityViewStyleBlackBanner) {
-            _activityIndicator = [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:
-                                  UIActivityIndicatorViewStyleWhite];
-            _label.font = WSTYLEVAR(activityBannerFont);
-            _label.textColor = [UIColor whiteColor];
-            _label.shadowColor = [UIColor colorWithWhite:0 alpha:0.3];
-            _label.shadowOffset = CGSizeMake(1, 1);
-        }
-        
-        [self addSubview:_bezelView];
-        [_bezelView addSubview:_activityIndicator];
-        [_bezelView addSubview:_label];
-        [_activityIndicator startAnimating];
+        [self _initWithFrame:frame style:style text:text];
     }
     return self;
 }
 
 - (instancetype) initWithFrame:(CGRect)frame style:(WActivityViewStyle)style
 {
-    self = [self initWithFrame:frame style:style text:nil];
+    self = [super initWithFrame:frame];
     
     if (self) {
-        
+        [self _initWithFrame:frame style:style text:nil];
     }
     return self;
 }
 
 - (instancetype) initWithStyle:(WActivityViewStyle)style
 {
-    self = [self initWithFrame:CGRectZero style:style text:nil];
+    self = [super initWithFrame:CGRectZero];
     
     if (self) {
-        
+        [self _initWithFrame:self.frame style:style text:nil];
     }
     return self;
 }
 
 - (instancetype) initWithFrame:(CGRect)frame
 {
-    self = [self initWithFrame:frame style:WActivityViewStyleWhiteBox text:nil];
+    self = [super initWithFrame:frame];
     
     if (self) {
-        
+        [self _initWithFrame:self.frame style:WActivityViewStyleWhiteBox text:nil];
     }
     return self;
+}
+
+- (void) _initWithFrame:(CGRect)frame style:(WActivityViewStyle)style text:(NSString *)text
+{
+    _style = style;
+    _progress = 0;
+    _smoothesProgress = NO;
+    _smoothTimer =nil;
+    _progressView = nil;
+    
+    _bezelView = [[UIView alloc] init];
+    if (_style == WActivityViewStyleBlackBezel) {
+        _bezelView.backgroundColor = [UIColor clearColor];
+        self.backgroundColor = [UIColor clearColor];
+    } else if (_style == WActivityViewStyleWhiteBezel) {
+        _bezelView.backgroundColor = [UIColor clearColor];
+        self.backgroundColor = [UIColor clearColor];
+    } else if (_style == WActivityViewStyleWhiteBox) {
+        _bezelView.backgroundColor = [UIColor clearColor];
+        self.backgroundColor = [UIColor whiteColor];
+    } else if (_style == WActivityViewStyleBlackBox) {
+        _bezelView.backgroundColor = [UIColor clearColor];
+        self.backgroundColor = [UIColor colorWithWhite:0 alpha:0.8];
+    } else if (_style == WActivityViewStyleBlackBanner) {
+        _bezelView.backgroundColor = [UIColor clearColor];
+        self.backgroundColor = [UIColor clearColor];
+    } else {
+        _bezelView.backgroundColor = [UIColor clearColor];
+        self.backgroundColor = [UIColor clearColor];
+    }
+    
+    self.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
+    
+    _label = [[UILabel alloc] init];
+    _label.text = text;
+    _label.backgroundColor = [UIColor clearColor];
+    _label.lineBreakMode = NSLineBreakByTruncatingTail;
+    
+    if (_style == WActivityViewStyleWhite) {
+        _activityIndicator = [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:
+                              UIActivityIndicatorViewStyleWhite];
+        _label.font = WSTYLEVAR(activityLabelFont);
+        _label.textColor = [UIColor whiteColor];
+    } else if (_style == WActivityViewStyleGray
+               || _style == WActivityViewStyleWhiteBox
+               || _style == WActivityViewStyleWhiteBezel) {
+        _activityIndicator = [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:
+                              UIActivityIndicatorViewStyleGray];
+        _label.font = WSTYLEVAR(activityLabelFont);
+        _label.textColor = WSTYLEVAR(activityTextColor);
+    } else if (_style == WActivityViewStyleBlackBezel || _style == WActivityViewStyleBlackBox) {
+        _activityIndicator = [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:
+                              UIActivityIndicatorViewStyleWhite];
+        _activityIndicator.frame = CGRectMake(0, 0, 24, 24);
+        _label.font = WSTYLEVAR(activityLabelFont);
+        _label.textColor = [UIColor whiteColor];
+        _label.shadowColor = [UIColor colorWithWhite:0 alpha:0.3];
+        _label.shadowOffset = CGSizeMake(1, 1);
+    } else if (_style == WActivityViewStyleBlackBanner) {
+        _activityIndicator = [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:
+                              UIActivityIndicatorViewStyleWhite];
+        _label.font = WSTYLEVAR(activityBannerFont);
+        _label.textColor = [UIColor whiteColor];
+        _label.shadowColor = [UIColor colorWithWhite:0 alpha:0.3];
+        _label.shadowOffset = CGSizeMake(1, 1);
+    }
+    
+    [self addSubview:_bezelView];
+    [_bezelView addSubview:_activityIndicator];
+    [_bezelView addSubview:_label];
+    [_activityIndicator startAnimating];
 }
 
 - (void) dealloc
@@ -189,7 +204,7 @@ static CGFloat kProgressMargin  = 6;
         bezelHeight = self.height;
     }
     
-    CGFloat maxBevelWidth = [[UIScreen mainScreen] applicationFrame].size.width - margin*2;
+    CGFloat maxBevelWidth = [UIScreen mainScreen].applicationFrame.size.width - margin*2;
     if (bezelWidth > maxBevelWidth) {
         bezelWidth = maxBevelWidth;
         contentWidth = bezelWidth - (kSpacing + indicatorSize);

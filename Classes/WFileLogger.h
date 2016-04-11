@@ -6,7 +6,7 @@
 //  Copyright (c) 2011 TwoManShow. All rights reserved.
 //
 
-#import <Foundation/Foundation.h>
+@import Foundation;
 
 
 @interface WFileLogger : NSObject

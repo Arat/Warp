@@ -6,7 +6,7 @@
 //  Copyright (c) 2014 TwoManShow. All rights reserved.
 //
 
-#import <Cocoa/Cocoa.h>
+@import Cocoa;
 
 //! Project version number for WarpX.
 FOUNDATION_EXPORT double WarpXVersionNumber;

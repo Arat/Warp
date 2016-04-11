@@ -251,7 +251,7 @@
 #pragma mark -
 #pragma mark UITableViewDelegate
 
-- (BOOL) tableView:(UITableView *)tableView willSelectRowAtIndexPath:(NSIndexPath *)indexPath
+- (NSIndexPath *) tableView:(UITableView *)tableView willSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     id<WViewDataObjectProtocol> object = [_viewSource objectForIndexPath:indexPath];
     if (object && !object.inserting && !object.processing && !object.removing) {

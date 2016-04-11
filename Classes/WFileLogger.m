@@ -27,9 +27,9 @@
         _logConnections = [[NSMutableDictionary alloc] init];
         NSString *logPath = [self logConnectionListName]; BOOL isDir = NO;
         
-        if (!([[NSFileManager defaultManager] fileExistsAtPath:[logPath stringByDeletingLastPathComponent] isDirectory:&isDir] && isDir)) {
-            if (![[NSFileManager defaultManager] createDirectoryAtPath:[logPath stringByDeletingLastPathComponent] withIntermediateDirectories:YES attributes:nil error:nil]) {
-                NSLog(@"Failed to create log directory: %@", [logPath stringByDeletingLastPathComponent]);
+        if (!([[NSFileManager defaultManager] fileExistsAtPath:logPath.stringByDeletingLastPathComponent isDirectory:&isDir] && isDir)) {
+            if (![[NSFileManager defaultManager] createDirectoryAtPath:logPath.stringByDeletingLastPathComponent withIntermediateDirectories:YES attributes:nil error:nil]) {
+                NSLog(@"Failed to create log directory: %@", logPath.stringByDeletingLastPathComponent);
             }
         }
         NSData *data = [NSData dataWithContentsOfFile:logPath];
@@ -96,7 +96,7 @@
 		while (1) {
 			unsigned len;
 			NSData *lenData = [logFileHandle readDataOfLength:sizeof(unsigned)];
-			[lenData getBytes:&len length:[lenData length]];
+			[lenData getBytes:&len length:lenData.length];
 			len = CFSwapInt32LittleToHost(len);
 			NSData *archive = [logFileHandle readDataOfLength:len];
 #if !TARGET_OS_IPHONE
@@ -187,7 +187,7 @@
 		}
 		[handle seekToEndOfFile];
         
-		unsigned len = CFSwapInt32HostToLittle((unsigned int)[recData length]);
+		unsigned len = CFSwapInt32HostToLittle((unsigned int)recData.length);
 		NSMutableData *entry = [NSMutableData data];
 		[entry appendBytes:&len length:sizeof(unsigned)];
 		[entry appendData:recData];

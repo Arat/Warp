@@ -21,7 +21,7 @@
 + (NSString *) MD5String:(NSString *) string
 {
     unsigned char digest[CC_MD5_DIGEST_LENGTH], i;
-	CC_MD5([string UTF8String], (CC_LONG)[string lengthOfBytesUsingEncoding:NSUTF8StringEncoding], digest);
+	CC_MD5(string.UTF8String, (CC_LONG)[string lengthOfBytesUsingEncoding:NSUTF8StringEncoding], digest);
 	NSMutableString *ms = [NSMutableString string];
 	
 	for (i = 0; i < CC_MD5_DIGEST_LENGTH; i++) {
@@ -38,7 +38,7 @@
 + (NSString *) SHA1String:(NSString *) string
 {
     unsigned char digest[CC_SHA1_DIGEST_LENGTH], i;
-	CC_SHA1([string UTF8String], (CC_LONG)[string lengthOfBytesUsingEncoding:NSUTF8StringEncoding], digest);
+	CC_SHA1(string.UTF8String, (CC_LONG)[string lengthOfBytesUsingEncoding:NSUTF8StringEncoding], digest);
 	NSMutableString *ms = [NSMutableString string];
 	
 	for (i = 0; i< CC_SHA1_DIGEST_LENGTH; i++) {
