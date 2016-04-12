@@ -15,6 +15,8 @@ static NSString *WApplicationGroupIdentifier = nil;
 
 @implementation WAppDelegate
 
+@synthesize window = _window;
+
 + (WAppDelegate *) sharedAppDelegate
 {
 #if TARGET_OS_IPHONE
