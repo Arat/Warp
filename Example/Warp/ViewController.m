@@ -21,7 +21,6 @@
     __weak WViewController *weakSelf = self;
     
     [self setViewSource:[[WViewDataSource alloc] initWithLabel:@"test"]];
-    [self.viewSource setContent:@[]];
     [self.viewSource setStatusCallback:^(WViewDataSourceState state) {
         switch (state) {
             case WViewDataSourceStateLoading:
@@ -37,13 +36,21 @@
         }
     }];
     
+    // How to use it manualy
     dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(2 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-        [self.viewSource setContent:@[@"content"]];
+        [self.viewSource setContent:@[]];
         
         dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(2 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-             [self.viewSource setError:[NSError errorWithDomain:@"Test" code:404 userInfo:@{NSLocalizedDescriptionKey: @"Test error description"}]];
+            [self.viewSource setContent:@[@"content"]];
+            
+            dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(2 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+                [self.viewSource setError:[NSError errorWithDomain:@"Test" code:404 userInfo:@{NSLocalizedDescriptionKey: @"Test error description"}]];
+            });
         });
     });
+    
+    // Automatic KVO observing
+    // [self.viewSource observerSourceForContentChanges:self.source keyPath:@"items"];
 }
 
 - (void) didReceiveMemoryWarning

@@ -95,6 +95,7 @@
         return;
     }
     _loadingView = [self createLoadingView];
+    [_loadingView setFrame:[self overlayerFrame]];
     [self.view addSubview:_loadingView];
     
     [UIView animateWithDuration:0.25 animations:^{
@@ -200,6 +201,7 @@
         return;
     }
     _loadingView = [self createLoadingView];
+    [_loadingView setFrame:[self overlayerFrame]];
     [self.view addSubview:_loadingView];
     
     [UIView animateWithDuration:0.25 animations:^{
@@ -327,6 +329,7 @@
         return;
     }
     _loadingView = [self createLoadingView];
+    [_loadingView setFrame:[self overlayerFrame]];
     [self.view addSubview:_loadingView];
     
     [UIView animateWithDuration:0.25 animations:^{
