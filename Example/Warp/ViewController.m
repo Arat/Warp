@@ -14,20 +14,39 @@
 
 @implementation ViewController
 
-- (void)viewDidLoad
+- (void) viewDidLoad
 {
     [super viewDidLoad];
-	// Do any additional setup after loading the view, typically from a nib.
+	
+    __weak WViewController *weakSelf = self;
     
-    [self displayLoading];
+    [self setViewSource:[[WViewDataSource alloc] initWithLabel:@"test"]];
+    [self.viewSource setContent:@[]];
+    [self.viewSource setStatusCallback:^(WViewDataSourceState state) {
+        switch (state) {
+            case WViewDataSourceStateLoading:
+                [weakSelf displayLoading];
+                break;
+            case WViewDataSourceStateLoadingMore:
+            case WViewDataSourceStateLoaded:
+                [weakSelf hideOverlayer];
+                break;
+            default:
+                [weakSelf displayError];
+                break;
+        }
+    }];
     
-    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-        [self hideOverlayer];
-        [self displayError];
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(2 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+        [self.viewSource setContent:@[@"content"]];
+        
+        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(2 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+             [self.viewSource setError:[NSError errorWithDomain:@"Test" code:404 userInfo:@{NSLocalizedDescriptionKey: @"Test error description"}]];
+        });
     });
 }
 
-- (void)didReceiveMemoryWarning
+- (void) didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.

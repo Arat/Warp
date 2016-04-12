@@ -343,7 +343,13 @@
 
 - (BOOL) isLoading
 {
-    return _source == nil || [_source isLoading];
+    if (_source) {
+        return [_source isLoading];
+    } else if (_content != nil) {
+        return NO;
+    } else {
+        return NO;
+    }
 }
 
 - (BOOL) isOutdated
