@@ -13,7 +13,7 @@
 
 @implementation UIViewController (WViewController)
 
-- (WErrorView *) errorView
+- (WErrorView *) createErrorView
 {
     WErrorView *errorView = [[WErrorView alloc] initWithTitle:@"" subtitle:@"" image:nil];
     [errorView setAutoresizingMask:UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight];
@@ -28,7 +28,7 @@
     return errorView;
 }
 
-- (UIActivityIndicatorView *) loadingView
+- (UIActivityIndicatorView *) createLoadingView
 {
     UIActivityIndicatorView *loadingView = [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleWhiteLarge];
     [loadingView setAutoresizingMask:UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight];
@@ -56,7 +56,7 @@
 - (void) displayError
 {
     if (_errorView == nil) {
-        _errorView = [self errorView];
+        _errorView = [self createErrorView];
     }
     [_errorView setTitle:[self titleForState]];
     [_errorView setSubtitle:[self subtitleForState]];
@@ -94,7 +94,7 @@
     if (_loadingView) {
         return;
     }
-    _loadingView = [self loadingView];
+    _loadingView = [self createLoadingView];
     [self.view addSubview:_loadingView];
     
     [UIView animateWithDuration:0.25 animations:^{
@@ -161,7 +161,7 @@
 - (void) displayError
 {
     if (_errorView == nil) {
-        _errorView = [self errorView];
+        _errorView = [self createErrorView];
     }
     [_errorView setTitle:[self titleForState]];
     [_errorView setSubtitle:[self subtitleForState]];
@@ -199,7 +199,7 @@
     if (_loadingView) {
         return;
     }
-    _loadingView = [self loadingView];
+    _loadingView = [self createLoadingView];
     [self.view addSubview:_loadingView];
     
     [UIView animateWithDuration:0.25 animations:^{
@@ -288,7 +288,7 @@
 - (void) displayError
 {
     if (_errorView == nil) {
-        _errorView = [self errorView];
+        _errorView = [self createErrorView];
     }
     [_errorView setTitle:[self titleForState]];
     [_errorView setSubtitle:[self subtitleForState]];
@@ -326,7 +326,7 @@
     if (_loadingView) {
         return;
     }
-    _loadingView = [self loadingView];
+    _loadingView = [self createLoadingView];
     [self.view addSubview:_loadingView];
     
     [UIView animateWithDuration:0.25 animations:^{

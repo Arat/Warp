@@ -35,8 +35,8 @@
 
 @interface UIViewController (WViewController)
 
-@property (nonatomic, strong, readonly, nonnull) WErrorView *errorView;
-@property (nonatomic, strong, readonly, nonnull) UIActivityIndicatorView *loadingView;
+- (WErrorView * _Nonnull) createErrorView;
+- (UIActivityIndicatorView * _Nonnull) createLoadingView;
 
 @end
 
