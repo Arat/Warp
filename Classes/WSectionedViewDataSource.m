@@ -33,7 +33,7 @@
 {
     for (NSArray *section in _content) {
         NSInteger index = [section indexOfObject:object];
-
+        
         if (index != NSNotFound) {
             NSInteger sectionIndex = [_content indexOfObject:section];
             if (_collectionView)
@@ -414,16 +414,24 @@
 
 - (UITableViewCell *) tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    UITableViewCell<WViewDataCellProtocol> *cell = (id)[tableView dequeueReusableCellWithIdentifier:self.cellIdentifier forIndexPath:indexPath];
+    UITableViewCell<WViewDataCellProtocol> *cell = (id)[tableView dequeueReusableCellWithIdentifier:[self cellIdentifierForIndexPath:indexPath] forIndexPath:indexPath];
     NSObject<WViewDataObjectProtocol> *item = self.content[indexPath.section][indexPath.row];
-    if (item) {
-        [cell setObject:(id)item];
-    }
-
+    [cell setObject:(id)item];
+    
     if (self.itemCellSetupCallback) {
         self.itemCellSetupCallback(cell, item);
     }
     return cell;
+}
+
+- (BOOL) tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    if (self.canEditItemCallback) {
+        return self.canEditItemCallback(indexPath);
+    } else {
+        id<WViewDataObjectProtocol> item = self.content[indexPath.section][indexPath.row];
+        return ![item isRemoving] && ![item isInserting] && ![item isRemoving];
+    }
 }
 
 #pragma mark UICollectionViewDataSource
@@ -440,10 +448,10 @@
 
 - (UICollectionViewCell *) collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath
 {
-    UICollectionViewCell<WViewDataCellProtocol> *cell = (id)[collectionView dequeueReusableCellWithReuseIdentifier:self.cellIdentifier forIndexPath:indexPath];
+    UICollectionViewCell<WViewDataCellProtocol> *cell = (id)[collectionView dequeueReusableCellWithReuseIdentifier:[self cellIdentifierForIndexPath:indexPath] forIndexPath:indexPath];
     NSObject<WViewDataObjectProtocol> *item = self.content[indexPath.section][indexPath.item];
     [cell setObject:item];
-
+    
     if (self.itemCellSetupCallback) {
         self.itemCellSetupCallback(cell, item);
     }

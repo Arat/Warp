@@ -20,7 +20,7 @@
     if (self) {
         _label = @"default";
         _lastState = WViewDataSourceStateLoading;
-
+        
         _contentCount = 0;
         _section = 0;
     }
@@ -479,17 +479,16 @@
 
 - (NSString *) tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section
 {
-    return _sectionTitles[section];
+    return [_sectionTitles[section] title];
 }
 
 - (UITableViewCell *) tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     UITableViewCell<WViewDataCellProtocol> *cell = (id)[tableView dequeueReusableCellWithIdentifier:[self cellIdentifierForIndexPath:indexPath]
-                                                                                         forIndexPath:indexPath];
+                                                                                       forIndexPath:indexPath];
     id<WViewDataObjectProtocol> item = self.content[indexPath.row];
-    if (item) {
-        [cell setObject:(id)item];
-    }
+    [cell setObject:(id)item];
+    
     if (self.itemCellSetupCallback) {
         self.itemCellSetupCallback(cell, item);
     }
@@ -537,11 +536,10 @@
 - (UICollectionViewCell *) collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath
 {
     UICollectionViewCell<WViewDataCellProtocol> *cell = (id)[collectionView dequeueReusableCellWithReuseIdentifier:[self cellIdentifierForIndexPath:indexPath]
-                                                                                                        forIndexPath:indexPath];
+                                                                                                      forIndexPath:indexPath];
     id<WViewDataObjectProtocol> item = self.content[indexPath.item];
-    if (item) {
-        [cell setObject:(id)item];
-    }
+    [cell setObject:(id)item];
+    
     if (self.itemCellSetupCallback) {
         self.itemCellSetupCallback(cell, item);
     }
@@ -554,7 +552,7 @@
         return nil;
     }
     UICollectionReusableView<WViewDataCellProtocol> *sectionView = [collectionView dequeueReusableSupplementaryViewOfKind:kind
-                                                                                                        withReuseIdentifier:self.sectionIdentifier forIndexPath:indexPath];
+                                                                                                      withReuseIdentifier:self.sectionIdentifier forIndexPath:indexPath];
     NSArray *sectionTitles = [self sectionTitles];
     if ([sectionTitles count] > [indexPath section]) {
         [sectionView setObject:self.sectionTitles[indexPath.section]];

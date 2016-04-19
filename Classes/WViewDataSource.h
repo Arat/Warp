@@ -9,6 +9,7 @@
 @import Foundation;
 #import "WViewDataSourceProtocol.h"
 #import "WViewDataObjectProtocol.h"
+#import "WViewDataSectionProtocol.h"
 #import "WViewDataCellProtocol.h"
 
 
@@ -49,7 +50,7 @@ typedef NS_ENUM(NSUInteger, WViewDataSourceState) {
 - (NSString * _Nonnull) cellIdentifierForIndexPath:(NSIndexPath * _Nonnull)indexPath; // override point for cellIdentifier, default returns just cellIdentifier
 
 @property (nonatomic, strong, nullable) NSString *sectionIdentifier; // reuse section identifier for sections, all section views must implement WViewDataCellProtocol
-@property (nonatomic, copy, nullable) NSArray<id<WViewDataObjectProtocol>> *sectionTitles;
+@property (nonatomic, copy, nullable) NSArray<id<WViewDataSectionProtocol>> *sectionTitles;
 
 - (void) deleteItemAtIndexPath:(NSIndexPath * _Nonnull)indexPath; // delete item, it will call deleteItemCallback and mark it as removing in source, same call as in UIT datasource
 @property (nonatomic, strong, readonly, nullable) NSArray *deletingItems; // items that are currently in delete queue

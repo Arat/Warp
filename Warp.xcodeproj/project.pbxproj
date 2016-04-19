@@ -23,6 +23,9 @@
 		6531C4091CB26A7300B76B5D /* WViewDataObjectProtocol.h in Headers */ = {isa = PBXBuildFile; fileRef = 6531C4061CB26A7300B76B5D /* WViewDataObjectProtocol.h */; };
 		6531C40A1CB26A7300B76B5D /* WViewDataSourceProtocol.h in Headers */ = {isa = PBXBuildFile; fileRef = 6531C4071CB26A7300B76B5D /* WViewDataSourceProtocol.h */; };
 		65339E0819814CBD00CE3AC1 /* WTableView.h in Headers */ = {isa = PBXBuildFile; fileRef = 80C7C2BE1073EBB400BAC071 /* WTableView.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		654035691CC62D7D005B8EF8 /* WViewDataSectionProtocol.h in Headers */ = {isa = PBXBuildFile; fileRef = 654035681CC62D7D005B8EF8 /* WViewDataSectionProtocol.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		6540356A1CC62D7D005B8EF8 /* WViewDataSectionProtocol.h in Headers */ = {isa = PBXBuildFile; fileRef = 654035681CC62D7D005B8EF8 /* WViewDataSectionProtocol.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		6540356B1CC62D7D005B8EF8 /* WViewDataSectionProtocol.h in Headers */ = {isa = PBXBuildFile; fileRef = 654035681CC62D7D005B8EF8 /* WViewDataSectionProtocol.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		6556B9201ADBD61A00DC7376 /* WViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = 6556B91E1ADBD61A00DC7376 /* WViewController.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		6556B9221ADBD61A00DC7376 /* WViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = 6556B91E1ADBD61A00DC7376 /* WViewController.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		6556B9231ADBD61A00DC7376 /* WViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6556B91F1ADBD61A00DC7376 /* WViewController.m */; };
@@ -185,6 +188,7 @@
 		6531C4051CB26A7300B76B5D /* WViewDataCellProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WViewDataCellProtocol.h; sourceTree = "<group>"; };
 		6531C4061CB26A7300B76B5D /* WViewDataObjectProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WViewDataObjectProtocol.h; sourceTree = "<group>"; };
 		6531C4071CB26A7300B76B5D /* WViewDataSourceProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WViewDataSourceProtocol.h; sourceTree = "<group>"; };
+		654035681CC62D7D005B8EF8 /* WViewDataSectionProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WViewDataSectionProtocol.h; sourceTree = "<group>"; };
 		6556B91E1ADBD61A00DC7376 /* WViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WViewController.h; sourceTree = "<group>"; };
 		6556B91F1ADBD61A00DC7376 /* WViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WViewController.m; sourceTree = "<group>"; };
 		6556B92D1ADBD95800DC7376 /* Warp.podspec */ = {isa = PBXFileReference; lastKnownFileType = text; path = Warp.podspec; sourceTree = "<group>"; };
@@ -474,6 +478,7 @@
 			children = (
 				6531C4051CB26A7300B76B5D /* WViewDataCellProtocol.h */,
 				6531C4061CB26A7300B76B5D /* WViewDataObjectProtocol.h */,
+				654035681CC62D7D005B8EF8 /* WViewDataSectionProtocol.h */,
 				6531C4071CB26A7300B76B5D /* WViewDataSourceProtocol.h */,
 				652BAAD4191938F400D1867A /* WViewDataSource.h */,
 				65A0488119ACC6EC0068D3EE /* WViewDataSourcePrivate.h */,
@@ -528,6 +533,7 @@
 				6576866B196D5AF000C0E88D /* WDefaultStyleSheet.h in Headers */,
 				655781D41CABE78800EAD75A /* WFileSource.h in Headers */,
 				655781DB1CABE79700EAD75A /* WFileLogger.h in Headers */,
+				6540356A1CC62D7D005B8EF8 /* WViewDataSectionProtocol.h in Headers */,
 				6576866C196D5AFE00C0E88D /* UIImage+WResize.h in Headers */,
 				655781D11CABE77E00EAD75A /* WFileSearch.h in Headers */,
 				6576866D196D5AFE00C0E88D /* NSDate+WAdditions.h in Headers */,
@@ -559,6 +565,7 @@
 				65C0C9CC1A8CDE8000D9B053 /* NSUserDefaults+WGroupDefaults.h in Headers */,
 				65E4CB4219912804009C0BAB /* NSString+WCrypto.h in Headers */,
 				65E4CB3C19912804009C0BAB /* NSFileManager+WFileManager.h in Headers */,
+				6540356B1CC62D7D005B8EF8 /* WViewDataSectionProtocol.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -585,6 +592,7 @@
 				6556B9201ADBD61A00DC7376 /* WViewController.h in Headers */,
 				652BAAC21917E0A100D1867A /* WErrorView.h in Headers */,
 				6531C40A1CB26A7300B76B5D /* WViewDataSourceProtocol.h in Headers */,
+				654035691CC62D7D005B8EF8 /* WViewDataSectionProtocol.h in Headers */,
 				809501C4120F0A4600EE6A75 /* WGlobal.h in Headers */,
 				809501C5120F0A4600EE6A75 /* Warp.h in Headers */,
 				809501CC120F0A4600EE6A75 /* WTableView.h in Headers */,
