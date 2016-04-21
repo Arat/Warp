@@ -15,4 +15,8 @@
 @property (nonatomic, assign, getter = isProcessing) BOOL processing; // or download...
 @property (nonatomic, assign, getter = isRemoving) BOOL removing;
 
+@optional
+
+@property (nonatomic, strong, nullable) NSError *error;
+
 @end
