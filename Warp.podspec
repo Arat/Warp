@@ -39,8 +39,13 @@ Pod::Spec.new do |s|
     s.frameworks = 'UIKit'
     s.dependency 'CocoaLumberjack'
 
-    s.subspec 'AppExtension' do |ext|
-        s.xcconfig = { 'GCC_PREPROCESSOR_DEFINITIONS' => 'TARGET_IS_EXTENSION=1 LUMBERMODULE=1 $(inherited)' }
+    s.subspec 'AppExtension' do |ss|
+        ss.xcconfig = { 'GCC_PREPROCESSOR_DEFINITIONS' => 'TARGET_IS_EXTENSION=1 LUMBERMODULE=1 $(inherited)' }
+
+        s.prefix_header_file = 'Resources/Warp_Prefix.pch'
+        s.source_files = 'Classes/**/*'
+        s.frameworks = 'UIKit'
+        s.dependency 'CocoaLumberjack'
     end
 
 end
