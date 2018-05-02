@@ -19,10 +19,14 @@ static NSString *WApplicationGroupIdentifier = nil;
 
 + (WAppDelegate *) sharedAppDelegate
 {
+#if TARGET_IS_EXTENSION
+    return nil;
+#else
 #if TARGET_OS_IPHONE
-	return (id)[[UIApplication sharedApplication] delegate];
+    return (id)[[UIApplication sharedApplication] delegate];
 #else
     return (id)[NSApp delegate];
+#endif
 #endif
 }
 
@@ -211,7 +215,11 @@ static NSString *WApplicationGroupIdentifier = nil;
 
 - (UIViewController *) rootViewController
 {
+#if TARGET_IS_EXTENSION
+    return nil;
+#else
     return [[[UIApplication sharedApplication] keyWindow] rootViewController];
+#endif
 }
 
 + (UIViewController *) rootViewController
