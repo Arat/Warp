@@ -26,7 +26,6 @@ Pod::Spec.new do |s|
     s.author           = { "Lukas Foldyna" => "lukas@twomanshow.co" }
     s.source           = { :git => "https://github.com/TwoManShow/Warp.git", :tag => s.version.to_s }
     # s.social_media_url = 'https://twitter.com/twomanshowapps'
-    s.default_subspec = 'Core'
 
     s.platform     = :ios, '6.0'
     #s.ios.deployment_target = '6.0'
@@ -36,18 +35,9 @@ Pod::Spec.new do |s|
     s.frameworks = 'UIKit'
     s.dependency 'CocoaLumberjack'
 
-    s.subspec 'Core' do |ss|
-        s.xcconfig = { 'GCC_PREPROCESSOR_DEFINITIONS' => 'LUMBERMODULE=1 $(inherited)' }
+    s.xcconfig = { 'GCC_PREPROCESSOR_DEFINITIONS' => 'LUMBERMODULE=1 $(inherited)' }
 
-        s.prefix_header_file = 'Resources/Warp_Prefix.pch'
-        s.source_files = 'Classes/**/*'
-    end
-
-    s.subspec 'AppExtension' do |ss|
-        ss.xcconfig = { 'GCC_PREPROCESSOR_DEFINITIONS' => 'TARGET_IS_EXTENSION=1 LUMBERMODULE=1 $(inherited)' }
-
-        s.prefix_header_file = 'Resources/Warp_Prefix.pch'
-        s.source_files = 'Classes/**/*'
-    end
+    s.prefix_header_file = 'Resources/Warp_Prefix.pch'
+    s.source_files = 'Classes/**/*'
 
 end
