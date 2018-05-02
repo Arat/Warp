@@ -40,7 +40,7 @@ Pod::Spec.new do |s|
     s.dependency 'CocoaLumberjack'
 
     s.subspec 'AppExtension' do |ext|
-        ss.xcconfig = { 'GCC_PREPROCESSOR_DEFINITIONS' => 'TARGET_IS_EXTENSION=1 LUMBERMODULE=1 $(inherited)' }
+        s.xcconfig = { 'GCC_PREPROCESSOR_DEFINITIONS' => 'TARGET_IS_EXTENSION=1 LUMBERMODULE=1 $(inherited)' }
     end
 
 end
