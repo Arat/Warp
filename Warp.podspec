@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
     s.name             = "Warp"
-    s.version          = "0.1.11"
+    s.version          = "0.1.12"
     s.summary          = "Warp Objective-C Framework for iOS and OS X."
 
     # This description is used to generate tags and improve search results.
@@ -26,26 +26,28 @@ Pod::Spec.new do |s|
     s.author           = { "Lukas Foldyna" => "lukas@twomanshow.co" }
     s.source           = { :git => "https://github.com/TwoManShow/Warp.git", :tag => s.version.to_s }
     # s.social_media_url = 'https://twitter.com/twomanshowapps'
+    s.default_subspec = 'Core'
 
     s.platform     = :ios, '6.0'
     #s.ios.deployment_target = '6.0'
     #s.osx.deployment_target = '10.7'
     s.requires_arc = true
 
-    s.xcconfig = { 'GCC_PREPROCESSOR_DEFINITIONS' => 'LUMBERMODULE=1 $(inherited)' }
-
-    s.prefix_header_file = 'Resources/Warp_Prefix.pch'
-    s.source_files = 'Classes/**/*'
     s.frameworks = 'UIKit'
     s.dependency 'CocoaLumberjack'
+
+    s.subspec 'Core' do |ss|
+        s.xcconfig = { 'GCC_PREPROCESSOR_DEFINITIONS' => 'LUMBERMODULE=1 $(inherited)' }
+
+        s.prefix_header_file = 'Resources/Warp_Prefix.pch'
+        s.source_files = 'Classes/**/*'
+    end
 
     s.subspec 'AppExtension' do |ss|
         ss.xcconfig = { 'GCC_PREPROCESSOR_DEFINITIONS' => 'TARGET_IS_EXTENSION=1 LUMBERMODULE=1 $(inherited)' }
 
         s.prefix_header_file = 'Resources/Warp_Prefix.pch'
         s.source_files = 'Classes/**/*'
-        s.frameworks = 'UIKit'
-        s.dependency 'CocoaLumberjack'
     end
 
 end
