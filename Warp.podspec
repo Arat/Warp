@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
     s.name             = "Warp"
-    s.version          = "0.1.10"
+    s.version          = "0.1.11"
     s.summary          = "Warp Objective-C Framework for iOS and OS X."
 
     # This description is used to generate tags and improve search results.
@@ -38,4 +38,9 @@ Pod::Spec.new do |s|
     s.source_files = 'Classes/**/*'
     s.frameworks = 'UIKit'
     s.dependency 'CocoaLumberjack'
+
+    s.subspec 'AppExtension' do |ext|
+        ss.xcconfig = { 'GCC_PREPROCESSOR_DEFINITIONS' => 'TARGET_IS_EXTENSION=1 LUMBERMODULE=1 $(inherited)' }
+    end
+
 end
