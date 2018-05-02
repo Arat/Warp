@@ -44,6 +44,8 @@ Pod::Spec.new do |s|
     end
 
     s.subspec 'AppExtension' do |ss|
+        ss.name = "WarpExt"
+
         ss.xcconfig = { 'GCC_PREPROCESSOR_DEFINITIONS' => 'TARGET_IS_EXTENSION=1 LUMBERMODULE=1 $(inherited)' }
 
         s.prefix_header_file = 'Resources/Warp_Prefix.pch'
