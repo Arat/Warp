@@ -26,7 +26,6 @@ Pod::Spec.new do |s|
     s.author           = { "Lukas Foldyna" => "lukas@twomanshow.co" }
     s.source           = { :git => "https://github.com/TwoManShow/Warp.git", :tag => s.version.to_s }
     # s.social_media_url = 'https://twitter.com/twomanshowapps'
-    s.default_subspec = 'Core'
 
     s.platform     = :ios, '6.0'
     #s.ios.deployment_target = '6.0'
