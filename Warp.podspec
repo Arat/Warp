@@ -7,7 +7,7 @@
 #
 
 Pod::Spec.new do |s|
-    s.name             = "Warp"
+    s.name             = "WarpExt"
     s.version          = "0.1.12"
     s.summary          = "Warp Objective-C Framework for iOS and OS X."
 
